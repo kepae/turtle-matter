@@ -1,0 +1,79 @@
+Loading Turtle file: test_data/croissant/croissant.ttl
+Target namespace: http://mlcommons.org/croissant/
+Loaded 227 triples
+
+Namespaces found:
+  brick: https://brickschema.org/schema/Brick#
+  csvw: http://www.w3.org/ns/csvw#
+  dc: http://purl.org/dc/elements/1.1/
+  dcat: http://www.w3.org/ns/dcat#
+  dcmitype: http://purl.org/dc/dcmitype/
+  dcterms: http://purl.org/dc/terms/
+  dcam: http://purl.org/dc/dcam/
+  doap: http://usefulinc.com/ns/doap#
+  foaf: http://xmlns.com/foaf/0.1/
+  geo: http://www.opengis.net/ont/geosparql#
+  odrl: http://www.w3.org/ns/odrl/2/
+  org: http://www.w3.org/ns/org#
+  prof: http://www.w3.org/ns/dx/prof/
+  prov: http://www.w3.org/ns/prov#
+  qb: http://purl.org/linked-data/cube#
+  schema: https://schema.org/
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  sosa: http://www.w3.org/ns/sosa/
+  ssn: http://www.w3.org/ns/ssn/
+  time: http://www.w3.org/2006/time#
+  vann: http://purl.org/vocab/vann/
+  void: http://rdfs.org/ns/void#
+  wgs: https://www.w3.org/2003/01/geo/wgs84_pos#
+  owl: http://www.w3.org/2002/07/owl#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  xml: http://www.w3.org/XML/1998/namespace
+  croissant: http://mlcommons.org/croissant/
+
+Vocabulary Analysis:
+  Classes (filtered): 11
+    - http://mlcommons.org/croissant/ContentExtractionEnumeration (ContexExtractionEnumeration)
+    - http://mlcommons.org/croissant/DataSource (DataSource)
+    - http://mlcommons.org/croissant/DataType (DataType)
+    - http://mlcommons.org/croissant/Extract (Extract)
+    - http://mlcommons.org/croissant/Field (Field)
+    - http://mlcommons.org/croissant/FileObject (FileObject)
+    - http://mlcommons.org/croissant/FilePropertyEnumeration (FilePropertyEnumeration)
+    - http://mlcommons.org/croissant/FileSet (FileSet)
+    - http://mlcommons.org/croissant/Format (Format)
+    - http://mlcommons.org/croissant/RecordSet (RecordSet)
+    - http://mlcommons.org/croissant/Transform (Transform)
+  Properties (filtered): 29
+    - http://mlcommons.org/croissant/citeAs (citeAs)
+    - http://mlcommons.org/croissant/column (column)
+    - http://mlcommons.org/croissant/containedIn (containedIn)
+    - http://mlcommons.org/croissant/content (content)
+    - http://mlcommons.org/croissant/data (data)
+    - http://mlcommons.org/croissant/dataType (dataType)
+    - http://mlcommons.org/croissant/delimiter (delimiter)
+    - http://mlcommons.org/croissant/equivalentProperty (equivalentProperty)
+    - http://mlcommons.org/croissant/examples (examples)
+    - http://mlcommons.org/croissant/excludes (excludes)
+    - http://mlcommons.org/croissant/extract (extract)
+    - http://mlcommons.org/croissant/field (field)
+    - http://mlcommons.org/croissant/fileObject (fileObject)
+    - http://mlcommons.org/croissant/fileProperty (fileProperty)
+    - http://mlcommons.org/croissant/fileSet (fileSet)
+    - http://mlcommons.org/croissant/format (format)
+    - http://mlcommons.org/croissant/includes (includes)
+    - http://mlcommons.org/croissant/isLiveDataset (isLiveDataset)
+    - http://mlcommons.org/croissant/jsonPath (jsonPath)
+    - http://mlcommons.org/croissant/jsonQuery (jsonQuery)
+    - http://mlcommons.org/croissant/key (key)
+    - http://mlcommons.org/croissant/parentField (parentField)
+    - http://mlcommons.org/croissant/recordSet (recordSet)
+    - http://mlcommons.org/croissant/references (references)
+    - http://mlcommons.org/croissant/regex (regex)
+    - http://mlcommons.org/croissant/repeated (repeated)
+    - http://mlcommons.org/croissant/source (source)
+    - http://mlcommons.org/croissant/subField (subField)
+    - http://mlcommons.org/croissant/transform (transform)

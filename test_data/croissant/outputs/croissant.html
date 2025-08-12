@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulary</title>
+    <script type="application/ld+json">
+{
+  "@context": {
+    "@vocab": "http://mlcommons.org/croissant/",
+    "ContentExtractionEnumeration": {
+      "@id": "http://mlcommons.org/croissant/ContentExtractionEnumeration",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "https://schema.org/Enumeration"
+      }
+    },
+    "DataSource": {
+      "@id": "http://mlcommons.org/croissant/DataSource",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "https://schema.org/Intangible"
+      }
+    },
+    "DataType": {
+      "@id": "http://mlcommons.org/croissant/DataType",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "https://schema.org/URL"
+      }
+    },
+    "Extract": {
+      "@id": "http://mlcommons.org/croissant/Extract",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "https://schema.org/Intangible"
+      }
+    },
+    "Field": {
+      "@id": "http://mlcommons.org/croissant/Field",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "https://schema.org/Intangible"
+      }
+    },
+    "FileObject": {
+      "@id": "http://mlcommons.org/croissant/FileObject",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "https://schema.org/CreativeWork"
+      }
+    },
+    "FilePropertyEnumeration": {
+      "@id": "http://mlcommons.org/croissant/FilePropertyEnumeration",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "https://schema.org/Enumeration"
+      }
+    },
+    "FileSet": {
+      "@id": "http://mlcommons.org/croissant/FileSet",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "https://schema.org/Intangible"
+      }
+    },
+    "Format": {
+      "@id": "http://mlcommons.org/croissant/Format",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "https://schema.org/Text"
+      }
+    },
+    "RecordSet": {
+      "@id": "http://mlcommons.org/croissant/RecordSet",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "https://schema.org/Intangible"
+      }
+    },
+    "Transform": {
+      "@id": "http://mlcommons.org/croissant/Transform",
+      "@type": "@id",
+      "rdfs:subClassOf": {
+        "@id": "https://schema.org/Intangible"
+      }
+    },
+    "citeAs": {
+      "@id": "http://mlcommons.org/croissant/citeAs",
+      "rdfs:domain": {
+        "@id": "https://schema.org/Dataset"
+      },
+      "rdfs:range": {
+        "@id": "https://schema.org/Text"
+      }
+    },
+    "column": {
+      "@id": "http://mlcommons.org/croissant/column",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/Extract"
+      },
+      "rdfs:range": {
+        "@id": "https://schema.org/Text"
+      }
+    },
+    "containedIn": {
+      "@id": "http://mlcommons.org/croissant/containedIn",
+      "rdfs:domain": [
+        {
+          "@id": "http://mlcommons.org/croissant/FileObject"
+        },
+        {
+          "@id": "http://mlcommons.org/croissant/FileSet"
+        }
+      ],
+      "rdfs:range": [
+        {
+          "@id": "http://mlcommons.org/croissant/FileObject"
+        },
+        {
+          "@id": "http://mlcommons.org/croissant/FileSet"
+        }
+      ]
+    },
+    "content": {
+      "@id": "http://mlcommons.org/croissant/content",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/Extract"
+      },
+      "rdfs:range": {
+        "@id": "http://mlcommons.org/croissant/ContentExtractionEnumeration"
+      }
+    },
+    "data": {
+      "@id": "http://mlcommons.org/croissant/data",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/RecordSet"
+      },
+      "rdfs:range": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON"
+      }
+    },
+    "dataType": {
+      "@id": "http://mlcommons.org/croissant/dataType",
+      "rdfs:domain": [
+        {
+          "@id": "http://mlcommons.org/croissant/Field"
+        },
+        {
+          "@id": "http://mlcommons.org/croissant/RecordSet"
+        }
+      ],
+      "rdfs:range": {
+        "@id": "http://mlcommons.org/croissant/DataType"
+      }
+    },
+    "delimiter": {
+      "@id": "http://mlcommons.org/croissant/delimiter",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/Transform"
+      },
+      "rdfs:range": {
+        "@id": "https://schema.org/Text"
+      }
+    },
+    "equivalentProperty": {
+      "@id": "http://mlcommons.org/croissant/equivalentProperty",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/Field"
+      },
+      "rdfs:range": {
+        "@id": "https://schema.org/URL"
+      }
+    },
+    "examples": {
+      "@id": "http://mlcommons.org/croissant/examples",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/RecordSet"
+      },
+      "rdfs:range": {
+        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON"
+      }
+    },
+    "excludes": {
+      "@id": "http://mlcommons.org/croissant/excludes",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/FileSet"
+      },
+      "rdfs:range": {
+        "@id": "https://schema.org/Text"
+      }
+    },
+    "extract": {
+      "@id": "http://mlcommons.org/croissant/extract",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/DataSource"
+      },
+      "rdfs:range": {
+        "@id": "http://mlcommons.org/croissant/Extract"
+      }
+    },
+    "field": {
+      "@id": "http://mlcommons.org/croissant/field",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/RecordSet"
+      },
+      "rdfs:range": {
+        "@id": "http://mlcommons.org/croissant/Field"
+      }
+    },
+    "fileObject": {
+      "@id": "http://mlcommons.org/croissant/fileObject",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/DataSource"
+      },
+      "rdfs:range": {
+        "@id": "http://mlcommons.org/croissant/FileObject"
+      }
+    },
+    "fileProperty": {
+      "@id": "http://mlcommons.org/croissant/fileProperty",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/Extract"
+      },
+      "rdfs:range": {
+        "@id": "http://mlcommons.org/croissant/FilePropertyEnumeration"
+      }
+    },
+    "fileSet": {
+      "@id": "http://mlcommons.org/croissant/fileSet",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/DataSource"
+      },
+      "rdfs:range": {
+        "@id": "http://mlcommons.org/croissant/FileSet"
+      }
+    },
+    "format": {
+      "@id": "http://mlcommons.org/croissant/format",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/DataSource"
+      },
+      "rdfs:range": {
+        "@id": "http://mlcommons.org/croissant/Format"
+      }
+    },
+    "includes": {
+      "@id": "http://mlcommons.org/croissant/includes",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/FileSet"
+      },
+      "rdfs:range": {
+        "@id": "https://schema.org/Text"
+      }
+    },
+    "isLiveDataset": {
+      "@id": "http://mlcommons.org/croissant/isLiveDataset",
+      "rdfs:domain": {
+        "@id": "https://schema.org/Dataset"
+      },
+      "rdfs:range": {
+        "@id": "https://schema.org/Boolean"
+      }
+    },
+    "jsonPath": {
+      "@id": "http://mlcommons.org/croissant/jsonPath",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/Extract"
+      },
+      "rdfs:range": {
+        "@id": "https://schema.org/Text"
+      }
+    },
+    "jsonQuery": {
+      "@id": "http://mlcommons.org/croissant/jsonQuery",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/Transform"
+      },
+      "rdfs:range": {
+        "@id": "https://schema.org/Text"
+      }
+    },
+    "key": {
+      "@id": "http://mlcommons.org/croissant/key",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/RecordSet"
+      },
+      "rdfs:range": {
+        "@id": "http://mlcommons.org/croissant/Field"
+      }
+    },
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "parentField": {
+      "@id": "http://mlcommons.org/croissant/parentField",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/Field"
+      },
+      "rdfs:range": {
+        "@id": "http://mlcommons.org/croissant/Field"
+      }
+    },
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "recordSet": {
+      "@id": "http://mlcommons.org/croissant/recordSet",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/DataSource"
+      },
+      "rdfs:range": {
+        "@id": "http://mlcommons.org/croissant/RecordSet"
+      }
+    },
+    "references": {
+      "@id": "http://mlcommons.org/croissant/references",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/Field"
+      },
+      "rdfs:range": {
+        "@id": "http://mlcommons.org/croissant/Field"
+      }
+    },
+    "regex": {
+      "@id": "http://mlcommons.org/croissant/regex",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/Transform"
+      },
+      "rdfs:range": {
+        "@id": "https://schema.org/Text"
+      }
+    },
+    "repeated": {
+      "@id": "http://mlcommons.org/croissant/repeated",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/Field"
+      },
+      "rdfs:range": {
+        "@id": "https://schema.org/Boolean"
+      }
+    },
+    "schema": "https://schema.org/",
+    "source": {
+      "@id": "http://mlcommons.org/croissant/source",
+      "rdfs:domain": [
+        {
+          "@id": "http://mlcommons.org/croissant/Field"
+        },
+        {
+          "@id": "http://mlcommons.org/croissant/RecordSet"
+        }
+      ],
+      "rdfs:range": [
+        {
+          "@id": "http://mlcommons.org/croissant/DataSource"
+        },
+        {
+          "@id": "http://mlcommons.org/croissant/FileSet"
+        },
+        {
+          "@id": "http://mlcommons.org/croissant/FileObject"
+        },
+        {
+          "@id": "http://mlcommons.org/croissant/RecordSet"
+        }
+      ]
+    },
+    "subField": {
+      "@id": "http://mlcommons.org/croissant/subField",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/Field"
+      },
+      "rdfs:range": {
+        "@id": "http://mlcommons.org/croissant/Field"
+      }
+    },
+    "transform": {
+      "@id": "http://mlcommons.org/croissant/transform",
+      "rdfs:domain": {
+        "@id": "http://mlcommons.org/croissant/DataSource"
+      },
+      "rdfs:range": {
+        "@id": "http://mlcommons.org/croissant/Transform"
+      }
+    }
+  }
+}
+    </script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; color: #333; }
+        .header { border-bottom: 2px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
+        .toc { background: #f8f8f8; padding: 20px; margin-bottom: 30px; border-radius: 5px; }
+        .toc h2 { margin-top: 0; }
+        .toc ul { list-style-type: none; padding-left: 0; }
+        .toc li { margin: 5px 0; }
+        .toc a { text-decoration: none; color: #0066cc; }
+        .toc a:hover { text-decoration: underline; }
+        .section { margin-bottom: 40px; }
+        .term { margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .term h3 { margin-top: 0; color: #0066cc; }
+        .term-uri { font-family: monospace; background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+        .term-type { background: #e6f3ff; color: #0066cc; padding: 2px 8px; border-radius: 3px; font-size: 0.9em; }
+        .property-list { margin: 10px 0; }
+        .property-list li { margin: 5px 0; }
+        .property-list a { color: #0066cc; text-decoration: none; }
+        .property-list a:hover { text-decoration: underline; }
+        .documentation { background: #f9f9f9; padding: 15px; margin-top: 15px; border-radius: 3px; border-left: 4px solid #0066cc; }
+        .documentation h4 { margin-top: 0; color: #0066cc; }
+        .doc-content { line-height: 1.6; }
+        .doc-content pre { background: #f4f4f4; padding: 10px; border-radius: 3px; overflow-x: auto; }
+        .doc-content pre code { background: transparent; padding: 0; font-family: 'Courier New', monospace; }
+        .doc-content code { background: #f4f4f4; padding: 2px 4px; border-radius: 3px; font-family: 'Courier New', monospace; }
+        .doc-content table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+        .doc-content th, .doc-content td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .doc-content th { background-color: #f2f2f2; font-weight: bold; }
+        .doc-content blockquote { border-left: 4px solid #ddd; margin: 0; padding-left: 15px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Vocabulary</h1>
+        
+        <p><strong>Namespace:</strong> http://mlcommons.org/croissant/</p>
+        
+    </div>
+
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        
+        <h3>Classes (11)</h3>
+        <ul>
+            
+            <li><a href="#ContentExtractionEnumeration">ContentExtractionEnumeration</a> - ContexExtractionEnumeration</li>
+            
+            <li><a href="#DataSource">DataSource</a> - DataSource</li>
+            
+            <li><a href="#DataType">DataType</a> - DataType</li>
+            
+            <li><a href="#Extract">Extract</a> - Extract</li>
+            
+            <li><a href="#Field">Field</a> - Field</li>
+            
+            <li><a href="#FileObject">FileObject</a> - FileObject</li>
+            
+            <li><a href="#FilePropertyEnumeration">FilePropertyEnumeration</a> - FilePropertyEnumeration</li>
+            
+            <li><a href="#FileSet">FileSet</a> - FileSet</li>
+            
+            <li><a href="#Format">Format</a> - Format</li>
+            
+            <li><a href="#RecordSet">RecordSet</a> - RecordSet</li>
+            
+            <li><a href="#Transform">Transform</a> - Transform</li>
+            
+        </ul>
+        
+        
+        
+        <h3>Properties (29)</h3>
+        <ul>
+            
+            <li><a href="#citeAs">citeAs</a> - citeAs</li>
+            
+            <li><a href="#column">column</a> - column</li>
+            
+            <li><a href="#containedIn">containedIn</a> - containedIn</li>
+            
+            <li><a href="#content">content</a> - content</li>
+            
+            <li><a href="#data">data</a> - data</li>
+            
+            <li><a href="#dataType">dataType</a> - dataType</li>
+            
+            <li><a href="#delimiter">delimiter</a> - delimiter</li>
+            
+            <li><a href="#equivalentProperty">equivalentProperty</a> - equivalentProperty</li>
+            
+            <li><a href="#examples">examples</a> - examples</li>
+            
+            <li><a href="#excludes">excludes</a> - excludes</li>
+            
+            <li><a href="#extract">extract</a> - extract</li>
+            
+            <li><a href="#field">field</a> - field</li>
+            
+            <li><a href="#fileObject">fileObject</a> - fileObject</li>
+            
+            <li><a href="#fileProperty">fileProperty</a> - fileProperty</li>
+            
+            <li><a href="#fileSet">fileSet</a> - fileSet</li>
+            
+            <li><a href="#format">format</a> - format</li>
+            
+            <li><a href="#includes">includes</a> - includes</li>
+            
+            <li><a href="#isLiveDataset">isLiveDataset</a> - isLiveDataset</li>
+            
+            <li><a href="#jsonPath">jsonPath</a> - jsonPath</li>
+            
+            <li><a href="#jsonQuery">jsonQuery</a> - jsonQuery</li>
+            
+            <li><a href="#key">key</a> - key</li>
+            
+            <li><a href="#parentField">parentField</a> - parentField</li>
+            
+            <li><a href="#recordSet">recordSet</a> - recordSet</li>
+            
+            <li><a href="#references">references</a> - references</li>
+            
+            <li><a href="#regex">regex</a> - regex</li>
+            
+            <li><a href="#repeated">repeated</a> - repeated</li>
+            
+            <li><a href="#source">source</a> - source</li>
+            
+            <li><a href="#subField">subField</a> - subField</li>
+            
+            <li><a href="#transform">transform</a> - transform</li>
+            
+        </ul>
+        
+    </div>
+
+    
+    <div class="section">
+        <h2>Classes</h2>
+        
+        <div class="term" id="ContentExtractionEnumeration">
+            <h3>ContexExtractionEnumeration <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/ContentExtractionEnumeration</span></p>
+            
+            <p><strong>Description:</strong> Specifies which content to extract from a file. One of "all", "lines", or "lineNumbers".</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Enumeration">https://schema.org/Enumeration</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="DataSource">
+            <h3>DataSource <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/DataSource</span></p>
+            
+            <p><strong>Description:</strong> A source of data, optionally transformed before being used.</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Intangible">https://schema.org/Intangible</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#extract">extract</a> (→ Extract)</li>
+                
+                <li><a href="#fileObject">fileObject</a> (→ FileObject)</li>
+                
+                <li><a href="#fileSet">fileSet</a> (→ FileSet)</li>
+                
+                <li><a href="#format">format</a> (→ Format)</li>
+                
+                <li><a href="#recordSet">recordSet</a> (→ RecordSet)</li>
+                
+                <li><a href="#transform">transform</a> (→ Transform)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="DataType">
+            <h3>DataType <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/DataType</span></p>
+            
+            <p><strong>Description:</strong> The data type of values expected for a Field in a RecordSet. This class is inspired by the Datatype class in CSVW. In addition to simple atomic types, types can be semantic types, such as schema.org classes, as well types defined in other vocabularies.</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/URL">https://schema.org/URL</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Extract">
+            <h3>Extract <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/Extract</span></p>
+            
+            <p><strong>Description:</strong> Specifies how to extract data from a DataSource. The extraction mechanism depends on the type of content, e.g., a column name for tabular data, or a jsonPath for JSON data.</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Intangible">https://schema.org/Intangible</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#column">column</a> (→ Text)</li>
+                
+                <li><a href="#content">content</a> (→ ContentExtractionEnumeration)</li>
+                
+                <li><a href="#fileProperty">fileProperty</a> (→ FilePropertyEnumeration)</li>
+                
+                <li><a href="#jsonPath">jsonPath</a> (→ Text)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="Field">
+            <h3>Field <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/Field</span></p>
+            
+            <p><strong>Description:</strong> A component of the structure of a RecordSet, such as a column of a table.</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Intangible">https://schema.org/Intangible</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#dataType">dataType</a> (→ DataType)</li>
+                
+                <li><a href="#equivalentProperty">equivalentProperty</a> (→ URL)</li>
+                
+                <li><a href="#parentField">parentField</a> (→ Field)</li>
+                
+                <li><a href="#references">references</a> (→ Field)</li>
+                
+                <li><a href="#repeated">repeated</a> (→ Boolean)</li>
+                
+                <li><a href="#source">source</a> (→ DataSource, FileSet, FileObject, RecordSet)</li>
+                
+                <li><a href="#subField">subField</a> (→ Field)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="FileObject">
+            <h3>FileObject <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/FileObject</span></p>
+            
+            <p><strong>Description:</strong> An individual file that is part of a dataset.</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/CreativeWork">https://schema.org/CreativeWork</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#containedIn">containedIn</a> (→ FileObject, FileSet)</li>
+                
+            </ul>
+            
+            
+            <div class="documentation">
+                <h4>Documentation</h4>
+                <div class="doc-content">
+                    
+                        <p><code>FileObject</code> is the Croissant class used to represent individual files that are part of a dataset.</p>
+<p><code>FileObject</code> is a general purpose class that inherits from <a href="http://Schema.org">Schema.org</a> <code>CreativeWork</code>, and can be used to represent instances of more specific types of content like <code>DigitalDocument</code> and <code>MediaObject</code>.</p>
+<p>Most of the important properties needed to describe a <code>FileObject</code> are defined in the classes it inherits from:</p>
+<table>
+  <thead>
+    <th>Property</th>
+    <th>ExpectedType</th>
+    <th>Cardinality</th>
+    <th>Description</th>
+  </thead>
+  <tr>
+    <td><a href="https://schema.org/name">sc:name</a></td>
+    <td><a href="http://schema.org/Text">Text</a></td>
+    <td>ONE</td>
+    <td>The name of the file. As much as possible, the name should reflect the name of the file as downloaded, including the file extension. e.g. "images.zip".</td>
+  </tr>
+  <tr>
+    <td><a href="https://schema.org/contentUrl">sc:contentUrl</a></td>
+    <td><a href="http://schema.org/URL">URL</a></td>
+    <td>ONE</td>
+    <td>Actual bytes of the media object, for example the image file or video file.</td>
+  </tr>
+  <tr>
+    <td><a href="https://schema.org/contentSize">sc:contentSize</a></td>
+    <td><a href="http://schema.org/Text">Text</a></td>
+    <td>ONE</td>
+    <td>File size in (mega/kilo/…)bytes. Defaults to bytes if a unit is not specified.</td>
+  </tr>
+  <tr>
+    <td><a href="https://schema.org/encodingFormat">sc:encodingFormat</a></td>
+    <td><a href="http://schema.org/Text">Text</a></td>
+    <td>ONE</td>
+    <td>The format of the file, given as a mime type.</td>
+  </tr>
+  <tr>
+    <td><a href="https://schema.org/sameAs">sc:sameAs</a></td>
+    <td><a href="http://schema.org/URL">URL</a></td>
+    <td>MANY</td>
+    <td>URL (or local name) of a FileObject with the same content, but in a different format.</td>
+  </tr>
+  <tr>
+    <td><a href="https://schema.org/sha256">sc:sha256</a></td>
+    <td><a href="http://schema.org/Text">Text</a></td>
+    <td>ONE</td>
+    <td>Checksum for the file contents.</td>
+  </tr>
+</table>
+
+<p>In addition, <code>FileObject</code> defines the following property:</p>
+<table>
+  <thead>
+    <th>Property</th>
+    <th>ExpectedType</th>
+    <th>Cardinality</th>
+    <th>Description</th>
+  </thead>
+  <tr>
+    <td>containedIn</td>
+    <td><a href="http://schema.org/Text">Text</a></td>
+    <td>MANY</td>
+    <td>Another <code>FileObject</code> or <code>FileSet</code> that this one is contained in, e.g., in the case of a file extracted from an archive. When this property is present, the <code>contentUrl</code> is evaluated as a relative path within the container object.</td>
+  </tr>
+</table>
+
+<p>Let's look at a few examples of <code>FileObject</code> definitions.</p>
+<p>First, a single CSV file:</p>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@type&quot;: &quot;cr:FileObject&quot;,
+  &quot;@id&quot;: &quot;pass_metadata.csv&quot;,
+  &quot;contentUrl&quot;: &quot;https://zenodo.org/record/6615455/files/pass_metadata.csv&quot;,
+  &quot;encodingFormat&quot;: &quot;text/csv&quot;,
+  &quot;sha256&quot;: &quot;0b033707ea49365a5ffdd14615825511&quot;
+}
+</code></pre>
+
+<p>Next: An archive and some files extracted from it (represented via the <code>containedIn</code> property):</p>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@type&quot;: &quot;cr:FileObject&quot;,
+  &quot;@id&quot;: &quot;ml-25m.zip&quot;,
+  &quot;contentUrl&quot;: &quot;https://files.grouplens.org/datasets/movielens/ml-25m.zip&quot;,
+  &quot;encodingFormat&quot;: &quot;application/zip&quot;,
+  &quot;sha256&quot;: &quot;6b51fb2759a8657d3bfcbfc42b592ada&quot;
+},
+{
+  &quot;@type&quot;: &quot;cr:FileObject&quot;,
+  &quot;@id&quot;: &quot;ratings-table&quot;,
+  &quot;contentUrl&quot;: &quot;ratings.csv&quot;,
+  &quot;containedIn&quot;: { &quot;@id&quot;: &quot;ml-25m.zip&quot; },
+  &quot;encodingFormat&quot;: &quot;text/csv&quot;
+},
+{
+  &quot;@type&quot;: &quot;cr:FileObject&quot;,
+  &quot;@id&quot;: &quot;movies-table&quot;,
+  &quot;contentUrl&quot;: &quot;movies.csv&quot;,
+  &quot;containedIn&quot;: { &quot;@id&quot;: &quot;ml-25m.zip&quot; },
+  &quot;encodingFormat&quot;: &quot;text/csv&quot;
+}
+</code></pre>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="term" id="FilePropertyEnumeration">
+            <h3>FilePropertyEnumeration <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/FilePropertyEnumeration</span></p>
+            
+            <p><strong>Description:</strong> Specifies a property of a FileObject. One of "fullPath" or "fileName".</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Enumeration">https://schema.org/Enumeration</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="FileSet">
+            <h3>FileSet <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/FileSet</span></p>
+            
+            <p><strong>Description:</strong> A set of homogeneous files extracted from a container, optionally filtered by inclusion and/or exclusion filters.</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Intangible">https://schema.org/Intangible</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#containedIn">containedIn</a> (→ FileObject, FileSet)</li>
+                
+                <li><a href="#excludes">excludes</a> (→ Text)</li>
+                
+                <li><a href="#includes">includes</a> (→ Text)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="Format">
+            <h3>Format <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/Format</span></p>
+            
+            <p><strong>Description:</strong> Specifies how to parse the format of the data from a string representation. For example, format may hold a date format string, a number format, or a bounding box format.</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Text">https://schema.org/Text</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="RecordSet">
+            <h3>RecordSet <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/RecordSet</span></p>
+            
+            <p><strong>Description:</strong> A description of a set of structured records from one or more data sources and their structure, expressed as a set of fields.</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Intangible">https://schema.org/Intangible</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#data">data</a> (→ 22-rdf-syntax-ns#JSON)</li>
+                
+                <li><a href="#dataType">dataType</a> (→ DataType)</li>
+                
+                <li><a href="#examples">examples</a> (→ 22-rdf-syntax-ns#JSON)</li>
+                
+                <li><a href="#field">field</a> (→ Field)</li>
+                
+                <li><a href="#key">key</a> (→ Field)</li>
+                
+                <li><a href="#source">source</a> (→ DataSource, FileSet, FileObject, RecordSet)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="Transform">
+            <h3>Transform <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/Transform</span></p>
+            
+            <p><strong>Description:</strong> Specifies how to transform data extracted from a DataSource. The type of transformation depends on the type of content, e.g., a regular expression to appy on text, or a jsonQuery to transform JSON content.</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Intangible">https://schema.org/Intangible</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#delimiter">delimiter</a> (→ Text)</li>
+                
+                <li><a href="#jsonQuery">jsonQuery</a> (→ Text)</li>
+                
+                <li><a href="#regex">regex</a> (→ Text)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+    </div>
+    
+
+    
+    <div class="section">
+        <h2>Properties</h2>
+        
+        <div class="term" id="citeAs">
+            <h3>citeAs <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/citeAs</span></p>
+            
+            <p><strong>Description:</strong> How to cite this dataset. Ideally, citations should be expressed using the bibtex format. Note that this is different from schema.org/citation, which is used to make a citation to another publication from this dataset.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Dataset">https://schema.org/Dataset</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Text">https://schema.org/Text</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="column">
+            <h3>column <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/column</span></p>
+            
+            <p><strong>Description:</strong> In case the data source is tabular, the id of a column to extract.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Extract">http://mlcommons.org/croissant/Extract</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Text">https://schema.org/Text</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="containedIn">
+            <h3>containedIn <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/containedIn</span></p>
+            
+            <p><strong>Description:</strong> Another FileObject or FileSet that this one is contained in, e.g., in the case of a file extracted from an archive. When this property is present, the contentUrl is evaluated as a relative path within the container object.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/FileObject">http://mlcommons.org/croissant/FileObject</a></li>
+                
+                <li><a href="http://mlcommons.org/croissant/FileSet">http://mlcommons.org/croissant/FileSet</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/FileObject">http://mlcommons.org/croissant/FileObject</a></li>
+                
+                <li><a href="http://mlcommons.org/croissant/FileSet">http://mlcommons.org/croissant/FileSet</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="content">
+            <h3>content <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/content</span></p>
+            
+            <p><strong>Description:</strong> What to extract from the data source content, e.g., lines.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Extract">http://mlcommons.org/croissant/Extract</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/ContentExtractionEnumeration">http://mlcommons.org/croissant/ContentExtractionEnumeration</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="data">
+            <h3>data <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/data</span></p>
+            
+            <p><strong>Description:</strong> One or more inlined records that constitute the data of the RecordSet, typically used for small enumeration values.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/RecordSet">http://mlcommons.org/croissant/RecordSet</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON">http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="dataType">
+            <h3>dataType <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/dataType</span></p>
+            
+            <p><strong>Description:</strong> The data type of the field, identified by the URI of the corresponding class. It could be either an atomic type (e.g, sc:Integer) or a semantic type (e.g., sc:GeoLocation).</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Field">http://mlcommons.org/croissant/Field</a></li>
+                
+                <li><a href="http://mlcommons.org/croissant/RecordSet">http://mlcommons.org/croissant/RecordSet</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/DataType">http://mlcommons.org/croissant/DataType</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="delimiter">
+            <h3>delimiter <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/delimiter</span></p>
+            
+            <p><strong>Description:</strong> A delimiter to use parse the data into an array.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Transform">http://mlcommons.org/croissant/Transform</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Text">https://schema.org/Text</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="equivalentProperty">
+            <h3>equivalentProperty <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/equivalentProperty</span></p>
+            
+            <p><strong>Description:</strong> A property that is equivalent to this Field. Used in the case a dataType is specified on the RecordSet to map specific fields to specific properties associated with that dataType.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Field">http://mlcommons.org/croissant/Field</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/URL">https://schema.org/URL</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="examples">
+            <h3>examples <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/examples</span></p>
+            
+            <p><strong>Description:</strong> One more inlined records provided as example content of the RecordSet.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/RecordSet">http://mlcommons.org/croissant/RecordSet</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON">http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="excludes">
+            <h3>excludes <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/excludes</span></p>
+            
+            <p><strong>Description:</strong> A glob pattern that specifies the files to exclude. The pattern is evaluated from the root of the containedIn contents, after the includes patterns have been evaluated.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/FileSet">http://mlcommons.org/croissant/FileSet</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Text">https://schema.org/Text</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="extract">
+            <h3>extract <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/extract</span></p>
+            
+            <p><strong>Description:</strong> The extraction method from the provided source.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/DataSource">http://mlcommons.org/croissant/DataSource</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Extract">http://mlcommons.org/croissant/Extract</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="field">
+            <h3>field <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/field</span></p>
+            
+            <p><strong>Description:</strong> A data element that appears in the records of the RecordSet (e.g., one column of a table).</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/RecordSet">http://mlcommons.org/croissant/RecordSet</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Field">http://mlcommons.org/croissant/Field</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="fileObject">
+            <h3>fileObject <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/fileObject</span></p>
+            
+            <p><strong>Description:</strong> The id of a FileObject that is the source of the data.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/DataSource">http://mlcommons.org/croissant/DataSource</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/FileObject">http://mlcommons.org/croissant/FileObject</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="fileProperty">
+            <h3>fileProperty <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/fileProperty</span></p>
+            
+            <p><strong>Description:</strong> The file property to extract from the data source metadata, e.g., the filename.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Extract">http://mlcommons.org/croissant/Extract</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/FilePropertyEnumeration">http://mlcommons.org/croissant/FilePropertyEnumeration</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="fileSet">
+            <h3>fileSet <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/fileSet</span></p>
+            
+            <p><strong>Description:</strong> The id of a FileSet that is the source of the data.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/DataSource">http://mlcommons.org/croissant/DataSource</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/FileSet">http://mlcommons.org/croissant/FileSet</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="format">
+            <h3>format <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/format</span></p>
+            
+            <p><strong>Description:</strong> A format to parse the values of the data from text, e.g., a date format or number format.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/DataSource">http://mlcommons.org/croissant/DataSource</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Format">http://mlcommons.org/croissant/Format</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="includes">
+            <h3>includes <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/includes</span></p>
+            
+            <p><strong>Description:</strong> A glob pattern that specifies the files to include, e.g., ".jpg", "/foo/pic*.jpg". The pattern is evaluated from the root of the containedIn contents.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/FileSet">http://mlcommons.org/croissant/FileSet</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Text">https://schema.org/Text</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="isLiveDataset">
+            <h3>isLiveDataset <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/isLiveDataset</span></p>
+            
+            <p><strong>Description:</strong> Indicates that the dataset is continuously updated instead of being versioned.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Dataset">https://schema.org/Dataset</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Boolean">https://schema.org/Boolean</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="jsonPath">
+            <h3>jsonPath <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/jsonPath</span></p>
+            
+            <p><strong>Description:</strong> In case the data source is JSON data, a path expression to extract a subset of the data.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Extract">http://mlcommons.org/croissant/Extract</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Text">https://schema.org/Text</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="jsonQuery">
+            <h3>jsonQuery <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/jsonQuery</span></p>
+            
+            <p><strong>Description:</strong> For JSON content, a query to evaluate on the data.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Transform">http://mlcommons.org/croissant/Transform</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Text">https://schema.org/Text</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="key">
+            <h3>key <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/key</span></p>
+            
+            <p><strong>Description:</strong> One or more fields whose values uniquely identify each record in the RecordSet. (See example below.)</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/RecordSet">http://mlcommons.org/croissant/RecordSet</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Field">http://mlcommons.org/croissant/Field</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="parentField">
+            <h3>parentField <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/parentField</span></p>
+            
+            <p><strong>Description:</strong> A special case of SubField that should be hidden because it references a Field that already appears in the RecordSet.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Field">http://mlcommons.org/croissant/Field</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Field">http://mlcommons.org/croissant/Field</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="recordSet">
+            <h3>recordSet <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/recordSet</span></p>
+            
+            <p><strong>Description:</strong> The id of a RecordSet that is the source of the data.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/DataSource">http://mlcommons.org/croissant/DataSource</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/RecordSet">http://mlcommons.org/croissant/RecordSet</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="references">
+            <h3>references <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/references</span></p>
+            
+            <p><strong>Description:</strong> Another Field of another RecordSet that this field references. This is the equivalent of a foreign key reference in a relational database.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Field">http://mlcommons.org/croissant/Field</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Field">http://mlcommons.org/croissant/Field</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="regex">
+            <h3>regex <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/regex</span></p>
+            
+            <p><strong>Description:</strong> A regular expression to apply to the data.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Transform">http://mlcommons.org/croissant/Transform</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Text">https://schema.org/Text</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="repeated">
+            <h3>repeated <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/repeated</span></p>
+            
+            <p><strong>Description:</strong> If true, then the Field is a list of values of type dataType.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Field">http://mlcommons.org/croissant/Field</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="https://schema.org/Boolean">https://schema.org/Boolean</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="source">
+            <h3>source <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/source</span></p>
+            
+            <p><strong>Description:</strong> The data source of the field. This will generally reference a FileObject or FileSet's contents (e.g., a specific column of a table).</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Field">http://mlcommons.org/croissant/Field</a></li>
+                
+                <li><a href="http://mlcommons.org/croissant/RecordSet">http://mlcommons.org/croissant/RecordSet</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/DataSource">http://mlcommons.org/croissant/DataSource</a></li>
+                
+                <li><a href="http://mlcommons.org/croissant/FileSet">http://mlcommons.org/croissant/FileSet</a></li>
+                
+                <li><a href="http://mlcommons.org/croissant/FileObject">http://mlcommons.org/croissant/FileObject</a></li>
+                
+                <li><a href="http://mlcommons.org/croissant/RecordSet">http://mlcommons.org/croissant/RecordSet</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="subField">
+            <h3>subField <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/subField</span></p>
+            
+            <p><strong>Description:</strong> Another Field that is nested inside this one.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Field">http://mlcommons.org/croissant/Field</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Field">http://mlcommons.org/croissant/Field</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="transform">
+            <h3>transform <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/transform</span></p>
+            
+            <p><strong>Description:</strong> A transformation to apply on source data on top of the extracted method as specified through extract, e.g., a regular expression or JSON query.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/DataSource">http://mlcommons.org/croissant/DataSource</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://mlcommons.org/croissant/Transform">http://mlcommons.org/croissant/Transform</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+    </div>
+    
+</body>
+</html>
