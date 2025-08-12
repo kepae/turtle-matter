@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ vocab_data.title }}</title>
+    <script type="application/ld+json">
+{{ vocab_data.jsonld_context | tojson(indent=2) }}
+    </script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; color: #333; }
+        .header { border-bottom: 2px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
+        .toc { background: #f8f8f8; padding: 20px; margin-bottom: 30px; border-radius: 5px; }
+        .toc h2 { margin-top: 0; }
+        .toc ul { list-style-type: none; padding-left: 0; }
+        .toc li { margin: 5px 0; }
+        .toc a { text-decoration: none; color: #0066cc; }
+        .toc a:hover { text-decoration: underline; }
+        .section { margin-bottom: 40px; }
+        .term { margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .term h3 { margin-top: 0; color: #0066cc; }
+        .term-uri { font-family: monospace; background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+        .term-type { background: #e6f3ff; color: #0066cc; padding: 2px 8px; border-radius: 3px; font-size: 0.9em; }
+        .property-list { margin: 10px 0; }
+        .property-list li { margin: 5px 0; }
+        .property-list a { color: #0066cc; text-decoration: none; }
+        .property-list a:hover { text-decoration: underline; }
+        .documentation { background: #f9f9f9; padding: 15px; margin-top: 15px; border-radius: 3px; border-left: 4px solid #0066cc; }
+        .documentation h4 { margin-top: 0; color: #0066cc; }
+        .doc-content { line-height: 1.6; }
+        .doc-content pre { background: #f4f4f4; padding: 10px; border-radius: 3px; overflow-x: auto; }
+        .doc-content pre code { background: transparent; padding: 0; font-family: 'Courier New', monospace; }
+        .doc-content code { background: #f4f4f4; padding: 2px 4px; border-radius: 3px; font-family: 'Courier New', monospace; }
+        .doc-content table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+        .doc-content th, .doc-content td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .doc-content th { background-color: #f2f2f2; font-weight: bold; }
+        .doc-content blockquote { border-left: 4px solid #ddd; margin: 0; padding-left: 15px; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>{{ vocab_data.title }}</h1>
+        {% if vocab_data.namespace %}
+        <p><strong>Namespace:</strong> {{ vocab_data.namespace }}</p>
+        {% else %}
+        <p><strong>Scope:</strong> All terms</p>
+        {% endif %}
+    </div>
+
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        {% if vocab_data.classes %}
+        <h3>Classes ({{ vocab_data.classes|length }})</h3>
+        <ul>
+            {% for cls in vocab_data.classes %}
+            <li><a href="#{{ cls.local_name }}">{{ cls.local_name }}</a>{% if cls.label %} - {{ cls.label }}{% endif %}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        
+        {% if vocab_data.properties %}
+        <h3>Properties ({{ vocab_data.properties|length }})</h3>
+        <ul>
+            {% for prop in vocab_data.properties %}
+            <li><a href="#{{ prop.local_name }}">{{ prop.local_name }}</a>{% if prop.label %} - {{ prop.label }}{% endif %}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+
+    {% if vocab_data.classes %}
+    <div class="section">
+        <h2>Classes</h2>
+        {% for cls in vocab_data.classes %}
+        <div class="term" id="{{ cls.local_name }}">
+            <h3>{{ cls.label or cls.local_name }} <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">{{ cls.uri }}</span></p>
+            {% if cls.comment %}
+            <p><strong>Description:</strong> {{ cls.comment }}</p>
+            {% endif %}
+            {% if cls.subclass_of %}
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                {% for parent in cls.subclass_of %}
+                <li><a href="{{ parent }}">{{ parent }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% if cls.related_properties %}
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                {% for prop in cls.related_properties %}
+                <li><a href="#{{ prop.local_name }}">{{ prop.local_name }}</a>{% if prop.range %} (→ {% for r in prop.range %}{{ r.split('/')[-1] }}{% if not loop.last %}, {% endif %}{% endfor %}){% endif %}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% if cls.documentation and (cls.documentation.content_html or cls.documentation.content) %}
+            <div class="documentation">
+                <h4>Documentation</h4>
+                <div class="doc-content">
+                    {% if cls.documentation.content_html %}
+                        {{ cls.documentation.content_html | safe }}
+                    {% else %}
+                        {{ cls.documentation.content | replace('\n', '<br>') | safe }}
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    {% if vocab_data.properties %}
+    <div class="section">
+        <h2>Properties</h2>
+        {% for prop in vocab_data.properties %}
+        <div class="term" id="{{ prop.local_name }}">
+            <h3>{{ prop.label or prop.local_name }} <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">{{ prop.uri }}</span></p>
+            {% if prop.comment %}
+            <p><strong>Description:</strong> {{ prop.comment }}</p>
+            {% endif %}
+            {% if prop.domain %}
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                {% for domain in prop.domain %}
+                <li><a href="{{ domain }}">{{ domain }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% if prop.range %}
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                {% for range in prop.range %}
+                <li><a href="{{ range }}">{{ range }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {% if prop.documentation and (prop.documentation.content_html or prop.documentation.content) %}
+            <div class="documentation">
+                <h4>Documentation</h4>
+                <div class="doc-content">
+                    {% if prop.documentation.content_html %}
+                        {{ prop.documentation.content_html | safe }}
+                    {% else %}
+                        {{ prop.documentation.content | replace('\n', '<br>') | safe }}
+                    {% endif %}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</body>
+</html>

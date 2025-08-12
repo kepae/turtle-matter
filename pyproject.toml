@@ -1,0 +1,15 @@
+[project]
+name = "turtle-matter"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "rdflib>=7.0.0",
+    "rdflib-jsonld>=0.6.2",
+    "jinja2>=3.1.0",
+    "python-frontmatter>=1.1.0",
+    "click>=8.1.0",
+    "pyld>=2.0.0",
+    "markdown>=3.4.0",
+]
