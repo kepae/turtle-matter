@@ -158,6 +158,8 @@
         .section { margin-bottom: 40px; }
         .term { margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
         .term h3 { margin-top: 0; color: #0066cc; }
+        .term h3 a { color: inherit; text-decoration: none; }
+        .term h3 a:hover { text-decoration: underline; }
         .term-uri { font-family: monospace; background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
         .term-type { background: #e6f3ff; color: #0066cc; padding: 2px 8px; border-radius: 3px; font-size: 0.9em; }
         .property-list { margin: 10px 0; }
@@ -286,7 +288,7 @@
         <h2>Classes</h2>
         
         <div class="term" id="ContentExtractionEnumeration">
-            <h3>ContexExtractionEnumeration <span class="term-type">Class</span></h3>
+            <h3><a href="#ContentExtractionEnumeration">ContexExtractionEnumeration</a> <span class="term-type">Class</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/ContentExtractionEnumeration</span></p>
             
             <p><strong>Description:</strong> Specifies which content to extract from a file. One of "all", "lines", or "lineNumbers".</p>
@@ -304,7 +306,7 @@
         </div>
         
         <div class="term" id="DataSource">
-            <h3>DataSource <span class="term-type">Class</span></h3>
+            <h3><a href="#DataSource">DataSource</a> <span class="term-type">Class</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/DataSource</span></p>
             
             <p><strong>Description:</strong> A source of data, optionally transformed before being used.</p>
@@ -415,7 +417,7 @@
         </div>
         
         <div class="term" id="DataType">
-            <h3>DataType <span class="term-type">Class</span></h3>
+            <h3><a href="#DataType">DataType</a> <span class="term-type">Class</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/DataType</span></p>
             
             <p><strong>Description:</strong> The data type of values expected for a Field in a RecordSet. This class is inspired by the Datatype class in CSVW. In addition to simple atomic types, types can be semantic types, such as schema.org classes, as well types defined in other vocabularies.</p>
@@ -535,7 +537,7 @@
         </div>
         
         <div class="term" id="Extract">
-            <h3>Extract <span class="term-type">Class</span></h3>
+            <h3><a href="#Extract">Extract</a> <span class="term-type">Class</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/Extract</span></p>
             
             <p><strong>Description:</strong> Specifies how to extract data from a DataSource. The extraction mechanism depends on the type of content, e.g., a column name for tabular data, or a jsonPath for JSON data.</p>
@@ -648,7 +650,7 @@
         </div>
         
         <div class="term" id="Field">
-            <h3>Field <span class="term-type">Class</span></h3>
+            <h3><a href="#Field">Field</a> <span class="term-type">Class</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/Field</span></p>
             
             <p><strong>Description:</strong> A component of the structure of a RecordSet, such as a column of a table.</p>
@@ -675,7 +677,7 @@
                 
                 <li><a href="#repeated">repeated</a> (→ Boolean)</li>
                 
-                <li><a href="#source">source</a> (→ FileObject, FileSet, DataSource, RecordSet)</li>
+                <li><a href="#source">source</a> (→ DataSource, FileObject, FileSet, RecordSet)</li>
                 
                 <li><a href="#subField">subField</a> (→ Field)</li>
                 
@@ -819,7 +821,7 @@
         </div>
         
         <div class="term" id="FileObject">
-            <h3>FileObject <span class="term-type">Class</span></h3>
+            <h3><a href="#FileObject">FileObject</a> <span class="term-type">Class</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/FileObject</span></p>
             
             <p><strong>Description:</strong> An individual file that is part of a dataset.</p>
@@ -836,7 +838,7 @@
             <p><strong>Properties:</strong></p>
             <ul class="property-list">
                 
-                <li><a href="#containedIn">containedIn</a> (→ FileSet, FileObject)</li>
+                <li><a href="#containedIn">containedIn</a> (→ FileObject, FileSet)</li>
                 
             </ul>
             
@@ -950,7 +952,7 @@
         </div>
         
         <div class="term" id="FilePropertyEnumeration">
-            <h3>FilePropertyEnumeration <span class="term-type">Class</span></h3>
+            <h3><a href="#FilePropertyEnumeration">FilePropertyEnumeration</a> <span class="term-type">Class</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/FilePropertyEnumeration</span></p>
             
             <p><strong>Description:</strong> Specifies a property of a FileObject. One of "fullPath" or "fileName".</p>
@@ -968,7 +970,7 @@
         </div>
         
         <div class="term" id="FileSet">
-            <h3>FileSet <span class="term-type">Class</span></h3>
+            <h3><a href="#FileSet">FileSet</a> <span class="term-type">Class</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/FileSet</span></p>
             
             <p><strong>Description:</strong> A set of homogeneous files extracted from a container, optionally filtered by inclusion and/or exclusion filters.</p>
@@ -985,7 +987,7 @@
             <p><strong>Properties:</strong></p>
             <ul class="property-list">
                 
-                <li><a href="#containedIn">containedIn</a> (→ FileSet, FileObject)</li>
+                <li><a href="#containedIn">containedIn</a> (→ FileObject, FileSet)</li>
                 
                 <li><a href="#excludes">excludes</a> (→ Text)</li>
                 
@@ -1094,7 +1096,7 @@
         </div>
         
         <div class="term" id="Format">
-            <h3>Format <span class="term-type">Class</span></h3>
+            <h3><a href="#Format">Format</a> <span class="term-type">Class</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/Format</span></p>
             
             <p><strong>Description:</strong> Specifies how to parse the format of the data from a string representation. For example, format may hold a date format string, a number format, or a bounding box format.</p>
@@ -1176,7 +1178,7 @@
         </div>
         
         <div class="term" id="RecordSet">
-            <h3>RecordSet <span class="term-type">Class</span></h3>
+            <h3><a href="#RecordSet">RecordSet</a> <span class="term-type">Class</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/RecordSet</span></p>
             
             <p><strong>Description:</strong> A description of a set of structured records from one or more data sources and their structure, expressed as a set of fields.</p>
@@ -1203,7 +1205,7 @@
                 
                 <li><a href="#key">key</a> (→ Field)</li>
                 
-                <li><a href="#source">source</a> (→ FileObject, FileSet, DataSource, RecordSet)</li>
+                <li><a href="#source">source</a> (→ DataSource, FileObject, FileSet, RecordSet)</li>
                 
             </ul>
             
@@ -1338,7 +1340,7 @@
         </div>
         
         <div class="term" id="Transform">
-            <h3>Transform <span class="term-type">Class</span></h3>
+            <h3><a href="#Transform">Transform</a> <span class="term-type">Class</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/Transform</span></p>
             
             <p><strong>Description:</strong> Specifies how to transform data extracted from a DataSource. The type of transformation depends on the type of content, e.g., a regular expression to appy on text, or a jsonQuery to transform JSON content.</p>
@@ -1440,7 +1442,7 @@
         <h2>Properties</h2>
         
         <div class="term" id="citeAs">
-            <h3>citeAs <span class="term-type">Property</span></h3>
+            <h3><a href="#citeAs">citeAs</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/citeAs</span></p>
             
             <p><strong>Description:</strong> How to cite this dataset. Ideally, citations should be expressed using the bibtex format. Note that this is different from schema.org/citation, which is used to make a citation to another publication from this dataset.</p>
@@ -1465,7 +1467,7 @@
         </div>
         
         <div class="term" id="column">
-            <h3>column <span class="term-type">Property</span></h3>
+            <h3><a href="#column">column</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/column</span></p>
             
             <p><strong>Description:</strong> In case the data source is tabular, the id of a column to extract.</p>
@@ -1490,7 +1492,7 @@
         </div>
         
         <div class="term" id="containedIn">
-            <h3>containedIn <span class="term-type">Property</span></h3>
+            <h3><a href="#containedIn">containedIn</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/containedIn</span></p>
             
             <p><strong>Description:</strong> Another FileObject or FileSet that this one is contained in, e.g., in the case of a file extracted from an archive. When this property is present, the contentUrl is evaluated as a relative path within the container object.</p>
@@ -1499,9 +1501,9 @@
             <p><strong>Domain:</strong></p>
             <ul class="property-list">
                 
-                <li><a href="http://mlcommons.org/croissant/FileSet">http://mlcommons.org/croissant/FileSet</a></li>
-                
                 <li><a href="http://mlcommons.org/croissant/FileObject">http://mlcommons.org/croissant/FileObject</a></li>
+                
+                <li><a href="http://mlcommons.org/croissant/FileSet">http://mlcommons.org/croissant/FileSet</a></li>
                 
             </ul>
             
@@ -1509,9 +1511,9 @@
             <p><strong>Range:</strong></p>
             <ul class="property-list">
                 
-                <li><a href="http://mlcommons.org/croissant/FileSet">http://mlcommons.org/croissant/FileSet</a></li>
-                
                 <li><a href="http://mlcommons.org/croissant/FileObject">http://mlcommons.org/croissant/FileObject</a></li>
+                
+                <li><a href="http://mlcommons.org/croissant/FileSet">http://mlcommons.org/croissant/FileSet</a></li>
                 
             </ul>
             
@@ -1519,7 +1521,7 @@
         </div>
         
         <div class="term" id="content">
-            <h3>content <span class="term-type">Property</span></h3>
+            <h3><a href="#content">content</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/content</span></p>
             
             <p><strong>Description:</strong> What to extract from the data source content, e.g., lines.</p>
@@ -1544,7 +1546,7 @@
         </div>
         
         <div class="term" id="data">
-            <h3>data <span class="term-type">Property</span></h3>
+            <h3><a href="#data">data</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/data</span></p>
             
             <p><strong>Description:</strong> One or more inlined records that constitute the data of the RecordSet, typically used for small enumeration values.</p>
@@ -1569,7 +1571,7 @@
         </div>
         
         <div class="term" id="dataType">
-            <h3>dataType <span class="term-type">Property</span></h3>
+            <h3><a href="#dataType">dataType</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/dataType</span></p>
             
             <p><strong>Description:</strong> The data type of the field, identified by the URI of the corresponding class. It could be either an atomic type (e.g, sc:Integer) or a semantic type (e.g., sc:GeoLocation).</p>
@@ -1578,9 +1580,9 @@
             <p><strong>Domain:</strong></p>
             <ul class="property-list">
                 
-                <li><a href="http://mlcommons.org/croissant/RecordSet">http://mlcommons.org/croissant/RecordSet</a></li>
-                
                 <li><a href="http://mlcommons.org/croissant/Field">http://mlcommons.org/croissant/Field</a></li>
+                
+                <li><a href="http://mlcommons.org/croissant/RecordSet">http://mlcommons.org/croissant/RecordSet</a></li>
                 
             </ul>
             
@@ -1596,7 +1598,7 @@
         </div>
         
         <div class="term" id="delimiter">
-            <h3>delimiter <span class="term-type">Property</span></h3>
+            <h3><a href="#delimiter">delimiter</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/delimiter</span></p>
             
             <p><strong>Description:</strong> A delimiter to use parse the data into an array.</p>
@@ -1621,7 +1623,7 @@
         </div>
         
         <div class="term" id="equivalentProperty">
-            <h3>equivalentProperty <span class="term-type">Property</span></h3>
+            <h3><a href="#equivalentProperty">equivalentProperty</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/equivalentProperty</span></p>
             
             <p><strong>Description:</strong> A property that is equivalent to this Field. Used in the case a dataType is specified on the RecordSet to map specific fields to specific properties associated with that dataType.</p>
@@ -1646,7 +1648,7 @@
         </div>
         
         <div class="term" id="examples">
-            <h3>examples <span class="term-type">Property</span></h3>
+            <h3><a href="#examples">examples</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/examples</span></p>
             
             <p><strong>Description:</strong> One more inlined records provided as example content of the RecordSet.</p>
@@ -1671,7 +1673,7 @@
         </div>
         
         <div class="term" id="excludes">
-            <h3>excludes <span class="term-type">Property</span></h3>
+            <h3><a href="#excludes">excludes</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/excludes</span></p>
             
             <p><strong>Description:</strong> A glob pattern that specifies the files to exclude. The pattern is evaluated from the root of the containedIn contents, after the includes patterns have been evaluated.</p>
@@ -1696,7 +1698,7 @@
         </div>
         
         <div class="term" id="extract">
-            <h3>extract <span class="term-type">Property</span></h3>
+            <h3><a href="#extract">extract</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/extract</span></p>
             
             <p><strong>Description:</strong> The extraction method from the provided source.</p>
@@ -1721,7 +1723,7 @@
         </div>
         
         <div class="term" id="field">
-            <h3>field <span class="term-type">Property</span></h3>
+            <h3><a href="#field">field</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/field</span></p>
             
             <p><strong>Description:</strong> A data element that appears in the records of the RecordSet (e.g., one column of a table).</p>
@@ -1746,7 +1748,7 @@
         </div>
         
         <div class="term" id="fileObject">
-            <h3>fileObject <span class="term-type">Property</span></h3>
+            <h3><a href="#fileObject">fileObject</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/fileObject</span></p>
             
             <p><strong>Description:</strong> The id of a FileObject that is the source of the data.</p>
@@ -1771,7 +1773,7 @@
         </div>
         
         <div class="term" id="fileProperty">
-            <h3>fileProperty <span class="term-type">Property</span></h3>
+            <h3><a href="#fileProperty">fileProperty</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/fileProperty</span></p>
             
             <p><strong>Description:</strong> The file property to extract from the data source metadata, e.g., the filename.</p>
@@ -1796,7 +1798,7 @@
         </div>
         
         <div class="term" id="fileSet">
-            <h3>fileSet <span class="term-type">Property</span></h3>
+            <h3><a href="#fileSet">fileSet</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/fileSet</span></p>
             
             <p><strong>Description:</strong> The id of a FileSet that is the source of the data.</p>
@@ -1821,7 +1823,7 @@
         </div>
         
         <div class="term" id="format">
-            <h3>format <span class="term-type">Property</span></h3>
+            <h3><a href="#format">format</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/format</span></p>
             
             <p><strong>Description:</strong> A format to parse the values of the data from text, e.g., a date format or number format.</p>
@@ -1846,7 +1848,7 @@
         </div>
         
         <div class="term" id="includes">
-            <h3>includes <span class="term-type">Property</span></h3>
+            <h3><a href="#includes">includes</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/includes</span></p>
             
             <p><strong>Description:</strong> A glob pattern that specifies the files to include, e.g., ".jpg", "/foo/pic*.jpg". The pattern is evaluated from the root of the containedIn contents.</p>
@@ -1871,7 +1873,7 @@
         </div>
         
         <div class="term" id="isLiveDataset">
-            <h3>isLiveDataset <span class="term-type">Property</span></h3>
+            <h3><a href="#isLiveDataset">isLiveDataset</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/isLiveDataset</span></p>
             
             <p><strong>Description:</strong> Indicates that the dataset is continuously updated instead of being versioned.</p>
@@ -1896,7 +1898,7 @@
         </div>
         
         <div class="term" id="jsonPath">
-            <h3>jsonPath <span class="term-type">Property</span></h3>
+            <h3><a href="#jsonPath">jsonPath</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/jsonPath</span></p>
             
             <p><strong>Description:</strong> In case the data source is JSON data, a path expression to extract a subset of the data.</p>
@@ -1921,7 +1923,7 @@
         </div>
         
         <div class="term" id="jsonQuery">
-            <h3>jsonQuery <span class="term-type">Property</span></h3>
+            <h3><a href="#jsonQuery">jsonQuery</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/jsonQuery</span></p>
             
             <p><strong>Description:</strong> For JSON content, a query to evaluate on the data.</p>
@@ -1946,7 +1948,7 @@
         </div>
         
         <div class="term" id="key">
-            <h3>key <span class="term-type">Property</span></h3>
+            <h3><a href="#key">key</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/key</span></p>
             
             <p><strong>Description:</strong> One or more fields whose values uniquely identify each record in the RecordSet. (See example below.)</p>
@@ -1971,7 +1973,7 @@
         </div>
         
         <div class="term" id="parentField">
-            <h3>parentField <span class="term-type">Property</span></h3>
+            <h3><a href="#parentField">parentField</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/parentField</span></p>
             
             <p><strong>Description:</strong> A special case of SubField that should be hidden because it references a Field that already appears in the RecordSet.</p>
@@ -1996,7 +1998,7 @@
         </div>
         
         <div class="term" id="recordSet">
-            <h3>recordSet <span class="term-type">Property</span></h3>
+            <h3><a href="#recordSet">recordSet</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/recordSet</span></p>
             
             <p><strong>Description:</strong> The id of a RecordSet that is the source of the data.</p>
@@ -2021,7 +2023,7 @@
         </div>
         
         <div class="term" id="references">
-            <h3>references <span class="term-type">Property</span></h3>
+            <h3><a href="#references">references</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/references</span></p>
             
             <p><strong>Description:</strong> Another Field of another RecordSet that this field references. This is the equivalent of a foreign key reference in a relational database.</p>
@@ -2046,7 +2048,7 @@
         </div>
         
         <div class="term" id="regex">
-            <h3>regex <span class="term-type">Property</span></h3>
+            <h3><a href="#regex">regex</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/regex</span></p>
             
             <p><strong>Description:</strong> A regular expression to apply to the data.</p>
@@ -2071,7 +2073,7 @@
         </div>
         
         <div class="term" id="repeated">
-            <h3>repeated <span class="term-type">Property</span></h3>
+            <h3><a href="#repeated">repeated</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/repeated</span></p>
             
             <p><strong>Description:</strong> If true, then the Field is a list of values of type dataType.</p>
@@ -2096,7 +2098,7 @@
         </div>
         
         <div class="term" id="source">
-            <h3>source <span class="term-type">Property</span></h3>
+            <h3><a href="#source">source</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/source</span></p>
             
             <p><strong>Description:</strong> The data source of the field. This will generally reference a FileObject or FileSet's contents (e.g., a specific column of a table).</p>
@@ -2105,9 +2107,9 @@
             <p><strong>Domain:</strong></p>
             <ul class="property-list">
                 
-                <li><a href="http://mlcommons.org/croissant/RecordSet">http://mlcommons.org/croissant/RecordSet</a></li>
-                
                 <li><a href="http://mlcommons.org/croissant/Field">http://mlcommons.org/croissant/Field</a></li>
+                
+                <li><a href="http://mlcommons.org/croissant/RecordSet">http://mlcommons.org/croissant/RecordSet</a></li>
                 
             </ul>
             
@@ -2115,11 +2117,11 @@
             <p><strong>Range:</strong></p>
             <ul class="property-list">
                 
+                <li><a href="http://mlcommons.org/croissant/DataSource">http://mlcommons.org/croissant/DataSource</a></li>
+                
                 <li><a href="http://mlcommons.org/croissant/FileObject">http://mlcommons.org/croissant/FileObject</a></li>
                 
                 <li><a href="http://mlcommons.org/croissant/FileSet">http://mlcommons.org/croissant/FileSet</a></li>
-                
-                <li><a href="http://mlcommons.org/croissant/DataSource">http://mlcommons.org/croissant/DataSource</a></li>
                 
                 <li><a href="http://mlcommons.org/croissant/RecordSet">http://mlcommons.org/croissant/RecordSet</a></li>
                 
@@ -2129,7 +2131,7 @@
         </div>
         
         <div class="term" id="subField">
-            <h3>subField <span class="term-type">Property</span></h3>
+            <h3><a href="#subField">subField</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/subField</span></p>
             
             <p><strong>Description:</strong> Another Field that is nested inside this one.</p>
@@ -2154,7 +2156,7 @@
         </div>
         
         <div class="term" id="transform">
-            <h3>transform <span class="term-type">Property</span></h3>
+            <h3><a href="#transform">transform</a> <span class="term-type">Property</span></h3>
             <p><strong>URI:</strong> <span class="term-uri">http://mlcommons.org/croissant/transform</span></p>
             
             <p><strong>Description:</strong> A transformation to apply on source data on top of the extracted method as specified through extract, e.g., a regular expression or JSON query.</p>
