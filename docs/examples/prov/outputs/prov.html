@@ -1,0 +1,3744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PROV Ontology</title>
+    <script type="application/ld+json">
+{
+  "@context": {
+    "@vocab": "http://www.w3.org/ns/prov#",
+    "Accept": {
+      "@id": "http://www.w3.org/ns/prov#Accept",
+      "@type": "@id"
+    },
+    "Activity": {
+      "@id": "http://www.w3.org/ns/prov#Activity",
+      "@type": "@id"
+    },
+    "ActivityInfluence": {
+      "@id": "http://www.w3.org/ns/prov#ActivityInfluence",
+      "@type": "@id"
+    },
+    "Agent": {
+      "@id": "http://www.w3.org/ns/prov#Agent",
+      "@type": "@id"
+    },
+    "AgentInfluence": {
+      "@id": "http://www.w3.org/ns/prov#AgentInfluence",
+      "@type": "@id"
+    },
+    "Association": {
+      "@id": "http://www.w3.org/ns/prov#Association",
+      "@type": "@id"
+    },
+    "Attribution": {
+      "@id": "http://www.w3.org/ns/prov#Attribution",
+      "@type": "@id"
+    },
+    "Bundle": {
+      "@id": "http://www.w3.org/ns/prov#Bundle",
+      "@type": "@id"
+    },
+    "Collection": {
+      "@id": "http://www.w3.org/ns/prov#Collection",
+      "@type": "@id"
+    },
+    "Communication": {
+      "@id": "http://www.w3.org/ns/prov#Communication",
+      "@type": "@id"
+    },
+    "Contribute": {
+      "@id": "http://www.w3.org/ns/prov#Contribute",
+      "@type": "@id"
+    },
+    "Contributor": {
+      "@id": "http://www.w3.org/ns/prov#Contributor",
+      "@type": "@id"
+    },
+    "Copyright": {
+      "@id": "http://www.w3.org/ns/prov#Copyright",
+      "@type": "@id"
+    },
+    "Create": {
+      "@id": "http://www.w3.org/ns/prov#Create",
+      "@type": "@id"
+    },
+    "Creator": {
+      "@id": "http://www.w3.org/ns/prov#Creator",
+      "@type": "@id"
+    },
+    "Delegation": {
+      "@id": "http://www.w3.org/ns/prov#Delegation",
+      "@type": "@id"
+    },
+    "Derivation": {
+      "@id": "http://www.w3.org/ns/prov#Derivation",
+      "@type": "@id"
+    },
+    "Dictionary": {
+      "@id": "http://www.w3.org/ns/prov#Dictionary",
+      "@type": "@id"
+    },
+    "DirectQueryService": {
+      "@id": "http://www.w3.org/ns/prov#DirectQueryService",
+      "@type": "@id"
+    },
+    "EmptyCollection": {
+      "@id": "http://www.w3.org/ns/prov#EmptyCollection",
+      "@type": "@id"
+    },
+    "EmptyDictionary": {
+      "@id": "http://www.w3.org/ns/prov#EmptyDictionary",
+      "@type": "@id"
+    },
+    "End": {
+      "@id": "http://www.w3.org/ns/prov#End",
+      "@type": "@id"
+    },
+    "Entity": {
+      "@id": "http://www.w3.org/ns/prov#Entity",
+      "@type": "@id"
+    },
+    "EntityInfluence": {
+      "@id": "http://www.w3.org/ns/prov#EntityInfluence",
+      "@type": "@id"
+    },
+    "Generation": {
+      "@id": "http://www.w3.org/ns/prov#Generation",
+      "@type": "@id"
+    },
+    "Influence": {
+      "@id": "http://www.w3.org/ns/prov#Influence",
+      "@type": "@id"
+    },
+    "Insertion": {
+      "@id": "http://www.w3.org/ns/prov#Insertion",
+      "@type": "@id"
+    },
+    "InstantaneousEvent": {
+      "@id": "http://www.w3.org/ns/prov#InstantaneousEvent",
+      "@type": "@id"
+    },
+    "Invalidation": {
+      "@id": "http://www.w3.org/ns/prov#Invalidation",
+      "@type": "@id"
+    },
+    "KeyEntityPair": {
+      "@id": "http://www.w3.org/ns/prov#KeyEntityPair",
+      "@type": "@id"
+    },
+    "Location": {
+      "@id": "http://www.w3.org/ns/prov#Location",
+      "@type": "@id"
+    },
+    "Modify": {
+      "@id": "http://www.w3.org/ns/prov#Modify",
+      "@type": "@id"
+    },
+    "Organization": {
+      "@id": "http://www.w3.org/ns/prov#Organization",
+      "@type": "@id"
+    },
+    "Person": {
+      "@id": "http://www.w3.org/ns/prov#Person",
+      "@type": "@id"
+    },
+    "Plan": {
+      "@id": "http://www.w3.org/ns/prov#Plan",
+      "@type": "@id"
+    },
+    "PrimarySource": {
+      "@id": "http://www.w3.org/ns/prov#PrimarySource",
+      "@type": "@id"
+    },
+    "Publish": {
+      "@id": "http://www.w3.org/ns/prov#Publish",
+      "@type": "@id"
+    },
+    "Publisher": {
+      "@id": "http://www.w3.org/ns/prov#Publisher",
+      "@type": "@id"
+    },
+    "Quotation": {
+      "@id": "http://www.w3.org/ns/prov#Quotation",
+      "@type": "@id"
+    },
+    "Removal": {
+      "@id": "http://www.w3.org/ns/prov#Removal",
+      "@type": "@id"
+    },
+    "Replace": {
+      "@id": "http://www.w3.org/ns/prov#Replace",
+      "@type": "@id"
+    },
+    "Revision": {
+      "@id": "http://www.w3.org/ns/prov#Revision",
+      "@type": "@id"
+    },
+    "RightsAssignment": {
+      "@id": "http://www.w3.org/ns/prov#RightsAssignment",
+      "@type": "@id"
+    },
+    "RightsHolder": {
+      "@id": "http://www.w3.org/ns/prov#RightsHolder",
+      "@type": "@id"
+    },
+    "Role": {
+      "@id": "http://www.w3.org/ns/prov#Role",
+      "@type": "@id"
+    },
+    "ServiceDescription": {
+      "@id": "http://www.w3.org/ns/prov#ServiceDescription",
+      "@type": "@id"
+    },
+    "SoftwareAgent": {
+      "@id": "http://www.w3.org/ns/prov#SoftwareAgent",
+      "@type": "@id"
+    },
+    "Start": {
+      "@id": "http://www.w3.org/ns/prov#Start",
+      "@type": "@id"
+    },
+    "Submit": {
+      "@id": "http://www.w3.org/ns/prov#Submit",
+      "@type": "@id"
+    },
+    "Usage": {
+      "@id": "http://www.w3.org/ns/prov#Usage",
+      "@type": "@id"
+    },
+    "actedOnBehalfOf": {
+      "@id": "http://www.w3.org/ns/prov#actedOnBehalfOf"
+    },
+    "activity": {
+      "@id": "http://www.w3.org/ns/prov#activity"
+    },
+    "agent": {
+      "@id": "http://www.w3.org/ns/prov#agent"
+    },
+    "alternateOf": {
+      "@id": "http://www.w3.org/ns/prov#alternateOf"
+    },
+    "asInBundle": {
+      "@id": "http://www.w3.org/ns/prov#asInBundle"
+    },
+    "atLocation": {
+      "@id": "http://www.w3.org/ns/prov#atLocation"
+    },
+    "atTime": {
+      "@id": "http://www.w3.org/ns/prov#atTime"
+    },
+    "derivedByInsertionFrom": {
+      "@id": "http://www.w3.org/ns/prov#derivedByInsertionFrom"
+    },
+    "derivedByRemovalFrom": {
+      "@id": "http://www.w3.org/ns/prov#derivedByRemovalFrom"
+    },
+    "describesService": {
+      "@id": "http://www.w3.org/ns/prov#describesService"
+    },
+    "dictionary": {
+      "@id": "http://www.w3.org/ns/prov#dictionary"
+    },
+    "endedAtTime": {
+      "@id": "http://www.w3.org/ns/prov#endedAtTime"
+    },
+    "entity": {
+      "@id": "http://www.w3.org/ns/prov#entity"
+    },
+    "generated": {
+      "@id": "http://www.w3.org/ns/prov#generated"
+    },
+    "generatedAtTime": {
+      "@id": "http://www.w3.org/ns/prov#generatedAtTime"
+    },
+    "hadActivity": {
+      "@id": "http://www.w3.org/ns/prov#hadActivity"
+    },
+    "hadDictionaryMember": {
+      "@id": "http://www.w3.org/ns/prov#hadDictionaryMember"
+    },
+    "hadGeneration": {
+      "@id": "http://www.w3.org/ns/prov#hadGeneration"
+    },
+    "hadMember": {
+      "@id": "http://www.w3.org/ns/prov#hadMember"
+    },
+    "hadPlan": {
+      "@id": "http://www.w3.org/ns/prov#hadPlan"
+    },
+    "hadPrimarySource": {
+      "@id": "http://www.w3.org/ns/prov#hadPrimarySource"
+    },
+    "hadRole": {
+      "@id": "http://www.w3.org/ns/prov#hadRole"
+    },
+    "hadUsage": {
+      "@id": "http://www.w3.org/ns/prov#hadUsage"
+    },
+    "has_anchor": {
+      "@id": "http://www.w3.org/ns/prov#has_anchor"
+    },
+    "has_provenance": {
+      "@id": "http://www.w3.org/ns/prov#has_provenance"
+    },
+    "has_query_service": {
+      "@id": "http://www.w3.org/ns/prov#has_query_service"
+    },
+    "influenced": {
+      "@id": "http://www.w3.org/ns/prov#influenced"
+    },
+    "influencer": {
+      "@id": "http://www.w3.org/ns/prov#influencer"
+    },
+    "insertedKeyEntityPair": {
+      "@id": "http://www.w3.org/ns/prov#insertedKeyEntityPair"
+    },
+    "invalidated": {
+      "@id": "http://www.w3.org/ns/prov#invalidated"
+    },
+    "invalidatedAtTime": {
+      "@id": "http://www.w3.org/ns/prov#invalidatedAtTime"
+    },
+    "mentionOf": {
+      "@id": "http://www.w3.org/ns/prov#mentionOf"
+    },
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "pairEntity": {
+      "@id": "http://www.w3.org/ns/prov#pairEntity"
+    },
+    "pairKey": {
+      "@id": "http://www.w3.org/ns/prov#pairKey"
+    },
+    "pingback": {
+      "@id": "http://www.w3.org/ns/prov#pingback"
+    },
+    "provenanceUriTemplate": {
+      "@id": "http://www.w3.org/ns/prov#provenanceUriTemplate"
+    },
+    "qualifiedAssociation": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedAssociation"
+    },
+    "qualifiedAttribution": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedAttribution"
+    },
+    "qualifiedCommunication": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedCommunication"
+    },
+    "qualifiedDelegation": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedDelegation"
+    },
+    "qualifiedDerivation": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedDerivation"
+    },
+    "qualifiedEnd": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedEnd"
+    },
+    "qualifiedGeneration": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedGeneration"
+    },
+    "qualifiedInfluence": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedInfluence"
+    },
+    "qualifiedInsertion": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedInsertion"
+    },
+    "qualifiedInvalidation": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedInvalidation"
+    },
+    "qualifiedPrimarySource": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedPrimarySource"
+    },
+    "qualifiedQuotation": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedQuotation"
+    },
+    "qualifiedRemoval": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedRemoval"
+    },
+    "qualifiedRevision": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedRevision"
+    },
+    "qualifiedStart": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedStart"
+    },
+    "qualifiedUsage": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedUsage"
+    },
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "removedKey": {
+      "@id": "http://www.w3.org/ns/prov#removedKey"
+    },
+    "specializationOf": {
+      "@id": "http://www.w3.org/ns/prov#specializationOf"
+    },
+    "startedAtTime": {
+      "@id": "http://www.w3.org/ns/prov#startedAtTime"
+    },
+    "used": {
+      "@id": "http://www.w3.org/ns/prov#used"
+    },
+    "value": {
+      "@id": "http://www.w3.org/ns/prov#value"
+    },
+    "wasAssociatedWith": {
+      "@id": "http://www.w3.org/ns/prov#wasAssociatedWith"
+    },
+    "wasAttributedTo": {
+      "@id": "http://www.w3.org/ns/prov#wasAttributedTo"
+    },
+    "wasDerivedFrom": {
+      "@id": "http://www.w3.org/ns/prov#wasDerivedFrom"
+    },
+    "wasEndedBy": {
+      "@id": "http://www.w3.org/ns/prov#wasEndedBy"
+    },
+    "wasGeneratedBy": {
+      "@id": "http://www.w3.org/ns/prov#wasGeneratedBy"
+    },
+    "wasInfluencedBy": {
+      "@id": "http://www.w3.org/ns/prov#wasInfluencedBy"
+    },
+    "wasInformedBy": {
+      "@id": "http://www.w3.org/ns/prov#wasInformedBy"
+    },
+    "wasInvalidatedBy": {
+      "@id": "http://www.w3.org/ns/prov#wasInvalidatedBy"
+    },
+    "wasQuotedFrom": {
+      "@id": "http://www.w3.org/ns/prov#wasQuotedFrom"
+    },
+    "wasRevisionOf": {
+      "@id": "http://www.w3.org/ns/prov#wasRevisionOf"
+    },
+    "wasStartedBy": {
+      "@id": "http://www.w3.org/ns/prov#wasStartedBy"
+    }
+  }
+}
+    </script>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; }
+        
+        /* Layout Container */
+        .layout { display: flex; min-height: 100vh; }
+        
+        /* Sidebar */
+        .sidebar { 
+            width: 280px; 
+            background: #f8f9fa; 
+            border-right: 1px solid #e9ecef; 
+            overflow-y: auto; 
+            position: fixed; 
+            height: 100vh; 
+            top: 0; 
+            left: 0; 
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        
+        .sidebar-header { 
+            padding: 15px 20px; 
+            border-bottom: 1px solid #e9ecef; 
+            background: #fff; 
+            position: sticky; 
+            top: 0; 
+            z-index: 10;
+        }
+        
+        .sidebar-header h2 { 
+            margin: 0; 
+            font-size: 1.0em; 
+            color: #495057; 
+        }
+        
+        .sidebar-nav { 
+            padding: 0; 
+        }
+        
+        .sidebar-section { 
+            margin-bottom: 0; 
+        }
+        
+        .sidebar-section-header { 
+            padding: 12px 20px 6px; 
+            font-weight: bold; 
+            color: #6c757d; 
+            font-size: 0.85em; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+            margin: 0;
+        }
+        
+        .sidebar-nav ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0 0 8px 0; 
+        }
+        
+        .sidebar-nav li { 
+            margin: 0; 
+        }
+        
+        .sidebar-nav a { 
+            display: block; 
+            padding: 6px 20px; 
+            color: #495057; 
+            text-decoration: none; 
+            border-left: 3px solid transparent; 
+            transition: all 0.2s ease;
+            font-size: 0.9em;
+        }
+        
+        .sidebar-nav a:hover { 
+            background: #e9ecef; 
+            border-left-color: #0066cc; 
+            color: #0066cc; 
+        }
+        
+        /* Mobile Menu Button */
+        .menu-toggle { 
+            display: none; 
+            position: fixed; 
+            top: 20px; 
+            left: 20px; 
+            z-index: 1100; 
+            background: #0066cc; 
+            color: white; 
+            border: none; 
+            padding: 10px 12px; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 16px;
+        }
+        
+        .menu-toggle:hover { 
+            background: #0056b3; 
+        }
+        
+        /* Main Content */
+        .main-content { 
+            flex: 1; 
+            margin-left: 280px; 
+            padding: 40px; 
+            max-width: none; 
+        }
+        
+        .container { 
+            max-width: 900px; 
+        }
+        
+        /* Remove the old TOC since we have sidebar */
+        .toc { 
+            display: none; 
+        }
+        
+        .header { border-bottom: 2px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
+        .section { margin-bottom: 40px; }
+        .term { margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .term h3 { margin-top: 0; color: #0066cc; }
+        .term h3 a { color: inherit; text-decoration: none; }
+        .term h3 a:hover { text-decoration: underline; }
+        .term-uri { font-family: monospace; background: #f5f5f5; padding: 2px 5px; border-radius: 3px; }
+        .term-type { background: #e6f3ff; color: #0066cc; padding: 2px 8px; border-radius: 3px; font-size: 0.9em; }
+        .property-list { margin: 10px 0; }
+        .property-list li { margin: 5px 0; }
+        .property-list a { color: #0066cc; text-decoration: none; }
+        .property-list a:hover { text-decoration: underline; }
+        .documentation { background: #f9f9f9; padding: 15px; margin-top: 15px; border-radius: 3px; border-left: 4px solid #0066cc; }
+        .documentation h4 { margin-top: 0; color: #0066cc; }
+        .doc-content { line-height: 1.6; }
+        .doc-content pre { background: #f4f4f4; padding: 10px; border-radius: 3px; overflow-x: auto; }
+        .doc-content pre code { background: transparent; padding: 0; font-family: 'Courier New', monospace; }
+        .doc-content code { background: #f4f4f4; padding: 2px 4px; border-radius: 3px; font-family: 'Courier New', monospace; }
+        .doc-content table { border-collapse: collapse; width: 100%; margin: 10px 0; }
+        .doc-content th, .doc-content td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .doc-content th { background-color: #f2f2f2; font-weight: bold; }
+        .doc-content blockquote { border-left: 4px solid #ddd; margin: 0; padding-left: 15px; color: #666; }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .sidebar { 
+                transform: translateX(-100%); 
+            }
+            
+            .sidebar.open { 
+                transform: translateX(0); 
+            }
+            
+            .main-content { 
+                margin-left: 0; 
+                padding: 20px; 
+            }
+            
+            .menu-toggle { 
+                display: block; 
+            }
+            
+            /* Overlay when sidebar is open on mobile */
+            .sidebar-overlay { 
+                display: none; 
+                position: fixed; 
+                top: 0; 
+                left: 0; 
+                right: 0; 
+                bottom: 0; 
+                background: rgba(0, 0, 0, 0.5); 
+                z-index: 999; 
+            }
+            
+            .sidebar-overlay.show { 
+                display: block; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile menu button -->
+    <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
+    
+    <!-- Sidebar overlay for mobile -->
+    <div class="sidebar-overlay" onclick="closeSidebar()"></div>
+    
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Navigation</h2>
+        </div>
+        <div class="sidebar-nav">
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-header">Classes (50)</h3>
+                <ul>
+                    
+                    <li><a href="#Accept" onclick="closeSidebar()">Accept</a></li>
+                    
+                    <li><a href="#Activity" onclick="closeSidebar()">Activity</a></li>
+                    
+                    <li><a href="#ActivityInfluence" onclick="closeSidebar()">ActivityInfluence</a></li>
+                    
+                    <li><a href="#Agent" onclick="closeSidebar()">Agent</a></li>
+                    
+                    <li><a href="#AgentInfluence" onclick="closeSidebar()">AgentInfluence</a></li>
+                    
+                    <li><a href="#Association" onclick="closeSidebar()">Association</a></li>
+                    
+                    <li><a href="#Attribution" onclick="closeSidebar()">Attribution</a></li>
+                    
+                    <li><a href="#Bundle" onclick="closeSidebar()">Bundle</a></li>
+                    
+                    <li><a href="#Collection" onclick="closeSidebar()">Collection</a></li>
+                    
+                    <li><a href="#Communication" onclick="closeSidebar()">Communication</a></li>
+                    
+                    <li><a href="#Contribute" onclick="closeSidebar()">Contribute</a></li>
+                    
+                    <li><a href="#Contributor" onclick="closeSidebar()">Contributor</a></li>
+                    
+                    <li><a href="#Copyright" onclick="closeSidebar()">Copyright</a></li>
+                    
+                    <li><a href="#Create" onclick="closeSidebar()">Create</a></li>
+                    
+                    <li><a href="#Creator" onclick="closeSidebar()">Creator</a></li>
+                    
+                    <li><a href="#Delegation" onclick="closeSidebar()">Delegation</a></li>
+                    
+                    <li><a href="#Derivation" onclick="closeSidebar()">Derivation</a></li>
+                    
+                    <li><a href="#Dictionary" onclick="closeSidebar()">Dictionary</a></li>
+                    
+                    <li><a href="#DirectQueryService" onclick="closeSidebar()">DirectQueryService</a></li>
+                    
+                    <li><a href="#EmptyCollection" onclick="closeSidebar()">EmptyCollection</a></li>
+                    
+                    <li><a href="#EmptyDictionary" onclick="closeSidebar()">EmptyDictionary</a></li>
+                    
+                    <li><a href="#End" onclick="closeSidebar()">End</a></li>
+                    
+                    <li><a href="#Entity" onclick="closeSidebar()">Entity</a></li>
+                    
+                    <li><a href="#EntityInfluence" onclick="closeSidebar()">EntityInfluence</a></li>
+                    
+                    <li><a href="#Generation" onclick="closeSidebar()">Generation</a></li>
+                    
+                    <li><a href="#Influence" onclick="closeSidebar()">Influence</a></li>
+                    
+                    <li><a href="#Insertion" onclick="closeSidebar()">Insertion</a></li>
+                    
+                    <li><a href="#InstantaneousEvent" onclick="closeSidebar()">InstantaneousEvent</a></li>
+                    
+                    <li><a href="#Invalidation" onclick="closeSidebar()">Invalidation</a></li>
+                    
+                    <li><a href="#KeyEntityPair" onclick="closeSidebar()">KeyEntityPair</a></li>
+                    
+                    <li><a href="#Location" onclick="closeSidebar()">Location</a></li>
+                    
+                    <li><a href="#Modify" onclick="closeSidebar()">Modify</a></li>
+                    
+                    <li><a href="#Organization" onclick="closeSidebar()">Organization</a></li>
+                    
+                    <li><a href="#Person" onclick="closeSidebar()">Person</a></li>
+                    
+                    <li><a href="#Plan" onclick="closeSidebar()">Plan</a></li>
+                    
+                    <li><a href="#PrimarySource" onclick="closeSidebar()">PrimarySource</a></li>
+                    
+                    <li><a href="#Publish" onclick="closeSidebar()">Publish</a></li>
+                    
+                    <li><a href="#Publisher" onclick="closeSidebar()">Publisher</a></li>
+                    
+                    <li><a href="#Quotation" onclick="closeSidebar()">Quotation</a></li>
+                    
+                    <li><a href="#Removal" onclick="closeSidebar()">Removal</a></li>
+                    
+                    <li><a href="#Replace" onclick="closeSidebar()">Replace</a></li>
+                    
+                    <li><a href="#Revision" onclick="closeSidebar()">Revision</a></li>
+                    
+                    <li><a href="#RightsAssignment" onclick="closeSidebar()">RightsAssignment</a></li>
+                    
+                    <li><a href="#RightsHolder" onclick="closeSidebar()">RightsHolder</a></li>
+                    
+                    <li><a href="#Role" onclick="closeSidebar()">Role</a></li>
+                    
+                    <li><a href="#ServiceDescription" onclick="closeSidebar()">ServiceDescription</a></li>
+                    
+                    <li><a href="#SoftwareAgent" onclick="closeSidebar()">SoftwareAgent</a></li>
+                    
+                    <li><a href="#Start" onclick="closeSidebar()">Start</a></li>
+                    
+                    <li><a href="#Submit" onclick="closeSidebar()">Submit</a></li>
+                    
+                    <li><a href="#Usage" onclick="closeSidebar()">Usage</a></li>
+                    
+                </ul>
+            </div>
+            
+            
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-header">Properties (68)</h3>
+                <ul>
+                    
+                    <li><a href="#actedOnBehalfOf" onclick="closeSidebar()">actedOnBehalfOf</a></li>
+                    
+                    <li><a href="#activity" onclick="closeSidebar()">activity</a></li>
+                    
+                    <li><a href="#agent" onclick="closeSidebar()">agent</a></li>
+                    
+                    <li><a href="#alternateOf" onclick="closeSidebar()">alternateOf</a></li>
+                    
+                    <li><a href="#asInBundle" onclick="closeSidebar()">asInBundle</a></li>
+                    
+                    <li><a href="#atLocation" onclick="closeSidebar()">atLocation</a></li>
+                    
+                    <li><a href="#atTime" onclick="closeSidebar()">atTime</a></li>
+                    
+                    <li><a href="#derivedByInsertionFrom" onclick="closeSidebar()">derivedByInsertionFrom</a></li>
+                    
+                    <li><a href="#derivedByRemovalFrom" onclick="closeSidebar()">derivedByRemovalFrom</a></li>
+                    
+                    <li><a href="#describesService" onclick="closeSidebar()">describesService</a></li>
+                    
+                    <li><a href="#dictionary" onclick="closeSidebar()">dictionary</a></li>
+                    
+                    <li><a href="#endedAtTime" onclick="closeSidebar()">endedAtTime</a></li>
+                    
+                    <li><a href="#entity" onclick="closeSidebar()">entity</a></li>
+                    
+                    <li><a href="#generated" onclick="closeSidebar()">generated</a></li>
+                    
+                    <li><a href="#generatedAtTime" onclick="closeSidebar()">generatedAtTime</a></li>
+                    
+                    <li><a href="#hadActivity" onclick="closeSidebar()">hadActivity</a></li>
+                    
+                    <li><a href="#hadDictionaryMember" onclick="closeSidebar()">hadDictionaryMember</a></li>
+                    
+                    <li><a href="#hadGeneration" onclick="closeSidebar()">hadGeneration</a></li>
+                    
+                    <li><a href="#hadMember" onclick="closeSidebar()">hadMember</a></li>
+                    
+                    <li><a href="#hadPlan" onclick="closeSidebar()">hadPlan</a></li>
+                    
+                    <li><a href="#hadPrimarySource" onclick="closeSidebar()">hadPrimarySource</a></li>
+                    
+                    <li><a href="#hadRole" onclick="closeSidebar()">hadRole</a></li>
+                    
+                    <li><a href="#hadUsage" onclick="closeSidebar()">hadUsage</a></li>
+                    
+                    <li><a href="#has_anchor" onclick="closeSidebar()">has_anchor</a></li>
+                    
+                    <li><a href="#has_provenance" onclick="closeSidebar()">has_provenance</a></li>
+                    
+                    <li><a href="#has_query_service" onclick="closeSidebar()">has_query_service</a></li>
+                    
+                    <li><a href="#influenced" onclick="closeSidebar()">influenced</a></li>
+                    
+                    <li><a href="#influencer" onclick="closeSidebar()">influencer</a></li>
+                    
+                    <li><a href="#insertedKeyEntityPair" onclick="closeSidebar()">insertedKeyEntityPair</a></li>
+                    
+                    <li><a href="#invalidated" onclick="closeSidebar()">invalidated</a></li>
+                    
+                    <li><a href="#invalidatedAtTime" onclick="closeSidebar()">invalidatedAtTime</a></li>
+                    
+                    <li><a href="#mentionOf" onclick="closeSidebar()">mentionOf</a></li>
+                    
+                    <li><a href="#pairEntity" onclick="closeSidebar()">pairEntity</a></li>
+                    
+                    <li><a href="#pairKey" onclick="closeSidebar()">pairKey</a></li>
+                    
+                    <li><a href="#pingback" onclick="closeSidebar()">pingback</a></li>
+                    
+                    <li><a href="#provenanceUriTemplate" onclick="closeSidebar()">provenanceUriTemplate</a></li>
+                    
+                    <li><a href="#qualifiedAssociation" onclick="closeSidebar()">qualifiedAssociation</a></li>
+                    
+                    <li><a href="#qualifiedAttribution" onclick="closeSidebar()">qualifiedAttribution</a></li>
+                    
+                    <li><a href="#qualifiedCommunication" onclick="closeSidebar()">qualifiedCommunication</a></li>
+                    
+                    <li><a href="#qualifiedDelegation" onclick="closeSidebar()">qualifiedDelegation</a></li>
+                    
+                    <li><a href="#qualifiedDerivation" onclick="closeSidebar()">qualifiedDerivation</a></li>
+                    
+                    <li><a href="#qualifiedEnd" onclick="closeSidebar()">qualifiedEnd</a></li>
+                    
+                    <li><a href="#qualifiedGeneration" onclick="closeSidebar()">qualifiedGeneration</a></li>
+                    
+                    <li><a href="#qualifiedInfluence" onclick="closeSidebar()">qualifiedInfluence</a></li>
+                    
+                    <li><a href="#qualifiedInsertion" onclick="closeSidebar()">qualifiedInsertion</a></li>
+                    
+                    <li><a href="#qualifiedInvalidation" onclick="closeSidebar()">qualifiedInvalidation</a></li>
+                    
+                    <li><a href="#qualifiedPrimarySource" onclick="closeSidebar()">qualifiedPrimarySource</a></li>
+                    
+                    <li><a href="#qualifiedQuotation" onclick="closeSidebar()">qualifiedQuotation</a></li>
+                    
+                    <li><a href="#qualifiedRemoval" onclick="closeSidebar()">qualifiedRemoval</a></li>
+                    
+                    <li><a href="#qualifiedRevision" onclick="closeSidebar()">qualifiedRevision</a></li>
+                    
+                    <li><a href="#qualifiedStart" onclick="closeSidebar()">qualifiedStart</a></li>
+                    
+                    <li><a href="#qualifiedUsage" onclick="closeSidebar()">qualifiedUsage</a></li>
+                    
+                    <li><a href="#removedKey" onclick="closeSidebar()">removedKey</a></li>
+                    
+                    <li><a href="#specializationOf" onclick="closeSidebar()">specializationOf</a></li>
+                    
+                    <li><a href="#startedAtTime" onclick="closeSidebar()">startedAtTime</a></li>
+                    
+                    <li><a href="#used" onclick="closeSidebar()">used</a></li>
+                    
+                    <li><a href="#value" onclick="closeSidebar()">value</a></li>
+                    
+                    <li><a href="#wasAssociatedWith" onclick="closeSidebar()">wasAssociatedWith</a></li>
+                    
+                    <li><a href="#wasAttributedTo" onclick="closeSidebar()">wasAttributedTo</a></li>
+                    
+                    <li><a href="#wasDerivedFrom" onclick="closeSidebar()">wasDerivedFrom</a></li>
+                    
+                    <li><a href="#wasEndedBy" onclick="closeSidebar()">wasEndedBy</a></li>
+                    
+                    <li><a href="#wasGeneratedBy" onclick="closeSidebar()">wasGeneratedBy</a></li>
+                    
+                    <li><a href="#wasInfluencedBy" onclick="closeSidebar()">wasInfluencedBy</a></li>
+                    
+                    <li><a href="#wasInformedBy" onclick="closeSidebar()">wasInformedBy</a></li>
+                    
+                    <li><a href="#wasInvalidatedBy" onclick="closeSidebar()">wasInvalidatedBy</a></li>
+                    
+                    <li><a href="#wasQuotedFrom" onclick="closeSidebar()">wasQuotedFrom</a></li>
+                    
+                    <li><a href="#wasRevisionOf" onclick="closeSidebar()">wasRevisionOf</a></li>
+                    
+                    <li><a href="#wasStartedBy" onclick="closeSidebar()">wasStartedBy</a></li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+    
+    <!-- Main content area -->
+    <main class="main-content">
+        <div class="container">
+            <div class="header">
+                <h1>PROV Ontology</h1>
+                
+                <p><strong>Namespace:</strong> http://www.w3.org/ns/prov#</p>
+                
+            </div>
+
+            <!-- Hide original TOC since we have sidebar -->
+            <div class="toc" style="display: none;">
+                <h2>Table of Contents</h2>
+                
+                <h3>Classes (50)</h3>
+                <ul>
+                    
+                    <li><a href="#Accept">Accept</a> - Accept</li>
+                    
+                    <li><a href="#Activity">Activity</a> - Activity</li>
+                    
+                    <li><a href="#ActivityInfluence">ActivityInfluence</a> - ActivityInfluence</li>
+                    
+                    <li><a href="#Agent">Agent</a> - Agent</li>
+                    
+                    <li><a href="#AgentInfluence">AgentInfluence</a> - AgentInfluence</li>
+                    
+                    <li><a href="#Association">Association</a> - Association</li>
+                    
+                    <li><a href="#Attribution">Attribution</a> - Attribution</li>
+                    
+                    <li><a href="#Bundle">Bundle</a> - Bundle</li>
+                    
+                    <li><a href="#Collection">Collection</a> - Collection</li>
+                    
+                    <li><a href="#Communication">Communication</a> - Communication</li>
+                    
+                    <li><a href="#Contribute">Contribute</a> - Contribute
+</li>
+                    
+                    <li><a href="#Contributor">Contributor</a> - Contributor</li>
+                    
+                    <li><a href="#Copyright">Copyright</a> - Copyright</li>
+                    
+                    <li><a href="#Create">Create</a> - Create</li>
+                    
+                    <li><a href="#Creator">Creator</a> - Creator</li>
+                    
+                    <li><a href="#Delegation">Delegation</a> - Delegation</li>
+                    
+                    <li><a href="#Derivation">Derivation</a> - Derivation</li>
+                    
+                    <li><a href="#Dictionary">Dictionary</a> - Dictionary</li>
+                    
+                    <li><a href="#DirectQueryService">DirectQueryService</a> - ProvenanceService</li>
+                    
+                    <li><a href="#EmptyCollection">EmptyCollection</a> - EmptyCollection</li>
+                    
+                    <li><a href="#EmptyDictionary">EmptyDictionary</a> - Empty Dictionary</li>
+                    
+                    <li><a href="#End">End</a> - End</li>
+                    
+                    <li><a href="#Entity">Entity</a> - Entity</li>
+                    
+                    <li><a href="#EntityInfluence">EntityInfluence</a> - EntityInfluence</li>
+                    
+                    <li><a href="#Generation">Generation</a> - Generation</li>
+                    
+                    <li><a href="#Influence">Influence</a> - Influence</li>
+                    
+                    <li><a href="#Insertion">Insertion</a> - Insertion</li>
+                    
+                    <li><a href="#InstantaneousEvent">InstantaneousEvent</a> - InstantaneousEvent</li>
+                    
+                    <li><a href="#Invalidation">Invalidation</a> - Invalidation</li>
+                    
+                    <li><a href="#KeyEntityPair">KeyEntityPair</a> - Key-Entity Pair</li>
+                    
+                    <li><a href="#Location">Location</a> - Location</li>
+                    
+                    <li><a href="#Modify">Modify</a> - Modify</li>
+                    
+                    <li><a href="#Organization">Organization</a> - Organization</li>
+                    
+                    <li><a href="#Person">Person</a> - Person</li>
+                    
+                    <li><a href="#Plan">Plan</a> - Plan</li>
+                    
+                    <li><a href="#PrimarySource">PrimarySource</a> - PrimarySource</li>
+                    
+                    <li><a href="#Publish">Publish</a> - Publish</li>
+                    
+                    <li><a href="#Publisher">Publisher</a> - Publisher</li>
+                    
+                    <li><a href="#Quotation">Quotation</a> - Quotation</li>
+                    
+                    <li><a href="#Removal">Removal</a> - Removal</li>
+                    
+                    <li><a href="#Replace">Replace</a> - Replace</li>
+                    
+                    <li><a href="#Revision">Revision</a> - Revision</li>
+                    
+                    <li><a href="#RightsAssignment">RightsAssignment</a> - RightsAssignment</li>
+                    
+                    <li><a href="#RightsHolder">RightsHolder</a> - RightsHolder</li>
+                    
+                    <li><a href="#Role">Role</a> - Role</li>
+                    
+                    <li><a href="#ServiceDescription">ServiceDescription</a> - ServiceDescription</li>
+                    
+                    <li><a href="#SoftwareAgent">SoftwareAgent</a> - SoftwareAgent</li>
+                    
+                    <li><a href="#Start">Start</a> - Start</li>
+                    
+                    <li><a href="#Submit">Submit</a> - Submit</li>
+                    
+                    <li><a href="#Usage">Usage</a> - Usage</li>
+                    
+                </ul>
+                
+                
+                
+                <h3>Properties (68)</h3>
+                <ul>
+                    
+                    <li><a href="#actedOnBehalfOf">actedOnBehalfOf</a> - actedOnBehalfOf</li>
+                    
+                    <li><a href="#activity">activity</a> - activity</li>
+                    
+                    <li><a href="#agent">agent</a> - agent</li>
+                    
+                    <li><a href="#alternateOf">alternateOf</a> - alternateOf</li>
+                    
+                    <li><a href="#asInBundle">asInBundle</a> - asInBundle</li>
+                    
+                    <li><a href="#atLocation">atLocation</a> - atLocation</li>
+                    
+                    <li><a href="#atTime">atTime</a> - atTime</li>
+                    
+                    <li><a href="#derivedByInsertionFrom">derivedByInsertionFrom</a> - derivedByInsertionFrom</li>
+                    
+                    <li><a href="#derivedByRemovalFrom">derivedByRemovalFrom</a> - derivedByRemovalFrom</li>
+                    
+                    <li><a href="#describesService">describesService</a> - describesService</li>
+                    
+                    <li><a href="#dictionary">dictionary</a> - dictionary</li>
+                    
+                    <li><a href="#endedAtTime">endedAtTime</a> - endedAtTime</li>
+                    
+                    <li><a href="#entity">entity</a> - entity</li>
+                    
+                    <li><a href="#generated">generated</a> - generated</li>
+                    
+                    <li><a href="#generatedAtTime">generatedAtTime</a> - generatedAtTime</li>
+                    
+                    <li><a href="#hadActivity">hadActivity</a> - hadActivity</li>
+                    
+                    <li><a href="#hadDictionaryMember">hadDictionaryMember</a> - hadDictionaryMember</li>
+                    
+                    <li><a href="#hadGeneration">hadGeneration</a> - hadGeneration</li>
+                    
+                    <li><a href="#hadMember">hadMember</a> - hadMember</li>
+                    
+                    <li><a href="#hadPlan">hadPlan</a> - hadPlan</li>
+                    
+                    <li><a href="#hadPrimarySource">hadPrimarySource</a> - hadPrimarySource</li>
+                    
+                    <li><a href="#hadRole">hadRole</a> - hadRole</li>
+                    
+                    <li><a href="#hadUsage">hadUsage</a> - hadUsage</li>
+                    
+                    <li><a href="#has_anchor">has_anchor</a> - has_anchor</li>
+                    
+                    <li><a href="#has_provenance">has_provenance</a> - has_provenance</li>
+                    
+                    <li><a href="#has_query_service">has_query_service</a> - hasProvenanceService</li>
+                    
+                    <li><a href="#influenced">influenced</a> - influenced</li>
+                    
+                    <li><a href="#influencer">influencer</a> - influencer</li>
+                    
+                    <li><a href="#insertedKeyEntityPair">insertedKeyEntityPair</a> - insertedKeyEntityPair</li>
+                    
+                    <li><a href="#invalidated">invalidated</a> - invalidated</li>
+                    
+                    <li><a href="#invalidatedAtTime">invalidatedAtTime</a> - invalidatedAtTime</li>
+                    
+                    <li><a href="#mentionOf">mentionOf</a> - mentionOf</li>
+                    
+                    <li><a href="#pairEntity">pairEntity</a> - pairKey</li>
+                    
+                    <li><a href="#pairKey">pairKey</a> - pairKey</li>
+                    
+                    <li><a href="#pingback">pingback</a> - provenance pingback</li>
+                    
+                    <li><a href="#provenanceUriTemplate">provenanceUriTemplate</a> - provenanceUriTemplate</li>
+                    
+                    <li><a href="#qualifiedAssociation">qualifiedAssociation</a> - qualifiedAssociation</li>
+                    
+                    <li><a href="#qualifiedAttribution">qualifiedAttribution</a> - qualifiedAttribution</li>
+                    
+                    <li><a href="#qualifiedCommunication">qualifiedCommunication</a> - qualifiedCommunication</li>
+                    
+                    <li><a href="#qualifiedDelegation">qualifiedDelegation</a> - qualifiedDelegation</li>
+                    
+                    <li><a href="#qualifiedDerivation">qualifiedDerivation</a> - qualifiedDerivation</li>
+                    
+                    <li><a href="#qualifiedEnd">qualifiedEnd</a> - qualifiedEnd</li>
+                    
+                    <li><a href="#qualifiedGeneration">qualifiedGeneration</a> - qualifiedGeneration</li>
+                    
+                    <li><a href="#qualifiedInfluence">qualifiedInfluence</a> - qualifiedInfluence</li>
+                    
+                    <li><a href="#qualifiedInsertion">qualifiedInsertion</a> - qualifiedInsertion</li>
+                    
+                    <li><a href="#qualifiedInvalidation">qualifiedInvalidation</a> - qualifiedInvalidation</li>
+                    
+                    <li><a href="#qualifiedPrimarySource">qualifiedPrimarySource</a> - qualifiedPrimarySource</li>
+                    
+                    <li><a href="#qualifiedQuotation">qualifiedQuotation</a> - qualifiedQuotation</li>
+                    
+                    <li><a href="#qualifiedRemoval">qualifiedRemoval</a> - qualifiedRemoval</li>
+                    
+                    <li><a href="#qualifiedRevision">qualifiedRevision</a> - qualifiedRevision</li>
+                    
+                    <li><a href="#qualifiedStart">qualifiedStart</a> - qualifiedStart</li>
+                    
+                    <li><a href="#qualifiedUsage">qualifiedUsage</a> - qualifiedUsage</li>
+                    
+                    <li><a href="#removedKey">removedKey</a> - removedKey</li>
+                    
+                    <li><a href="#specializationOf">specializationOf</a> - specializationOf</li>
+                    
+                    <li><a href="#startedAtTime">startedAtTime</a> - startedAtTime</li>
+                    
+                    <li><a href="#used">used</a> - used</li>
+                    
+                    <li><a href="#value">value</a> - value</li>
+                    
+                    <li><a href="#wasAssociatedWith">wasAssociatedWith</a> - wasAssociatedWith</li>
+                    
+                    <li><a href="#wasAttributedTo">wasAttributedTo</a> - wasAttributedTo</li>
+                    
+                    <li><a href="#wasDerivedFrom">wasDerivedFrom</a> - wasDerivedFrom</li>
+                    
+                    <li><a href="#wasEndedBy">wasEndedBy</a> - wasEndedBy</li>
+                    
+                    <li><a href="#wasGeneratedBy">wasGeneratedBy</a> - wasGeneratedBy</li>
+                    
+                    <li><a href="#wasInfluencedBy">wasInfluencedBy</a> - wasInfluencedBy</li>
+                    
+                    <li><a href="#wasInformedBy">wasInformedBy</a> - wasInformedBy</li>
+                    
+                    <li><a href="#wasInvalidatedBy">wasInvalidatedBy</a> - wasInvalidatedBy</li>
+                    
+                    <li><a href="#wasQuotedFrom">wasQuotedFrom</a> - wasQuotedFrom</li>
+                    
+                    <li><a href="#wasRevisionOf">wasRevisionOf</a> - wasRevisionOf</li>
+                    
+                    <li><a href="#wasStartedBy">wasStartedBy</a> - wasStartedBy</li>
+                    
+                </ul>
+                
+            </div>
+
+    
+    <div class="section">
+        <h2>Classes</h2>
+        
+        <div class="term" id="Accept">
+            <h3><a href="#Accept">Accept</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Accept</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Activity">
+            <h3><a href="#Activity">Activity</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Activity</span></p>
+            
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#endedAtTime">endedAtTime</a> (→ XMLSchema#dateTime)</li>
+                
+                <li><a href="#generated">generated</a> (→ prov#Entity)</li>
+                
+                <li><a href="#invalidated">invalidated</a> (→ prov#Entity)</li>
+                
+                <li><a href="#qualifiedAssociation">qualifiedAssociation</a> (→ prov#Association)</li>
+                
+                <li><a href="#qualifiedCommunication">qualifiedCommunication</a> (→ prov#Communication)</li>
+                
+                <li><a href="#qualifiedEnd">qualifiedEnd</a> (→ prov#End)</li>
+                
+                <li><a href="#qualifiedStart">qualifiedStart</a> (→ prov#Start)</li>
+                
+                <li><a href="#qualifiedUsage">qualifiedUsage</a> (→ prov#Usage)</li>
+                
+                <li><a href="#startedAtTime">startedAtTime</a> (→ XMLSchema#dateTime)</li>
+                
+                <li><a href="#used">used</a> (→ prov#Entity)</li>
+                
+                <li><a href="#wasAssociatedWith">wasAssociatedWith</a> (→ prov#Agent)</li>
+                
+                <li><a href="#wasEndedBy">wasEndedBy</a> (→ prov#Entity)</li>
+                
+                <li><a href="#wasInformedBy">wasInformedBy</a> (→ prov#Activity)</li>
+                
+                <li><a href="#wasStartedBy">wasStartedBy</a> (→ prov#Entity)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="ActivityInfluence">
+            <h3><a href="#ActivityInfluence">ActivityInfluence</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#ActivityInfluence</span></p>
+            
+            <p><strong>Description:</strong> ActivityInfluence provides additional descriptions of an Activity's binary influence upon any other kind of resource. Instances of ActivityInfluence use the prov:activity property to cite the influencing Activity.</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Influence">http://www.w3.org/ns/prov#Influence</a></li>
+                
+                <li><a href="n46118ee8ac5f40cd926d553a5f24ccbdb1">n46118ee8ac5f40cd926d553a5f24ccbdb1</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#activity">activity</a> (→ prov#Activity)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="Agent">
+            <h3><a href="#Agent">Agent</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Agent</span></p>
+            
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#actedOnBehalfOf">actedOnBehalfOf</a> (→ prov#Agent)</li>
+                
+                <li><a href="#qualifiedDelegation">qualifiedDelegation</a> (→ prov#Delegation)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="AgentInfluence">
+            <h3><a href="#AgentInfluence">AgentInfluence</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#AgentInfluence</span></p>
+            
+            <p><strong>Description:</strong> AgentInfluence provides additional descriptions of an Agent's binary influence upon any other kind of resource. Instances of AgentInfluence use the prov:agent property to cite the influencing Agent.</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Influence">http://www.w3.org/ns/prov#Influence</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#agent">agent</a> (→ prov#Agent)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="Association">
+            <h3><a href="#Association">Association</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Association</span></p>
+            
+            <p><strong>Description:</strong> An instance of prov:Association provides additional descriptions about the binary prov:wasAssociatedWith relation from an prov:Activity to some prov:Agent that had some responsiblity for it. For example, :baking prov:wasAssociatedWith :baker; prov:qualifiedAssociation [ a prov:Association; prov:agent :baker; :foo :bar ].</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#AgentInfluence">http://www.w3.org/ns/prov#AgentInfluence</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#hadPlan">hadPlan</a> (→ prov#Plan)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="Attribution">
+            <h3><a href="#Attribution">Attribution</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Attribution</span></p>
+            
+            <p><strong>Description:</strong> An instance of prov:Attribution provides additional descriptions about the binary prov:wasAttributedTo relation from an prov:Entity to some prov:Agent that had some responsible for it. For example, :cake prov:wasAttributedTo :baker; prov:qualifiedAttribution [ a prov:Attribution; prov:entity :baker; :foo :bar ].</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#AgentInfluence">http://www.w3.org/ns/prov#AgentInfluence</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Bundle">
+            <h3><a href="#Bundle">Bundle</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Bundle</span></p>
+            
+            <p><strong>Description:</strong> Note that there are kinds of bundles (e.g. handwritten letters, audio recordings, etc.) that are not expressed in PROV-O, but can be still be described by PROV-O.</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Collection">
+            <h3><a href="#Collection">Collection</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Collection</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#hadMember">hadMember</a> (→ prov#Entity)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="Communication">
+            <h3><a href="#Communication">Communication</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Communication</span></p>
+            
+            <p><strong>Description:</strong> An instance of prov:Communication provides additional descriptions about the binary prov:wasInformedBy relation from an informed prov:Activity to the prov:Activity that informed it. For example, :you_jumping_off_bridge prov:wasInformedBy :everyone_else_jumping_off_bridge; prov:qualifiedCommunication [ a prov:Communication; prov:activity :everyone_else_jumping_off_bridge; :foo :bar ].</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#ActivityInfluence">http://www.w3.org/ns/prov#ActivityInfluence</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Contribute">
+            <h3><a href="#Contribute">Contribute
+</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Contribute</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Contributor">
+            <h3><a href="#Contributor">Contributor</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Contributor</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Role">http://www.w3.org/ns/prov#Role</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Copyright">
+            <h3><a href="#Copyright">Copyright</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Copyright</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Create">
+            <h3><a href="#Create">Create</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Create</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Contribute">http://www.w3.org/ns/prov#Contribute</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Creator">
+            <h3><a href="#Creator">Creator</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Creator</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Contributor">http://www.w3.org/ns/prov#Contributor</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Delegation">
+            <h3><a href="#Delegation">Delegation</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Delegation</span></p>
+            
+            <p><strong>Description:</strong> An instance of prov:Delegation provides additional descriptions about the binary prov:actedOnBehalfOf relation from a performing prov:Agent to some prov:Agent for whom it was performed. For example, :mixing prov:wasAssociatedWith :toddler . :toddler prov:actedOnBehalfOf :mother; prov:qualifiedDelegation [ a prov:Delegation; prov:entity :mother; :foo :bar ].</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#AgentInfluence">http://www.w3.org/ns/prov#AgentInfluence</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Derivation">
+            <h3><a href="#Derivation">Derivation</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Derivation</span></p>
+            
+            <p><strong>Description:</strong> An instance of prov:Derivation provides additional descriptions about the binary prov:wasDerivedFrom relation from some derived prov:Entity to another prov:Entity from which it was derived. For example, :chewed_bubble_gum prov:wasDerivedFrom :unwrapped_bubble_gum; prov:qualifiedDerivation [ a prov:Derivation; prov:entity :unwrapped_bubble_gum; :foo :bar ].</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#EntityInfluence">http://www.w3.org/ns/prov#EntityInfluence</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#hadGeneration">hadGeneration</a> (→ prov#Generation)</li>
+                
+                <li><a href="#hadUsage">hadUsage</a> (→ prov#Usage)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="Dictionary">
+            <h3><a href="#Dictionary">Dictionary</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Dictionary</span></p>
+            
+            <p><strong>Description:</strong> This concept allows for the provenance of the dictionary, but also of its constituents to be expressed. Such a notion of dictionary corresponds to a wide variety of concrete data structures, such as a maps or associative arrays.</p>
+            
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#derivedByInsertionFrom">derivedByInsertionFrom</a> (→ prov#Dictionary)</li>
+                
+                <li><a href="#derivedByRemovalFrom">derivedByRemovalFrom</a> (→ prov#Dictionary)</li>
+                
+                <li><a href="#hadDictionaryMember">hadDictionaryMember</a> (→ prov#KeyEntityPair)</li>
+                
+                <li><a href="#qualifiedInsertion">qualifiedInsertion</a> (→ prov#Insertion)</li>
+                
+                <li><a href="#qualifiedRemoval">qualifiedRemoval</a> (→ prov#Removal)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="DirectQueryService">
+            <h3><a href="#DirectQueryService">ProvenanceService</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#DirectQueryService</span></p>
+            
+            <p><strong>Description:</strong> Type for a generic provenance query service. Mainly for use in RDF provenance query service descriptions, to facilitate discovery in linked data environments.</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#SoftwareAgent">http://www.w3.org/ns/prov#SoftwareAgent</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="EmptyCollection">
+            <h3><a href="#EmptyCollection">EmptyCollection</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#EmptyCollection</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Collection">http://www.w3.org/ns/prov#Collection</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="EmptyDictionary">
+            <h3><a href="#EmptyDictionary">Empty Dictionary</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#EmptyDictionary</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Dictionary">http://www.w3.org/ns/prov#Dictionary</a></li>
+                
+                <li><a href="http://www.w3.org/ns/prov#EmptyCollection">http://www.w3.org/ns/prov#EmptyCollection</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="End">
+            <h3><a href="#End">End</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#End</span></p>
+            
+            <p><strong>Description:</strong> An instance of prov:End provides additional descriptions about the binary prov:wasEndedBy relation from some ended prov:Activity to an prov:Entity that ended it. For example, :ball_game prov:wasEndedBy :buzzer; prov:qualifiedEnd [ a prov:End; prov:entity :buzzer; :foo :bar; prov:atTime '2012-03-09T08:05:08-05:00'^^xsd:dateTime ].</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#EntityInfluence">http://www.w3.org/ns/prov#EntityInfluence</a></li>
+                
+                <li><a href="http://www.w3.org/ns/prov#InstantaneousEvent">http://www.w3.org/ns/prov#InstantaneousEvent</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Entity">
+            <h3><a href="#Entity">Entity</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Entity</span></p>
+            
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#alternateOf">alternateOf</a> (→ prov#Entity)</li>
+                
+                <li><a href="#asInBundle">asInBundle</a> (→ prov#Bundle)</li>
+                
+                <li><a href="#generatedAtTime">generatedAtTime</a> (→ XMLSchema#dateTime)</li>
+                
+                <li><a href="#hadPrimarySource">hadPrimarySource</a> (→ prov#Entity)</li>
+                
+                <li><a href="#invalidatedAtTime">invalidatedAtTime</a> (→ XMLSchema#dateTime)</li>
+                
+                <li><a href="#mentionOf">mentionOf</a> (→ prov#Entity)</li>
+                
+                <li><a href="#qualifiedAttribution">qualifiedAttribution</a> (→ prov#Attribution)</li>
+                
+                <li><a href="#qualifiedDerivation">qualifiedDerivation</a> (→ prov#Derivation)</li>
+                
+                <li><a href="#qualifiedGeneration">qualifiedGeneration</a> (→ prov#Generation)</li>
+                
+                <li><a href="#qualifiedInvalidation">qualifiedInvalidation</a> (→ prov#Invalidation)</li>
+                
+                <li><a href="#qualifiedPrimarySource">qualifiedPrimarySource</a> (→ prov#PrimarySource)</li>
+                
+                <li><a href="#qualifiedQuotation">qualifiedQuotation</a> (→ prov#Quotation)</li>
+                
+                <li><a href="#qualifiedRevision">qualifiedRevision</a> (→ prov#Revision)</li>
+                
+                <li><a href="#specializationOf">specializationOf</a> (→ prov#Entity)</li>
+                
+                <li><a href="#value">value</a></li>
+                
+                <li><a href="#wasAttributedTo">wasAttributedTo</a> (→ prov#Agent)</li>
+                
+                <li><a href="#wasDerivedFrom">wasDerivedFrom</a> (→ prov#Entity)</li>
+                
+                <li><a href="#wasGeneratedBy">wasGeneratedBy</a> (→ prov#Activity)</li>
+                
+                <li><a href="#wasInvalidatedBy">wasInvalidatedBy</a> (→ prov#Activity)</li>
+                
+                <li><a href="#wasQuotedFrom">wasQuotedFrom</a> (→ prov#Entity)</li>
+                
+                <li><a href="#wasRevisionOf">wasRevisionOf</a> (→ prov#Entity)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="EntityInfluence">
+            <h3><a href="#EntityInfluence">EntityInfluence</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#EntityInfluence</span></p>
+            
+            <p><strong>Description:</strong> EntityInfluence provides additional descriptions of an Entity's binary influence upon any other kind of resource. Instances of EntityInfluence use the prov:entity property to cite the influencing Entity.</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Influence">http://www.w3.org/ns/prov#Influence</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#entity">entity</a> (→ prov#Entity)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="Generation">
+            <h3><a href="#Generation">Generation</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Generation</span></p>
+            
+            <p><strong>Description:</strong> An instance of prov:Generation provides additional descriptions about the binary prov:wasGeneratedBy relation from a generated prov:Entity to the prov:Activity that generated it. For example, :cake prov:wasGeneratedBy :baking; prov:qualifiedGeneration [ a prov:Generation; prov:activity :baking; :foo :bar ].</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#ActivityInfluence">http://www.w3.org/ns/prov#ActivityInfluence</a></li>
+                
+                <li><a href="http://www.w3.org/ns/prov#InstantaneousEvent">http://www.w3.org/ns/prov#InstantaneousEvent</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Influence">
+            <h3><a href="#Influence">Influence</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Influence</span></p>
+            
+            <p><strong>Description:</strong> An instance of prov:Influence provides additional descriptions about the binary prov:wasInfluencedBy relation from some influenced Activity, Entity, or Agent to the influencing Activity, Entity, or Agent. For example, :stomach_ache prov:wasInfluencedBy :spoon; prov:qualifiedInfluence [ a prov:Influence; prov:entity :spoon; :foo :bar ] . Because prov:Influence is a broad relation, the more specific relations (Communication, Delegation, End, etc.) should be used when applicable.</p>
+            
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#hadActivity">hadActivity</a> (→ prov#Activity)</li>
+                
+                <li><a href="#hadRole">hadRole</a> (→ prov#Role)</li>
+                
+                <li><a href="#influencer">influencer</a> (→ owl#Thing)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="Insertion">
+            <h3><a href="#Insertion">Insertion</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Insertion</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Derivation">http://www.w3.org/ns/prov#Derivation</a></li>
+                
+                <li><a href="n46118ee8ac5f40cd926d553a5f24ccbdb71">n46118ee8ac5f40cd926d553a5f24ccbdb71</a></li>
+                
+                <li><a href="n46118ee8ac5f40cd926d553a5f24ccbdb72">n46118ee8ac5f40cd926d553a5f24ccbdb72</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#dictionary">dictionary</a> (→ prov#Dictionary)</li>
+                
+                <li><a href="#insertedKeyEntityPair">insertedKeyEntityPair</a> (→ prov#KeyEntityPair)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="InstantaneousEvent">
+            <h3><a href="#InstantaneousEvent">InstantaneousEvent</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#InstantaneousEvent</span></p>
+            
+            <p><strong>Description:</strong> An instantaneous event, or event for short, happens in the world and marks a change in the world, in its activities and in its entities. The term 'event' is commonly used in process algebra with a similar meaning. Events represent communications or interactions; they are assumed to be atomic and instantaneous.</p>
+            
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#atTime">atTime</a> (→ XMLSchema#dateTime)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="Invalidation">
+            <h3><a href="#Invalidation">Invalidation</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Invalidation</span></p>
+            
+            <p><strong>Description:</strong> An instance of prov:Invalidation provides additional descriptions about the binary prov:wasInvalidatedBy relation from an invalidated prov:Entity to the prov:Activity that invalidated it. For example, :uncracked_egg prov:wasInvalidatedBy :baking; prov:qualifiedInvalidation [ a prov:Invalidation; prov:activity :baking; :foo :bar ].</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#ActivityInfluence">http://www.w3.org/ns/prov#ActivityInfluence</a></li>
+                
+                <li><a href="http://www.w3.org/ns/prov#InstantaneousEvent">http://www.w3.org/ns/prov#InstantaneousEvent</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="KeyEntityPair">
+            <h3><a href="#KeyEntityPair">Key-Entity Pair</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#KeyEntityPair</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="n46118ee8ac5f40cd926d553a5f24ccbdb69">n46118ee8ac5f40cd926d553a5f24ccbdb69</a></li>
+                
+                <li><a href="n46118ee8ac5f40cd926d553a5f24ccbdb70">n46118ee8ac5f40cd926d553a5f24ccbdb70</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#pairEntity">pairEntity</a> (→ prov#Entity)</li>
+                
+                <li><a href="#pairKey">pairKey</a> (→ rdf-schema#Literal)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="Location">
+            <h3><a href="#Location">Location</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Location</span></p>
+            
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Modify">
+            <h3><a href="#Modify">Modify</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Modify</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Organization">
+            <h3><a href="#Organization">Organization</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Organization</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Agent">http://www.w3.org/ns/prov#Agent</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Person">
+            <h3><a href="#Person">Person</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Person</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Agent">http://www.w3.org/ns/prov#Agent</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Plan">
+            <h3><a href="#Plan">Plan</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Plan</span></p>
+            
+            <p><strong>Description:</strong> There exist no prescriptive requirement on the nature of plans, their representation, the actions or steps they consist of, or their intended goals. Since plans may evolve over time, it may become necessary to track their provenance, so plans themselves are entities. Representing the plan explicitly in the provenance can be useful for various tasks: for example, to validate the execution as represented in the provenance record, to manage expectation failures, or to provide explanations.</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="PrimarySource">
+            <h3><a href="#PrimarySource">PrimarySource</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#PrimarySource</span></p>
+            
+            <p><strong>Description:</strong> An instance of prov:PrimarySource provides additional descriptions about the binary prov:hadPrimarySource relation from some secondary prov:Entity to an earlier, primary prov:Entity. For example, :blog prov:hadPrimarySource :newsArticle; prov:qualifiedPrimarySource [ a prov:PrimarySource; prov:entity :newsArticle; :foo :bar ] .</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Derivation">http://www.w3.org/ns/prov#Derivation</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Publish">
+            <h3><a href="#Publish">Publish</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Publish</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Publisher">
+            <h3><a href="#Publisher">Publisher</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Publisher</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Role">http://www.w3.org/ns/prov#Role</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Quotation">
+            <h3><a href="#Quotation">Quotation</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Quotation</span></p>
+            
+            <p><strong>Description:</strong> An instance of prov:Quotation provides additional descriptions about the binary prov:wasQuotedFrom relation from some taken prov:Entity from an earlier, larger prov:Entity. For example, :here_is_looking_at_you_kid prov:wasQuotedFrom :casablanca_script; prov:qualifiedQuotation [ a prov:Quotation; prov:entity :casablanca_script; :foo :bar ].</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Derivation">http://www.w3.org/ns/prov#Derivation</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Removal">
+            <h3><a href="#Removal">Removal</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Removal</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Derivation">http://www.w3.org/ns/prov#Derivation</a></li>
+                
+                <li><a href="n46118ee8ac5f40cd926d553a5f24ccbdb73">n46118ee8ac5f40cd926d553a5f24ccbdb73</a></li>
+                
+                <li><a href="n46118ee8ac5f40cd926d553a5f24ccbdb74">n46118ee8ac5f40cd926d553a5f24ccbdb74</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Properties:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="#dictionary">dictionary</a> (→ prov#Dictionary)</li>
+                
+                <li><a href="#removedKey">removedKey</a> (→ rdf-schema#Literal)</li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="Replace">
+            <h3><a href="#Replace">Replace</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Replace</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Revision">
+            <h3><a href="#Revision">Revision</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Revision</span></p>
+            
+            <p><strong>Description:</strong> An instance of prov:Revision provides additional descriptions about the binary prov:wasRevisionOf relation from some newer prov:Entity to an earlier prov:Entity. For example, :draft_2 prov:wasRevisionOf :draft_1; prov:qualifiedRevision [ a prov:Revision; prov:entity :draft_1; :foo :bar ].</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Derivation">http://www.w3.org/ns/prov#Derivation</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="RightsAssignment">
+            <h3><a href="#RightsAssignment">RightsAssignment</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#RightsAssignment</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="RightsHolder">
+            <h3><a href="#RightsHolder">RightsHolder</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#RightsHolder</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Role">http://www.w3.org/ns/prov#Role</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Role">
+            <h3><a href="#Role">Role</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Role</span></p>
+            
+            
+            
+            
+        </div>
+        
+        <div class="term" id="ServiceDescription">
+            <h3><a href="#ServiceDescription">ServiceDescription</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#ServiceDescription</span></p>
+            
+            <p><strong>Description:</strong> Type for a generic provenance query service. Mainly for use in RDF provenance query service descriptions, to facilitate discovery in linked data environments.</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#SoftwareAgent">http://www.w3.org/ns/prov#SoftwareAgent</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="SoftwareAgent">
+            <h3><a href="#SoftwareAgent">SoftwareAgent</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#SoftwareAgent</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/2002/07/owl#Thing">http://www.w3.org/2002/07/owl#Thing</a></li>
+                
+                <li><a href="http://www.w3.org/ns/prov#Agent">http://www.w3.org/ns/prov#Agent</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Start">
+            <h3><a href="#Start">Start</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Start</span></p>
+            
+            <p><strong>Description:</strong> An instance of prov:Start provides additional descriptions about the binary prov:wasStartedBy relation from some started prov:Activity to an prov:Entity that started it. For example, :foot_race prov:wasStartedBy :bang; prov:qualifiedStart [ a prov:Start; prov:entity :bang; :foo :bar; prov:atTime '2012-03-09T08:05:08-05:00'^^xsd:dateTime ] .</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#EntityInfluence">http://www.w3.org/ns/prov#EntityInfluence</a></li>
+                
+                <li><a href="http://www.w3.org/ns/prov#InstantaneousEvent">http://www.w3.org/ns/prov#InstantaneousEvent</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Submit">
+            <h3><a href="#Submit">Submit</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Submit</span></p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="Usage">
+            <h3><a href="#Usage">Usage</a> <span class="term-type">Class</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#Usage</span></p>
+            
+            <p><strong>Description:</strong> An instance of prov:Usage provides additional descriptions about the binary prov:used relation from some prov:Activity to an prov:Entity that it used. For example, :keynote prov:used :podium; prov:qualifiedUsage [ a prov:Usage; prov:entity :podium; :foo :bar ].</p>
+            
+            
+            <p><strong>Subclass of:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#EntityInfluence">http://www.w3.org/ns/prov#EntityInfluence</a></li>
+                
+                <li><a href="http://www.w3.org/ns/prov#InstantaneousEvent">http://www.w3.org/ns/prov#InstantaneousEvent</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+    </div>
+    
+
+    
+    <div class="section">
+        <h2>Properties</h2>
+        
+        <div class="term" id="actedOnBehalfOf">
+            <h3><a href="#actedOnBehalfOf">actedOnBehalfOf</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#actedOnBehalfOf</span></p>
+            
+            <p><strong>Description:</strong> An object property to express the accountability of an agent towards another agent. The subordinate agent acted on behalf of the responsible agent in an actual activity. </p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Agent">http://www.w3.org/ns/prov#Agent</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Agent">http://www.w3.org/ns/prov#Agent</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="activity">
+            <h3><a href="#activity">activity</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#activity</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#ActivityInfluence">http://www.w3.org/ns/prov#ActivityInfluence</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="agent">
+            <h3><a href="#agent">agent</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#agent</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#AgentInfluence">http://www.w3.org/ns/prov#AgentInfluence</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Agent">http://www.w3.org/ns/prov#Agent</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="alternateOf">
+            <h3><a href="#alternateOf">alternateOf</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#alternateOf</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="asInBundle">
+            <h3><a href="#asInBundle">asInBundle</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#asInBundle</span></p>
+            
+            <p><strong>Description:</strong> prov:asInBundle is used to specify which bundle the general entity of a prov:mentionOf property is described.
+
+When :x prov:mentionOf :y and :y is described in Bundle :b, the triple :x prov:asInBundle :b is also asserted to cite the Bundle in which :y was described.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Bundle">http://www.w3.org/ns/prov#Bundle</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="atLocation">
+            <h3><a href="#atLocation">atLocation</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#atLocation</span></p>
+            
+            <p><strong>Description:</strong> The Location of any resource.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="n46118ee8ac5f40cd926d553a5f24ccbdb4">n46118ee8ac5f40cd926d553a5f24ccbdb4</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Location">http://www.w3.org/ns/prov#Location</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="atTime">
+            <h3><a href="#atTime">atTime</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#atTime</span></p>
+            
+            <p><strong>Description:</strong> The time at which an InstantaneousEvent occurred, in the form of xsd:dateTime.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#InstantaneousEvent">http://www.w3.org/ns/prov#InstantaneousEvent</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/2001/XMLSchema#dateTime">http://www.w3.org/2001/XMLSchema#dateTime</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="derivedByInsertionFrom">
+            <h3><a href="#derivedByInsertionFrom">derivedByInsertionFrom</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#derivedByInsertionFrom</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Dictionary">http://www.w3.org/ns/prov#Dictionary</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Dictionary">http://www.w3.org/ns/prov#Dictionary</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="derivedByRemovalFrom">
+            <h3><a href="#derivedByRemovalFrom">derivedByRemovalFrom</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#derivedByRemovalFrom</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Dictionary">http://www.w3.org/ns/prov#Dictionary</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Dictionary">http://www.w3.org/ns/prov#Dictionary</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="describesService">
+            <h3><a href="#describesService">describesService</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#describesService</span></p>
+            
+            <p><strong>Description:</strong> relates a generic provenance query service resource (type prov:ServiceDescription) to a specific query service description (e.g. a prov:DirectQueryService or a sd:Service).</p>
+            
+            
+            
+            
+        </div>
+        
+        <div class="term" id="dictionary">
+            <h3><a href="#dictionary">dictionary</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#dictionary</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Insertion">http://www.w3.org/ns/prov#Insertion</a></li>
+                
+                <li><a href="http://www.w3.org/ns/prov#Removal">http://www.w3.org/ns/prov#Removal</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Dictionary">http://www.w3.org/ns/prov#Dictionary</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="endedAtTime">
+            <h3><a href="#endedAtTime">endedAtTime</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#endedAtTime</span></p>
+            
+            <p><strong>Description:</strong> The time at which an activity ended. See also prov:startedAtTime.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/2001/XMLSchema#dateTime">http://www.w3.org/2001/XMLSchema#dateTime</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="entity">
+            <h3><a href="#entity">entity</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#entity</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#EntityInfluence">http://www.w3.org/ns/prov#EntityInfluence</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="generated">
+            <h3><a href="#generated">generated</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#generated</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="generatedAtTime">
+            <h3><a href="#generatedAtTime">generatedAtTime</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#generatedAtTime</span></p>
+            
+            <p><strong>Description:</strong> The time at which an entity was completely created and is available for use.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/2001/XMLSchema#dateTime">http://www.w3.org/2001/XMLSchema#dateTime</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="hadActivity">
+            <h3><a href="#hadActivity">hadActivity</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#hadActivity</span></p>
+            
+            <p><strong>Description:</strong> The _optional_ Activity of an Influence, which used, generated, invalidated, or was the responsibility of some Entity. This property is _not_ used by ActivityInfluence (use prov:activity instead).</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Influence">http://www.w3.org/ns/prov#Influence</a></li>
+                
+                <li><a href="n46118ee8ac5f40cd926d553a5f24ccbdb9">n46118ee8ac5f40cd926d553a5f24ccbdb9</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="hadDictionaryMember">
+            <h3><a href="#hadDictionaryMember">hadDictionaryMember</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#hadDictionaryMember</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Dictionary">http://www.w3.org/ns/prov#Dictionary</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#KeyEntityPair">http://www.w3.org/ns/prov#KeyEntityPair</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="hadGeneration">
+            <h3><a href="#hadGeneration">hadGeneration</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#hadGeneration</span></p>
+            
+            <p><strong>Description:</strong> The _optional_ Generation involved in an Entity's Derivation.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Derivation">http://www.w3.org/ns/prov#Derivation</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Generation">http://www.w3.org/ns/prov#Generation</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="hadMember">
+            <h3><a href="#hadMember">hadMember</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#hadMember</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Collection">http://www.w3.org/ns/prov#Collection</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="hadPlan">
+            <h3><a href="#hadPlan">hadPlan</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#hadPlan</span></p>
+            
+            <p><strong>Description:</strong> The _optional_ Plan adopted by an Agent in Association with some Activity. Plan specifications are out of the scope of this specification.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Association">http://www.w3.org/ns/prov#Association</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Plan">http://www.w3.org/ns/prov#Plan</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="hadPrimarySource">
+            <h3><a href="#hadPrimarySource">hadPrimarySource</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#hadPrimarySource</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="hadRole">
+            <h3><a href="#hadRole">hadRole</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#hadRole</span></p>
+            
+            <p><strong>Description:</strong> The _optional_ Role that an Entity assumed in the context of an Activity. For example, :baking prov:used :spoon; prov:qualified [ a prov:Usage; prov:entity :spoon; prov:hadRole roles:mixing_implement ].</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Influence">http://www.w3.org/ns/prov#Influence</a></li>
+                
+                <li><a href="n46118ee8ac5f40cd926d553a5f24ccbdb16">n46118ee8ac5f40cd926d553a5f24ccbdb16</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Role">http://www.w3.org/ns/prov#Role</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="hadUsage">
+            <h3><a href="#hadUsage">hadUsage</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#hadUsage</span></p>
+            
+            <p><strong>Description:</strong> The _optional_ Usage involved in an Entity's Derivation.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Derivation">http://www.w3.org/ns/prov#Derivation</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Usage">http://www.w3.org/ns/prov#Usage</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="has_anchor">
+            <h3><a href="#has_anchor">has_anchor</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#has_anchor</span></p>
+            
+            <p><strong>Description:</strong> Indicates anchor URI for a potentially dynamic resource instance.</p>
+            
+            
+            
+            
+        </div>
+        
+        <div class="term" id="has_provenance">
+            <h3><a href="#has_provenance">has_provenance</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#has_provenance</span></p>
+            
+            <p><strong>Description:</strong> Indicates a provenance-URI for a resource; the resource identified by this property presents a provenance record about its subject or anchor resource.</p>
+            
+            
+            
+            
+        </div>
+        
+        <div class="term" id="has_query_service">
+            <h3><a href="#has_query_service">hasProvenanceService</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#has_query_service</span></p>
+            
+            <p><strong>Description:</strong> Indicates a provenance query service that can access provenance related to its subject or anchor resource.</p>
+            
+            
+            
+            
+        </div>
+        
+        <div class="term" id="influenced">
+            <h3><a href="#influenced">influenced</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#influenced</span></p>
+            
+            
+            
+            
+        </div>
+        
+        <div class="term" id="influencer">
+            <h3><a href="#influencer">influencer</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#influencer</span></p>
+            
+            <p><strong>Description:</strong> Subproperties of prov:influencer are used to cite the object of an unqualified PROV-O triple whose predicate is a subproperty of prov:wasInfluencedBy (e.g. prov:used, prov:wasGeneratedBy). prov:influencer is used much like rdf:object is used.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Influence">http://www.w3.org/ns/prov#Influence</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/2002/07/owl#Thing">http://www.w3.org/2002/07/owl#Thing</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="insertedKeyEntityPair">
+            <h3><a href="#insertedKeyEntityPair">insertedKeyEntityPair</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#insertedKeyEntityPair</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Insertion">http://www.w3.org/ns/prov#Insertion</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#KeyEntityPair">http://www.w3.org/ns/prov#KeyEntityPair</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="invalidated">
+            <h3><a href="#invalidated">invalidated</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#invalidated</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="invalidatedAtTime">
+            <h3><a href="#invalidatedAtTime">invalidatedAtTime</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#invalidatedAtTime</span></p>
+            
+            <p><strong>Description:</strong> The time at which an entity was invalidated (i.e., no longer usable).</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/2001/XMLSchema#dateTime">http://www.w3.org/2001/XMLSchema#dateTime</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="mentionOf">
+            <h3><a href="#mentionOf">mentionOf</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#mentionOf</span></p>
+            
+            <p><strong>Description:</strong> prov:mentionOf is used to specialize an entity as described in another bundle. It is to be used in conjuction with prov:asInBundle.
+
+prov:asInBundle is used to cite the Bundle in which the generalization was mentioned.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="pairEntity">
+            <h3><a href="#pairEntity">pairKey</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#pairEntity</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#KeyEntityPair">http://www.w3.org/ns/prov#KeyEntityPair</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="pairKey">
+            <h3><a href="#pairKey">pairKey</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#pairKey</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#KeyEntityPair">http://www.w3.org/ns/prov#KeyEntityPair</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/2000/01/rdf-schema#Literal">http://www.w3.org/2000/01/rdf-schema#Literal</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="pingback">
+            <h3><a href="#pingback">provenance pingback</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#pingback</span></p>
+            
+            <p><strong>Description:</strong> Relates a resource to a provenance pingback service that may receive additional provenance links about the resource.</p>
+            
+            
+            
+            
+        </div>
+        
+        <div class="term" id="provenanceUriTemplate">
+            <h3><a href="#provenanceUriTemplate">provenanceUriTemplate</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#provenanceUriTemplate</span></p>
+            
+            <p><strong>Description:</strong> Relates a provenance service to a URI template string for constructing provenance-URIs.</p>
+            
+            
+            
+            
+        </div>
+        
+        <div class="term" id="qualifiedAssociation">
+            <h3><a href="#qualifiedAssociation">qualifiedAssociation</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#qualifiedAssociation</span></p>
+            
+            <p><strong>Description:</strong> If this Activity prov:wasAssociatedWith Agent :ag, then it can qualify the Association using prov:qualifiedAssociation [ a prov:Association;  prov:agent :ag; :foo :bar ].</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Association">http://www.w3.org/ns/prov#Association</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="qualifiedAttribution">
+            <h3><a href="#qualifiedAttribution">qualifiedAttribution</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#qualifiedAttribution</span></p>
+            
+            <p><strong>Description:</strong> If this Entity prov:wasAttributedTo Agent :ag, then it can qualify how it was influenced using prov:qualifiedAttribution [ a prov:Attribution;  prov:agent :ag; :foo :bar ].</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Attribution">http://www.w3.org/ns/prov#Attribution</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="qualifiedCommunication">
+            <h3><a href="#qualifiedCommunication">qualifiedCommunication</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#qualifiedCommunication</span></p>
+            
+            <p><strong>Description:</strong> If this Activity prov:wasInformedBy Activity :a, then it can qualify how it was influenced using prov:qualifiedCommunication [ a prov:Communication;  prov:activity :a; :foo :bar ].</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Communication">http://www.w3.org/ns/prov#Communication</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="qualifiedDelegation">
+            <h3><a href="#qualifiedDelegation">qualifiedDelegation</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#qualifiedDelegation</span></p>
+            
+            <p><strong>Description:</strong> If this Agent prov:actedOnBehalfOf Agent :ag, then it can qualify how with prov:qualifiedResponsibility [ a prov:Responsibility;  prov:agent :ag; :foo :bar ].</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Agent">http://www.w3.org/ns/prov#Agent</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Delegation">http://www.w3.org/ns/prov#Delegation</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="qualifiedDerivation">
+            <h3><a href="#qualifiedDerivation">qualifiedDerivation</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#qualifiedDerivation</span></p>
+            
+            <p><strong>Description:</strong> If this Entity prov:wasDerivedFrom Entity :e, then it can qualify how it was derived using prov:qualifiedDerivation [ a prov:Derivation;  prov:entity :e; :foo :bar ].</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Derivation">http://www.w3.org/ns/prov#Derivation</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="qualifiedEnd">
+            <h3><a href="#qualifiedEnd">qualifiedEnd</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#qualifiedEnd</span></p>
+            
+            <p><strong>Description:</strong> If this Activity prov:wasEndedBy Entity :e1, then it can qualify how it was ended using prov:qualifiedEnd [ a prov:End;  prov:entity :e1; :foo :bar ].</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#End">http://www.w3.org/ns/prov#End</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="qualifiedGeneration">
+            <h3><a href="#qualifiedGeneration">qualifiedGeneration</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#qualifiedGeneration</span></p>
+            
+            <p><strong>Description:</strong> If this Activity prov:generated Entity :e, then it can qualify how it performed the Generation using prov:qualifiedGeneration [ a prov:Generation;  prov:entity :e; :foo :bar ].</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Generation">http://www.w3.org/ns/prov#Generation</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="qualifiedInfluence">
+            <h3><a href="#qualifiedInfluence">qualifiedInfluence</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#qualifiedInfluence</span></p>
+            
+            <p><strong>Description:</strong> Because prov:qualifiedInfluence is a broad relation, the more specific relations (qualifiedCommunication, qualifiedDelegation, qualifiedEnd, etc.) should be used when applicable.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="n46118ee8ac5f40cd926d553a5f24ccbdb19">n46118ee8ac5f40cd926d553a5f24ccbdb19</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Influence">http://www.w3.org/ns/prov#Influence</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="qualifiedInsertion">
+            <h3><a href="#qualifiedInsertion">qualifiedInsertion</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#qualifiedInsertion</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Dictionary">http://www.w3.org/ns/prov#Dictionary</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Insertion">http://www.w3.org/ns/prov#Insertion</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="qualifiedInvalidation">
+            <h3><a href="#qualifiedInvalidation">qualifiedInvalidation</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#qualifiedInvalidation</span></p>
+            
+            <p><strong>Description:</strong> If this Entity prov:wasInvalidatedBy Activity :a, then it can qualify how it was invalidated using prov:qualifiedInvalidation [ a prov:Invalidation;  prov:activity :a; :foo :bar ].</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Invalidation">http://www.w3.org/ns/prov#Invalidation</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="qualifiedPrimarySource">
+            <h3><a href="#qualifiedPrimarySource">qualifiedPrimarySource</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#qualifiedPrimarySource</span></p>
+            
+            <p><strong>Description:</strong> If this Entity prov:hadPrimarySource Entity :e, then it can qualify how using prov:qualifiedPrimarySource [ a prov:PrimarySource; prov:entity :e; :foo :bar ].</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#PrimarySource">http://www.w3.org/ns/prov#PrimarySource</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="qualifiedQuotation">
+            <h3><a href="#qualifiedQuotation">qualifiedQuotation</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#qualifiedQuotation</span></p>
+            
+            <p><strong>Description:</strong> If this Entity prov:wasQuotedFrom Entity :e, then it can qualify how using prov:qualifiedQuotation [ a prov:Quotation;  prov:entity :e; :foo :bar ].</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Quotation">http://www.w3.org/ns/prov#Quotation</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="qualifiedRemoval">
+            <h3><a href="#qualifiedRemoval">qualifiedRemoval</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#qualifiedRemoval</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Dictionary">http://www.w3.org/ns/prov#Dictionary</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Removal">http://www.w3.org/ns/prov#Removal</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="qualifiedRevision">
+            <h3><a href="#qualifiedRevision">qualifiedRevision</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#qualifiedRevision</span></p>
+            
+            <p><strong>Description:</strong> If this Entity prov:wasRevisionOf Entity :e, then it can qualify how it was revised using prov:qualifiedRevision [ a prov:Revision;  prov:entity :e; :foo :bar ].</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Revision">http://www.w3.org/ns/prov#Revision</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="qualifiedStart">
+            <h3><a href="#qualifiedStart">qualifiedStart</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#qualifiedStart</span></p>
+            
+            <p><strong>Description:</strong> If this Activity prov:wasStartedBy Entity :e1, then it can qualify how it was started using prov:qualifiedStart [ a prov:Start;  prov:entity :e1; :foo :bar ].</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Start">http://www.w3.org/ns/prov#Start</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="qualifiedUsage">
+            <h3><a href="#qualifiedUsage">qualifiedUsage</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#qualifiedUsage</span></p>
+            
+            <p><strong>Description:</strong> If this Activity prov:used Entity :e, then it can qualify how it used it using prov:qualifiedUsage [ a prov:Usage; prov:entity :e; :foo :bar ].</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Usage">http://www.w3.org/ns/prov#Usage</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="removedKey">
+            <h3><a href="#removedKey">removedKey</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#removedKey</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Removal">http://www.w3.org/ns/prov#Removal</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/2000/01/rdf-schema#Literal">http://www.w3.org/2000/01/rdf-schema#Literal</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="specializationOf">
+            <h3><a href="#specializationOf">specializationOf</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#specializationOf</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="startedAtTime">
+            <h3><a href="#startedAtTime">startedAtTime</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#startedAtTime</span></p>
+            
+            <p><strong>Description:</strong> The time at which an activity started. See also prov:endedAtTime.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/2001/XMLSchema#dateTime">http://www.w3.org/2001/XMLSchema#dateTime</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="used">
+            <h3><a href="#used">used</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#used</span></p>
+            
+            <p><strong>Description:</strong> A prov:Entity that was used by this prov:Activity. For example, :baking prov:used :spoon, :egg, :oven .</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="value">
+            <h3><a href="#value">value</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#value</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            
+        </div>
+        
+        <div class="term" id="wasAssociatedWith">
+            <h3><a href="#wasAssociatedWith">wasAssociatedWith</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#wasAssociatedWith</span></p>
+            
+            <p><strong>Description:</strong> An prov:Agent that had some (unspecified) responsibility for the occurrence of this prov:Activity.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Agent">http://www.w3.org/ns/prov#Agent</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="wasAttributedTo">
+            <h3><a href="#wasAttributedTo">wasAttributedTo</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#wasAttributedTo</span></p>
+            
+            <p><strong>Description:</strong> Attribution is the ascribing of an entity to an agent.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Agent">http://www.w3.org/ns/prov#Agent</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="wasDerivedFrom">
+            <h3><a href="#wasDerivedFrom">wasDerivedFrom</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#wasDerivedFrom</span></p>
+            
+            <p><strong>Description:</strong> The more specific subproperties of prov:wasDerivedFrom (i.e., prov:wasQuotedFrom, prov:wasRevisionOf, prov:hadPrimarySource) should be used when applicable.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="wasEndedBy">
+            <h3><a href="#wasEndedBy">wasEndedBy</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#wasEndedBy</span></p>
+            
+            <p><strong>Description:</strong> End is when an activity is deemed to have ended. An end may refer to an entity, known as trigger, that terminated the activity.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="wasGeneratedBy">
+            <h3><a href="#wasGeneratedBy">wasGeneratedBy</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#wasGeneratedBy</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="wasInfluencedBy">
+            <h3><a href="#wasInfluencedBy">wasInfluencedBy</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#wasInfluencedBy</span></p>
+            
+            <p><strong>Description:</strong> Because prov:wasInfluencedBy is a broad relation, its more specific subproperties (e.g. prov:wasInformedBy, prov:actedOnBehalfOf, prov:wasEndedBy, etc.) should be used when applicable.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="n46118ee8ac5f40cd926d553a5f24ccbdb35">n46118ee8ac5f40cd926d553a5f24ccbdb35</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="n46118ee8ac5f40cd926d553a5f24ccbdb39">n46118ee8ac5f40cd926d553a5f24ccbdb39</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="wasInformedBy">
+            <h3><a href="#wasInformedBy">wasInformedBy</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#wasInformedBy</span></p>
+            
+            <p><strong>Description:</strong> An activity a2 is dependent on or informed by another activity a1, by way of some unspecified entity that is generated by a1 and used by a2.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="wasInvalidatedBy">
+            <h3><a href="#wasInvalidatedBy">wasInvalidatedBy</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#wasInvalidatedBy</span></p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="wasQuotedFrom">
+            <h3><a href="#wasQuotedFrom">wasQuotedFrom</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#wasQuotedFrom</span></p>
+            
+            <p><strong>Description:</strong> An entity is derived from an original entity by copying, or 'quoting', some or all of it.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="wasRevisionOf">
+            <h3><a href="#wasRevisionOf">wasRevisionOf</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#wasRevisionOf</span></p>
+            
+            <p><strong>Description:</strong> A revision is a derivation that revises an entity into a revised version.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        <div class="term" id="wasStartedBy">
+            <h3><a href="#wasStartedBy">wasStartedBy</a> <span class="term-type">Property</span></h3>
+            <p><strong>URI:</strong> <span class="term-uri">http://www.w3.org/ns/prov#wasStartedBy</span></p>
+            
+            <p><strong>Description:</strong> Start is when an activity is deemed to have started. A start may refer to an entity, known as trigger, that initiated the activity.</p>
+            
+            
+            <p><strong>Domain:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Activity">http://www.w3.org/ns/prov#Activity</a></li>
+                
+            </ul>
+            
+            
+            <p><strong>Range:</strong></p>
+            <ul class="property-list">
+                
+                <li><a href="http://www.w3.org/ns/prov#Entity">http://www.w3.org/ns/prov#Entity</a></li>
+                
+            </ul>
+            
+            
+        </div>
+        
+        </div>
+        
+        
+        <footer style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #eee; color: #666; text-align: center; font-size: 0.9em;">
+            <p>🐢 Generated with <a href="https://github.com/kepae/turtle-matter" style="color: #0066cc;">turtle-matter</a> v0.1.0</p>
+        </footer>
+        </div>
+    </main>
+    
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('show');
+        }
+        
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+        }
+        
+        // Close sidebar when clicking on a link (mobile)
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', closeSidebar);
+            });
+        });
+    </script>
+</body>
+</html>

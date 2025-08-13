@@ -10,6 +10,7 @@ from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
 
 from .vocabulary import VocabularyData
+from . import __version__
 
 # Template configuration
 TEMPLATE_DIR = Path(__file__).parent / "templates"
@@ -25,7 +26,7 @@ class HTMLFormatter:
         env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
         template = env.get_template("vocabulary_template.html")
         
-        return template.render(vocab_data=vocab_data)
+        return template.render(vocab_data=vocab_data, version=__version__)
 
 
 class MarkdownFormatter:
@@ -39,6 +40,7 @@ class MarkdownFormatter:
         frontmatter += f"title: {vocab_data.title}\n"
         if vocab_data.namespace:
             frontmatter += f"namespace: {vocab_data.namespace}\n"
+        frontmatter += f"generator: turtle-matter v{__version__}\n"
         frontmatter += "jsonld_context: |\n"
         
         # Indent JSON-LD context for YAML
@@ -110,6 +112,10 @@ class MarkdownFormatter:
                     content += prop.documentation['content'] + "\n\n"
                 
                 content += "---\n\n"
+        
+        # Add footer
+        content += "---\n\n"
+        content += f"🐢 *Generated with [turtle-matter](https://github.com/kepae/turtle-matter) v{__version__}*\n"
         
         return frontmatter + content
 

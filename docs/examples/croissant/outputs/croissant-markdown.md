@@ -1,6 +1,7 @@
 ---
 title: Croissant
 namespace: http://mlcommons.org/croissant/
+generator: turtle-matter v0.1.0
 jsonld_context: |
   {
     "@context": {
@@ -1383,4 +1384,7 @@ Transformations are typically used within `DataSource` definitions, applied afte
 
 ---
 
+---
+
+🐢 *Generated with [turtle-matter](https://github.com/kepae/turtle-matter) v0.1.0*
 
