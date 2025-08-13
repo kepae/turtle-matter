@@ -65,7 +65,7 @@ def main(rdf_file: Path, emit: str, rdf_format: Optional[str], namespace: Option
         vocab_data.title = title
     else:
         # Simple filename-based inference
-        stem = rdf_file.stem  # "croissant" from "croissant.ttl"
+        stem = rdf_file.stem  # "filename" from "filename.ttl"
         vocab_data.title = stem.replace('-', ' ').replace('_', ' ').title()
     
     # Enrich with companion documentation if provided
