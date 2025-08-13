@@ -18,25 +18,51 @@
             border-bottom: 3px solid #3498db;
             padding-bottom: 10px;
         }
-        .example-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
         .example-card {
             border: 1px solid #ddd;
             border-radius: 8px;
-            padding: 20px;
-            background: #f9f9f9;
+            overflow: hidden;
+            background: #fff;
+            margin: 30px 0;
         }
-        .example-card h3 {
-            margin-top: 0;
+        .example-header {
+            background: #f8f9fa;
+            padding: 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .example-header h3 {
+            margin: 0;
             color: #2980b9;
+        }
+        .example-header p {
+            margin: 8px 0 0 0;
+            color: #666;
+        }
+        .example-content {
+            display: flex;
+        }
+        .inputs-section,
+        .outputs-section {
+            flex: 1;
+            padding: 20px;
+        }
+        .inputs-section {
+            background: #f8fffe;
+            border-right: 1px solid #e9ecef;
+        }
+        .outputs-section {
+            background: #fffef8;
+        }
+        .section-title {
+            font-weight: bold;
+            color: #495057;
+            margin: 0 0 15px 0;
+            font-size: 1.1em;
         }
         .example-links {
             list-style: none;
             padding: 0;
+            margin: 0;
         }
         .example-links li {
             margin: 10px 0;
@@ -70,14 +96,27 @@
         <p>turtle-matter generates vocabulary documentation from RDF files. Below are example outputs showing different formats generated from the same source vocabulary.</p>
     </div>
 
-    <div class="example-grid">
-        <div class="example-card">
+    <div class="example-card">
+        <div class="example-header">
             <h3>Croissant Vocabulary</h3>
-            <ul class="example-links">
-                <li><a href="examples/croissant/outputs/croissant.html">Interactive HTML Documentation</a>
-                <li><a href="examples/croissant/outputs/croissant.md">Markdown Documentation</a>
-                <li><a href="examples/croissant/outputs/croissant-context.json">JSON-LD Context</a>
-            </ul>
+            <p>MLCommons Croissant vocabulary for ML dataset metadata</p>
+        </div>
+        <div class="example-content">
+            <div class="inputs-section">
+                <h4 class="section-title">Inputs</h4>
+                <ul class="example-links">
+                    <li><a href="examples/croissant/inputs/croissant.ttl">croissant.ttl</a> <span class="format-tag">Turtle</span></li>
+                    <li><a href="examples/croissant/inputs/docs/">Documentation files</a> <span class="format-tag">Markdown</span></li>
+                </ul>
+            </div>
+            <div class="outputs-section">
+                <h4 class="section-title">Outputs</h4>
+                <ul class="example-links">
+                    <li><a href="examples/croissant/outputs/croissant.html">Interactive HTML Documentation</a> <span class="format-tag">HTML</span></li>
+                    <li><a href="examples/croissant/outputs/croissant.md">Markdown Documentation</a> <span class="format-tag">Markdown</span></li>
+                    <li><a href="examples/croissant/outputs/croissant-context.json">JSON-LD Context</a> <span class="format-tag">JSON-LD</span></li>
+                </ul>
+            </div>
         </div>
     </div>
 </body>
