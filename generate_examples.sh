@@ -11,7 +11,7 @@ OUTPUTS_DIR="docs/examples/croissant/outputs"
 
 mkdir -p $OUTPUTS_DIR
 uv run turtle-matter $RDF_FILE --emit html --namespace $NAMESPACE --docs-dir $DOCS_DIR --title "Croissant" > $OUTPUTS_DIR/croissant.html
-uv run turtle-matter $RDF_FILE --emit markdown --namespace $NAMESPACE --docs-dir $DOCS_DIR --title "Croissant" > $OUTPUTS_DIR/croissant.md
+uv run turtle-matter $RDF_FILE --emit markdown --namespace $NAMESPACE --docs-dir $DOCS_DIR --title "Croissant" > $OUTPUTS_DIR/croissant-markdown.md
 uv run turtle-matter $RDF_FILE --emit jsonld --namespace $NAMESPACE > $OUTPUTS_DIR/croissant-context.json
 
 # PROV example  
@@ -22,7 +22,7 @@ OUTPUTS_DIR="docs/examples/prov/outputs"
 
 mkdir -p $OUTPUTS_DIR
 uv run turtle-matter $RDF_FILE --emit html --namespace $NAMESPACE --title "PROV Ontology" > $OUTPUTS_DIR/prov.html
-uv run turtle-matter $RDF_FILE --emit markdown --namespace $NAMESPACE --title "PROV Ontology" > $OUTPUTS_DIR/prov.md
+uv run turtle-matter $RDF_FILE --emit markdown --namespace $NAMESPACE --title "PROV Ontology" > $OUTPUTS_DIR/prov-markdown.md
 uv run turtle-matter $RDF_FILE --emit jsonld --namespace $NAMESPACE > $OUTPUTS_DIR/prov-context.json
 
 echo "Done! All examples generated."
