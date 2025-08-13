@@ -147,14 +147,123 @@
 }
     </script>
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; line-height: 1.6; color: #333; }
+        * { box-sizing: border-box; }
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; line-height: 1.6; color: #333; }
+        
+        /* Layout Container */
+        .layout { display: flex; min-height: 100vh; }
+        
+        /* Sidebar */
+        .sidebar { 
+            width: 280px; 
+            background: #f8f9fa; 
+            border-right: 1px solid #e9ecef; 
+            overflow-y: auto; 
+            position: fixed; 
+            height: 100vh; 
+            top: 0; 
+            left: 0; 
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+        
+        .sidebar-header { 
+            padding: 15px 20px; 
+            border-bottom: 1px solid #e9ecef; 
+            background: #fff; 
+            position: sticky; 
+            top: 0; 
+            z-index: 10;
+        }
+        
+        .sidebar-header h2 { 
+            margin: 0; 
+            font-size: 1.0em; 
+            color: #495057; 
+        }
+        
+        .sidebar-nav { 
+            padding: 0; 
+        }
+        
+        .sidebar-section { 
+            margin-bottom: 0; 
+        }
+        
+        .sidebar-section-header { 
+            padding: 12px 20px 6px; 
+            font-weight: bold; 
+            color: #6c757d; 
+            font-size: 0.85em; 
+            text-transform: uppercase; 
+            letter-spacing: 0.5px; 
+            margin: 0;
+        }
+        
+        .sidebar-nav ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0 0 8px 0; 
+        }
+        
+        .sidebar-nav li { 
+            margin: 0; 
+        }
+        
+        .sidebar-nav a { 
+            display: block; 
+            padding: 6px 20px; 
+            color: #495057; 
+            text-decoration: none; 
+            border-left: 3px solid transparent; 
+            transition: all 0.2s ease;
+            font-size: 0.9em;
+        }
+        
+        .sidebar-nav a:hover { 
+            background: #e9ecef; 
+            border-left-color: #0066cc; 
+            color: #0066cc; 
+        }
+        
+        /* Mobile Menu Button */
+        .menu-toggle { 
+            display: none; 
+            position: fixed; 
+            top: 20px; 
+            left: 20px; 
+            z-index: 1100; 
+            background: #0066cc; 
+            color: white; 
+            border: none; 
+            padding: 10px 12px; 
+            border-radius: 5px; 
+            cursor: pointer; 
+            font-size: 16px;
+        }
+        
+        .menu-toggle:hover { 
+            background: #0056b3; 
+        }
+        
+        /* Main Content */
+        .main-content { 
+            flex: 1; 
+            margin-left: 280px; 
+            padding: 40px; 
+            max-width: none; 
+        }
+        
+        .container { 
+            max-width: 900px; 
+        }
+        
+        /* Remove the old TOC since we have sidebar */
+        .toc { 
+            display: none; 
+        }
+        
         .header { border-bottom: 2px solid #333; padding-bottom: 20px; margin-bottom: 30px; }
-        .toc { background: #f8f8f8; padding: 20px; margin-bottom: 30px; border-radius: 5px; }
-        .toc h2 { margin-top: 0; }
-        .toc ul { list-style-type: none; padding-left: 0; }
-        .toc li { margin: 5px 0; }
-        .toc a { text-decoration: none; color: #0066cc; }
-        .toc a:hover { text-decoration: underline; }
         .section { margin-bottom: 40px; }
         .term { margin-bottom: 30px; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
         .term h3 { margin-top: 0; color: #0066cc; }
@@ -176,112 +285,264 @@
         .doc-content th, .doc-content td { border: 1px solid #ddd; padding: 8px; text-align: left; }
         .doc-content th { background-color: #f2f2f2; font-weight: bold; }
         .doc-content blockquote { border-left: 4px solid #ddd; margin: 0; padding-left: 15px; color: #666; }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .sidebar { 
+                transform: translateX(-100%); 
+            }
+            
+            .sidebar.open { 
+                transform: translateX(0); 
+            }
+            
+            .main-content { 
+                margin-left: 0; 
+                padding: 20px; 
+            }
+            
+            .menu-toggle { 
+                display: block; 
+            }
+            
+            /* Overlay when sidebar is open on mobile */
+            .sidebar-overlay { 
+                display: none; 
+                position: fixed; 
+                top: 0; 
+                left: 0; 
+                right: 0; 
+                bottom: 0; 
+                background: rgba(0, 0, 0, 0.5); 
+                z-index: 999; 
+            }
+            
+            .sidebar-overlay.show { 
+                display: block; 
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>Vocabulary</h1>
-        
-        <p><strong>Namespace:</strong> http://mlcommons.org/croissant/</p>
-        
-    </div>
+    <!-- Mobile menu button -->
+    <button class="menu-toggle" onclick="toggleSidebar()" aria-label="Toggle navigation">☰</button>
+    
+    <!-- Sidebar overlay for mobile -->
+    <div class="sidebar-overlay" onclick="closeSidebar()"></div>
+    
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Navigation</h2>
+        </div>
+        <div class="sidebar-nav">
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-header">Classes (11)</h3>
+                <ul>
+                    
+                    <li><a href="#ContentExtractionEnumeration" onclick="closeSidebar()">ContentExtractionEnumeration</a></li>
+                    
+                    <li><a href="#DataSource" onclick="closeSidebar()">DataSource</a></li>
+                    
+                    <li><a href="#DataType" onclick="closeSidebar()">DataType</a></li>
+                    
+                    <li><a href="#Extract" onclick="closeSidebar()">Extract</a></li>
+                    
+                    <li><a href="#Field" onclick="closeSidebar()">Field</a></li>
+                    
+                    <li><a href="#FileObject" onclick="closeSidebar()">FileObject</a></li>
+                    
+                    <li><a href="#FilePropertyEnumeration" onclick="closeSidebar()">FilePropertyEnumeration</a></li>
+                    
+                    <li><a href="#FileSet" onclick="closeSidebar()">FileSet</a></li>
+                    
+                    <li><a href="#Format" onclick="closeSidebar()">Format</a></li>
+                    
+                    <li><a href="#RecordSet" onclick="closeSidebar()">RecordSet</a></li>
+                    
+                    <li><a href="#Transform" onclick="closeSidebar()">Transform</a></li>
+                    
+                </ul>
+            </div>
+            
+            
+            
+            <div class="sidebar-section">
+                <h3 class="sidebar-section-header">Properties (29)</h3>
+                <ul>
+                    
+                    <li><a href="#citeAs" onclick="closeSidebar()">citeAs</a></li>
+                    
+                    <li><a href="#column" onclick="closeSidebar()">column</a></li>
+                    
+                    <li><a href="#containedIn" onclick="closeSidebar()">containedIn</a></li>
+                    
+                    <li><a href="#content" onclick="closeSidebar()">content</a></li>
+                    
+                    <li><a href="#data" onclick="closeSidebar()">data</a></li>
+                    
+                    <li><a href="#dataType" onclick="closeSidebar()">dataType</a></li>
+                    
+                    <li><a href="#delimiter" onclick="closeSidebar()">delimiter</a></li>
+                    
+                    <li><a href="#equivalentProperty" onclick="closeSidebar()">equivalentProperty</a></li>
+                    
+                    <li><a href="#examples" onclick="closeSidebar()">examples</a></li>
+                    
+                    <li><a href="#excludes" onclick="closeSidebar()">excludes</a></li>
+                    
+                    <li><a href="#extract" onclick="closeSidebar()">extract</a></li>
+                    
+                    <li><a href="#field" onclick="closeSidebar()">field</a></li>
+                    
+                    <li><a href="#fileObject" onclick="closeSidebar()">fileObject</a></li>
+                    
+                    <li><a href="#fileProperty" onclick="closeSidebar()">fileProperty</a></li>
+                    
+                    <li><a href="#fileSet" onclick="closeSidebar()">fileSet</a></li>
+                    
+                    <li><a href="#format" onclick="closeSidebar()">format</a></li>
+                    
+                    <li><a href="#includes" onclick="closeSidebar()">includes</a></li>
+                    
+                    <li><a href="#isLiveDataset" onclick="closeSidebar()">isLiveDataset</a></li>
+                    
+                    <li><a href="#jsonPath" onclick="closeSidebar()">jsonPath</a></li>
+                    
+                    <li><a href="#jsonQuery" onclick="closeSidebar()">jsonQuery</a></li>
+                    
+                    <li><a href="#key" onclick="closeSidebar()">key</a></li>
+                    
+                    <li><a href="#parentField" onclick="closeSidebar()">parentField</a></li>
+                    
+                    <li><a href="#recordSet" onclick="closeSidebar()">recordSet</a></li>
+                    
+                    <li><a href="#references" onclick="closeSidebar()">references</a></li>
+                    
+                    <li><a href="#regex" onclick="closeSidebar()">regex</a></li>
+                    
+                    <li><a href="#repeated" onclick="closeSidebar()">repeated</a></li>
+                    
+                    <li><a href="#source" onclick="closeSidebar()">source</a></li>
+                    
+                    <li><a href="#subField" onclick="closeSidebar()">subField</a></li>
+                    
+                    <li><a href="#transform" onclick="closeSidebar()">transform</a></li>
+                    
+                </ul>
+            </div>
+            
+        </div>
+    </nav>
+    
+    <!-- Main content area -->
+    <main class="main-content">
+        <div class="container">
+            <div class="header">
+                <h1>Vocabulary</h1>
+                
+                <p><strong>Namespace:</strong> http://mlcommons.org/croissant/</p>
+                
+            </div>
 
-    <div class="toc">
-        <h2>Table of Contents</h2>
-        
-        <h3>Classes (11)</h3>
-        <ul>
-            
-            <li><a href="#ContentExtractionEnumeration">ContentExtractionEnumeration</a> - ContexExtractionEnumeration</li>
-            
-            <li><a href="#DataSource">DataSource</a> - DataSource</li>
-            
-            <li><a href="#DataType">DataType</a> - DataType</li>
-            
-            <li><a href="#Extract">Extract</a> - Extract</li>
-            
-            <li><a href="#Field">Field</a> - Field</li>
-            
-            <li><a href="#FileObject">FileObject</a> - FileObject</li>
-            
-            <li><a href="#FilePropertyEnumeration">FilePropertyEnumeration</a> - FilePropertyEnumeration</li>
-            
-            <li><a href="#FileSet">FileSet</a> - FileSet</li>
-            
-            <li><a href="#Format">Format</a> - Format</li>
-            
-            <li><a href="#RecordSet">RecordSet</a> - RecordSet</li>
-            
-            <li><a href="#Transform">Transform</a> - Transform</li>
-            
-        </ul>
-        
-        
-        
-        <h3>Properties (29)</h3>
-        <ul>
-            
-            <li><a href="#citeAs">citeAs</a> - citeAs</li>
-            
-            <li><a href="#column">column</a> - column</li>
-            
-            <li><a href="#containedIn">containedIn</a> - containedIn</li>
-            
-            <li><a href="#content">content</a> - content</li>
-            
-            <li><a href="#data">data</a> - data</li>
-            
-            <li><a href="#dataType">dataType</a> - dataType</li>
-            
-            <li><a href="#delimiter">delimiter</a> - delimiter</li>
-            
-            <li><a href="#equivalentProperty">equivalentProperty</a> - equivalentProperty</li>
-            
-            <li><a href="#examples">examples</a> - examples</li>
-            
-            <li><a href="#excludes">excludes</a> - excludes</li>
-            
-            <li><a href="#extract">extract</a> - extract</li>
-            
-            <li><a href="#field">field</a> - field</li>
-            
-            <li><a href="#fileObject">fileObject</a> - fileObject</li>
-            
-            <li><a href="#fileProperty">fileProperty</a> - fileProperty</li>
-            
-            <li><a href="#fileSet">fileSet</a> - fileSet</li>
-            
-            <li><a href="#format">format</a> - format</li>
-            
-            <li><a href="#includes">includes</a> - includes</li>
-            
-            <li><a href="#isLiveDataset">isLiveDataset</a> - isLiveDataset</li>
-            
-            <li><a href="#jsonPath">jsonPath</a> - jsonPath</li>
-            
-            <li><a href="#jsonQuery">jsonQuery</a> - jsonQuery</li>
-            
-            <li><a href="#key">key</a> - key</li>
-            
-            <li><a href="#parentField">parentField</a> - parentField</li>
-            
-            <li><a href="#recordSet">recordSet</a> - recordSet</li>
-            
-            <li><a href="#references">references</a> - references</li>
-            
-            <li><a href="#regex">regex</a> - regex</li>
-            
-            <li><a href="#repeated">repeated</a> - repeated</li>
-            
-            <li><a href="#source">source</a> - source</li>
-            
-            <li><a href="#subField">subField</a> - subField</li>
-            
-            <li><a href="#transform">transform</a> - transform</li>
-            
-        </ul>
-        
-    </div>
+            <!-- Hide original TOC since we have sidebar -->
+            <div class="toc" style="display: none;">
+                <h2>Table of Contents</h2>
+                
+                <h3>Classes (11)</h3>
+                <ul>
+                    
+                    <li><a href="#ContentExtractionEnumeration">ContentExtractionEnumeration</a> - ContexExtractionEnumeration</li>
+                    
+                    <li><a href="#DataSource">DataSource</a> - DataSource</li>
+                    
+                    <li><a href="#DataType">DataType</a> - DataType</li>
+                    
+                    <li><a href="#Extract">Extract</a> - Extract</li>
+                    
+                    <li><a href="#Field">Field</a> - Field</li>
+                    
+                    <li><a href="#FileObject">FileObject</a> - FileObject</li>
+                    
+                    <li><a href="#FilePropertyEnumeration">FilePropertyEnumeration</a> - FilePropertyEnumeration</li>
+                    
+                    <li><a href="#FileSet">FileSet</a> - FileSet</li>
+                    
+                    <li><a href="#Format">Format</a> - Format</li>
+                    
+                    <li><a href="#RecordSet">RecordSet</a> - RecordSet</li>
+                    
+                    <li><a href="#Transform">Transform</a> - Transform</li>
+                    
+                </ul>
+                
+                
+                
+                <h3>Properties (29)</h3>
+                <ul>
+                    
+                    <li><a href="#citeAs">citeAs</a> - citeAs</li>
+                    
+                    <li><a href="#column">column</a> - column</li>
+                    
+                    <li><a href="#containedIn">containedIn</a> - containedIn</li>
+                    
+                    <li><a href="#content">content</a> - content</li>
+                    
+                    <li><a href="#data">data</a> - data</li>
+                    
+                    <li><a href="#dataType">dataType</a> - dataType</li>
+                    
+                    <li><a href="#delimiter">delimiter</a> - delimiter</li>
+                    
+                    <li><a href="#equivalentProperty">equivalentProperty</a> - equivalentProperty</li>
+                    
+                    <li><a href="#examples">examples</a> - examples</li>
+                    
+                    <li><a href="#excludes">excludes</a> - excludes</li>
+                    
+                    <li><a href="#extract">extract</a> - extract</li>
+                    
+                    <li><a href="#field">field</a> - field</li>
+                    
+                    <li><a href="#fileObject">fileObject</a> - fileObject</li>
+                    
+                    <li><a href="#fileProperty">fileProperty</a> - fileProperty</li>
+                    
+                    <li><a href="#fileSet">fileSet</a> - fileSet</li>
+                    
+                    <li><a href="#format">format</a> - format</li>
+                    
+                    <li><a href="#includes">includes</a> - includes</li>
+                    
+                    <li><a href="#isLiveDataset">isLiveDataset</a> - isLiveDataset</li>
+                    
+                    <li><a href="#jsonPath">jsonPath</a> - jsonPath</li>
+                    
+                    <li><a href="#jsonQuery">jsonQuery</a> - jsonQuery</li>
+                    
+                    <li><a href="#key">key</a> - key</li>
+                    
+                    <li><a href="#parentField">parentField</a> - parentField</li>
+                    
+                    <li><a href="#recordSet">recordSet</a> - recordSet</li>
+                    
+                    <li><a href="#references">references</a> - references</li>
+                    
+                    <li><a href="#regex">regex</a> - regex</li>
+                    
+                    <li><a href="#repeated">repeated</a> - repeated</li>
+                    
+                    <li><a href="#source">source</a> - source</li>
+                    
+                    <li><a href="#subField">subField</a> - subField</li>
+                    
+                    <li><a href="#transform">transform</a> - transform</li>
+                    
+                </ul>
+                
+            </div>
 
     
     <div class="section">
@@ -344,7 +605,7 @@
                     
                         <p><code>DataSource</code> is the class describing the data that can be extracted from files to populate a <code>RecordSet</code>. This class should be used when the data coming from the source needs to be transformed or formatted to be included in the ML dataset; otherwise a simple <code>Reference</code> can be used instead to point to the source.</p>
 <p><code>DataSource</code> is a subclass of <a href="https://schema.org/Intangible">schema.org/Intangible</a>.</p>
-<h2>Properties</h2>
+<h2 id="properties">Properties</h2>
 <table>
 <thead>
 <tr>
@@ -393,9 +654,9 @@
 </tr>
 </tbody>
 </table>
-<h2>Usage</h2>
+<h2 id="usage">Usage</h2>
 <p><code>DataSource</code> is used within <code>Field</code> definitions to specify where the data for the field comes from and how it should be processed. The source can be a <code>FileObject</code>, <code>FileSet</code>, or another <code>RecordSet</code>, and the data can be extracted and transformed using the <code>extract</code>, <code>transform</code>, and <code>format</code> properties.</p>
-<h2>Example</h2>
+<h2 id="example">Example</h2>
 <pre class="codehilite"><code class="language-json">{
   &quot;source&quot;: {
     &quot;fileSet&quot;: { &quot;@id&quot;: &quot;image-files&quot; },
@@ -437,12 +698,12 @@
                 <div class="doc-content">
                     
                         <p>The data type of values expected for a <code>Field</code> in a <code>RecordSet</code>. This class is inspired by the Datatype class in <a href="https://csvw.org/">CSVW</a>. In addition to simple atomic types, types can be semantic types, such as schema.org classes, as well types defined in other vocabularies.</p>
-<h2>Key Features</h2>
+<h2 id="key-features">Key Features</h2>
 <ul>
 <li>A field may have more than a single assigned <code>dataType</code>, in which case at least one must be an atomic data type (e.g.: <code>sc:Text</code>), while other types can provide more semantic information, possibly in the context of ML.</li>
 <li>Can be specified at two levels: on individual <code>Field</code>s and on entire <code>RecordSet</code>s.</li>
 </ul>
-<h2>Atomic Data Types</h2>
+<h2 id="atomic-data-types">Atomic Data Types</h2>
 <table>
 <thead>
 <tr>
@@ -473,7 +734,7 @@
 </tr>
 </tbody>
 </table>
-<h2>ML-Specific Data Types</h2>
+<h2 id="ml-specific-data-types">ML-Specific Data Types</h2>
 <table>
 <thead>
 <tr>
@@ -496,7 +757,7 @@
 </tr>
 </tbody>
 </table>
-<h2>Using Data Types from Other Vocabularies</h2>
+<h2 id="using-data-types-from-other-vocabularies">Using Data Types from Other Vocabularies</h2>
 <p>Croissant datasets can use data types from other vocabularies, such as Wikidata. These may be supported by the tools consuming the data, but don't need to. For example:</p>
 <table>
 <thead>
@@ -512,8 +773,8 @@
 </tr>
 </tbody>
 </table>
-<h2>Examples</h2>
-<h3>Simple Field Type</h3>
+<h2 id="examples">Examples</h2>
+<h3 id="simple-field-type">Simple Field Type</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;@id&quot;: &quot;images/color_sample&quot;,
   &quot;@type&quot;: &quot;cr:Field&quot;,
@@ -521,7 +782,7 @@
 }
 </code></pre>
 
-<h3>Multiple Data Types</h3>
+<h3 id="multiple-data-types">Multiple Data Types</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;@id&quot;: &quot;cities/url&quot;,
   &quot;@type&quot;: &quot;cr:Field&quot;,
@@ -570,7 +831,7 @@
                 <div class="doc-content">
                     
                         <p>Sometimes, not all the data from the source is needed, but only a subset. The <code>Extract</code> class can be used to specify how to do that, depending on the type of the data.</p>
-<h2>Extraction Methods</h2>
+<h2 id="extraction-methods">Extraction Methods</h2>
 <table>
 <thead>
 <tr>
@@ -601,7 +862,7 @@
 </tr>
 </tbody>
 </table>
-<h2>FileProperty Values</h2>
+<h2 id="fileproperty-values">FileProperty Values</h2>
 <ul>
 <li><strong><code>fullpath</code></strong>: The full path to the file within the Croissant extraction or download folders. Example: <code>data/train/metadata.csv</code></li>
 <li><strong><code>filename</code></strong>: The name of the file. In <code>data/train/metadata.csv</code>, the file name is <code>metadata.csv</code></li>
@@ -609,8 +870,8 @@
 <li><strong><code>lines</code></strong>: The byte content of each line in the file</li>
 <li><strong><code>lineNumbers</code></strong>: The number of each line in the file (starting from 0)</li>
 </ul>
-<h2>Examples</h2>
-<h3>Extracting File Content</h3>
+<h2 id="examples">Examples</h2>
+<h3 id="extracting-file-content">Extracting File Content</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;extract&quot;: {
     &quot;fileProperty&quot;: &quot;content&quot;
@@ -618,7 +879,7 @@
 }
 </code></pre>
 
-<h3>Extracting CSV Column</h3>
+<h3 id="extracting-csv-column">Extracting CSV Column</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;extract&quot;: {
     &quot;column&quot;: &quot;userId&quot;
@@ -626,7 +887,7 @@
 }
 </code></pre>
 
-<h3>Extracting with JSONPath</h3>
+<h3 id="extracting-with-jsonpath">Extracting with JSONPath</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;extract&quot;: {
     &quot;jsonPath&quot;: &quot;$.metadata.title&quot;
@@ -634,7 +895,7 @@
 }
 </code></pre>
 
-<h3>Extracting Filename</h3>
+<h3 id="extracting-filename">Extracting Filename</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;extract&quot;: {
     &quot;fileProperty&quot;: &quot;filename&quot;
@@ -690,7 +951,7 @@
                     
                         <p>A <code>Field</code> is part of a <code>RecordSet</code>. It may represent a column of a table, or a nested data structure or even a nested <code>RecordSet</code> in the case of hierarchical data.</p>
 <p><code>Field</code> is a subclass of <a href="https://schema.org/Intangible">schema.org/Intangible</a>.</p>
-<h2>Properties</h2>
+<h2 id="properties">Properties</h2>
 <table>
 <thead>
 <tr>
@@ -745,15 +1006,15 @@
 </tr>
 </tbody>
 </table>
-<h2>Key Features</h2>
+<h2 id="key-features">Key Features</h2>
 <ul>
 <li>Each field has a <code>name</code> (unique identifier within the <code>RecordSet</code>)</li>
 <li>Supports foreign key relationships through the <code>references</code> property</li>
 <li>Supports hierarchical nesting with <code>subField</code> and <code>parentField</code></li>
 <li>Can specify multiple data types for semantic enrichment</li>
 </ul>
-<h2>Examples</h2>
-<h3>Simple Field</h3>
+<h2 id="examples">Examples</h2>
+<h3 id="simple-field">Simple Field</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;@type&quot;: &quot;cr:Field&quot;,
   &quot;@id&quot;: &quot;ratings/user_id&quot;,
@@ -767,7 +1028,7 @@
 }
 </code></pre>
 
-<h3>Field with Reference (Foreign Key)</h3>
+<h3 id="field-with-reference-foreign-key">Field with Reference (Foreign Key)</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;@type&quot;: &quot;cr:Field&quot;,
   &quot;@id&quot;: &quot;ratings/movie_id&quot;,
@@ -784,7 +1045,7 @@
 }
 </code></pre>
 
-<h3>Nested Field with SubFields</h3>
+<h3 id="nested-field-with-subfields">Nested Field with SubFields</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;@type&quot;: &quot;cr:Field&quot;,
   &quot;@id&quot;: &quot;gps_coordinates&quot;,
@@ -1003,7 +1264,7 @@
                         <p>In many datasets, data comes in the form of collections of homogeneous files, such as images, videos or text files, where each file needs to be treated as an individual item, e.g., as a training example. <code>FileSet</code> is a class that describes such collections of files.</p>
 <p>A <code>FileSet</code> is a set of files located in a container, which can be an archive <code>FileObject</code> or a "manifest" file. A FileSet may also specify inclusion / exclusion filters using file patterns.</p>
 <p><code>FileSet</code> extends <a href="https://schema.org/Intangible">schema.org/Intangible</a>.</p>
-<h2>Properties</h2>
+<h2 id="properties">Properties</h2>
 <table>
 <thead>
 <tr>
@@ -1034,15 +1295,15 @@
 </tr>
 </tbody>
 </table>
-<h2>Pattern Processing</h2>
+<h2 id="pattern-processing">Pattern Processing</h2>
 <p>The <code>includes</code> and <code>excludes</code> properties use <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob patterns</a>, a common mechanism to specify a set of files along a path, like "<em>.jpg" for all jpg images, or "/foo/pic</em>.jpg" for all jpg images under the "foo" directory whose filename starts with "pic".</p>
 <p>To get the set of FileObjects included in the FileSet:
 1. The <code>includes</code> pattern(s) are evaluated first
 2. If multiple <code>includes</code> are specified, the union of their results is taken
 3. Then all the files corresponding to the <code>excludes</code> patterns are removed from that set
 4. Patterns are evaluated from the root of the <code>containedIn</code> contents (e.g., the top level directory extracted from an archive)</p>
-<h2>Examples</h2>
-<h3>Simple Image Archive</h3>
+<h2 id="examples">Examples</h2>
+<h3 id="simple-image-archive">Simple Image Archive</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;@type&quot;: &quot;cr:FileObject&quot;,
   &quot;@id&quot;: &quot;train2014.zip&quot;,
@@ -1060,7 +1321,7 @@
 }
 </code></pre>
 
-<h3>Complex Archive with Multiple FileSets</h3>
+<h3 id="complex-archive-with-multiple-filesets">Complex Archive with Multiple FileSets</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;@type&quot;: &quot;cr:FileObject&quot;,
   &quot;@id&quot;: &quot;flores200_dataset.tar.gz&quot;,
@@ -1116,7 +1377,7 @@
                 <div class="doc-content">
                     
                         <p>A format string used to parse the values coming from a <code>DataSource</code>. For example, a date may be represented as the string "2022/11/10", and interpreted into the correct date via the format "yyyy/MM/dd". Formats correspond to a target data type.</p>
-<h2>Supported Format Types</h2>
+<h2 id="supported-format-types">Supported Format Types</h2>
 <table>
 <thead>
 <tr>
@@ -1144,8 +1405,8 @@
 </tbody>
 </table>
 <p><strong>Note</strong>: This list is not exhaustive, and not all Croissant implementations will support all formats.</p>
-<h2>Examples</h2>
-<h3>Date Format Parsing</h3>
+<h2 id="examples">Examples</h2>
+<h3 id="date-format-parsing">Date Format Parsing</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;source&quot;: {
     &quot;fileObject&quot;: { &quot;@id&quot;: &quot;metadata&quot; },
@@ -1155,7 +1416,7 @@
 }
 </code></pre>
 
-<h3>Bounding Box Format</h3>
+<h3 id="bounding-box-format">Bounding Box Format</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;@type&quot;: &quot;cr:Field&quot;,
   &quot;@id&quot;: &quot;images/annotations/bbox&quot;,
@@ -1169,7 +1430,7 @@
 }
 </code></pre>
 
-<h2>Usage</h2>
+<h2 id="usage">Usage</h2>
 <p>Format specifications are typically used within <code>DataSource</code> definitions to ensure that string representations of structured data (like dates, numbers, or coordinates) are correctly parsed into their intended data types. This is particularly important for ML datasets where precise data interpretation is crucial for model training and evaluation.</p>
                     
                 </div>
@@ -1215,7 +1476,7 @@
                 <div class="doc-content">
                     
                         <p>A <code>RecordSet</code> describes a set of structured records obtained from one or more data sources (typically a file or set of files) and the structure of these records, expressed as a set of fields (e.g., the columns of a table). A <code>RecordSet</code> can represent flat or nested data.</p>
-<h2>Purpose</h2>
+<h2 id="purpose">Purpose</h2>
 <p><code>RecordSet</code> provides a common structure description that can be used across different modalities, in terms of records that may contain multiple fields. It handles:</p>
 <ul>
 <li><strong>Unstructured content</strong> (like text and images) as single-field records</li>
@@ -1223,7 +1484,7 @@
 <li><strong>Tree-structured data</strong> with nested and repeated fields</li>
 </ul>
 <p><code>RecordSet</code> is a subclass of <a href="https://schema.org/Intangible">schema.org/Intangible</a>.</p>
-<h2>Properties</h2>
+<h2 id="properties">Properties</h2>
 <table>
 <thead>
 <tr>
@@ -1260,15 +1521,15 @@
 </tr>
 </tbody>
 </table>
-<h2>Additional Features</h2>
+<h2 id="additional-features">Additional Features</h2>
 <ul>
 <li><strong>Embedding</strong>: Supports embedding small enumerations directly via the <code>data</code> property</li>
 <li><strong>Typing</strong>: Supports typing with <code>dataType</code> for entire RecordSets  </li>
 <li><strong>Joins</strong>: Supports joins through field references (foreign keys)</li>
 <li><strong>Hierarchical</strong>: Supports hierarchical structures with nested records</li>
 </ul>
-<h2>Examples</h2>
-<h3>Simple Tabular RecordSet</h3>
+<h2 id="examples">Examples</h2>
+<h3 id="simple-tabular-recordset">Simple Tabular RecordSet</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;@type&quot;: &quot;cr:RecordSet&quot;,
   &quot;@id&quot;: &quot;ratings&quot;,
@@ -1297,7 +1558,7 @@
 }
 </code></pre>
 
-<h3>Enumeration with Embedded Data</h3>
+<h3 id="enumeration-with-embedded-data">Enumeration with Embedded Data</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;@type&quot;: &quot;cr:RecordSet&quot;,
   &quot;@id&quot;: &quot;gender_enum&quot;,
@@ -1314,7 +1575,7 @@
 }
 </code></pre>
 
-<h3>Geographic Data with Type Mapping</h3>
+<h3 id="geographic-data-with-type-mapping">Geographic Data with Type Mapping</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;@id&quot;: &quot;cities&quot;,
   &quot;@type&quot;: &quot;cr:RecordSet&quot;,
@@ -1371,14 +1632,14 @@
                 <div class="doc-content">
                     
                         <p>Croissant supports a few simple transformations that can be applied on the source data. Transformations are used to modify extracted data before it's included in the final dataset.</p>
-<h2>Supported Transformations</h2>
+<h2 id="supported-transformations">Supported Transformations</h2>
 <ul>
 <li><strong>delimiter</strong>: Split a string into an array using the supplied character</li>
 <li><strong>regex</strong>: A regular expression to parse the data  </li>
 <li><strong>jsonQuery</strong>: A JSON query to evaluate on the (JSON) data source</li>
 </ul>
-<h2>Examples</h2>
-<h3>Regular Expression Transformation</h3>
+<h2 id="examples">Examples</h2>
+<h3 id="regular-expression-transformation">Regular Expression Transformation</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;fileSet&quot;: {
     &quot;@id&quot;: &quot;files&quot;
@@ -1393,7 +1654,7 @@
 </code></pre>
 
 <p>This example extracts filenames and applies a regex to parse training/validation/test split information.</p>
-<h3>Filename Parsing</h3>
+<h3 id="filename-parsing">Filename Parsing</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;source&quot;: {
     &quot;fileSet&quot;: { &quot;@id&quot;: &quot;image-files&quot; },
@@ -1408,7 +1669,7 @@
 </code></pre>
 
 <p>This extracts the base filename (without path and extension) from image files.</p>
-<h3>Delimiter Transformation</h3>
+<h3 id="delimiter-transformation">Delimiter Transformation</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;transform&quot;: {
     &quot;delimiter&quot;: &quot;,&quot;
@@ -1417,7 +1678,7 @@
 </code></pre>
 
 <p>This would split a comma-separated string into an array of values.</p>
-<h3>JSON Query Transformation</h3>
+<h3 id="json-query-transformation">JSON Query Transformation</h3>
 <pre class="codehilite"><code class="language-json">{
   &quot;transform&quot;: {
     &quot;jsonQuery&quot;: &quot;$.metadata.authors[*].name&quot;
@@ -1426,7 +1687,7 @@
 </code></pre>
 
 <p>This would extract all author names from a JSON structure using a JSON query.</p>
-<h2>Usage</h2>
+<h2 id="usage">Usage</h2>
 <p>Transformations are typically used within <code>DataSource</code> definitions, applied after data extraction but before final formatting. They provide a way to clean, parse, or restructure data to make it suitable for machine learning workflows without requiring external preprocessing steps.</p>
                     
                 </div>
@@ -2180,7 +2441,33 @@
             
         </div>
         
-    </div>
+        </div>
+        
+        </div>
+    </main>
     
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('show');
+        }
+        
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.querySelector('.sidebar-overlay');
+            sidebar.classList.remove('open');
+            overlay.classList.remove('show');
+        }
+        
+        // Close sidebar when clicking on a link (mobile)
+        document.addEventListener('DOMContentLoaded', function() {
+            const sidebarLinks = document.querySelectorAll('.sidebar-nav a');
+            sidebarLinks.forEach(link => {
+                link.addEventListener('click', closeSidebar);
+            });
+        });
+    </script>
 </body>
 </html>
