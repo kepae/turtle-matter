@@ -93,14 +93,14 @@ class VocabularyExtractor:
         for md_file in docs_dir.glob('**/*.md'):
             try:
                 with open(md_file, 'r', encoding='utf-8') as f:
-                    post = frontmatter.load(f)
+                    md = frontmatter.load(f)
                     
                 # Extract the term URI from frontmatter
-                term_uri = post.metadata.get('term')
+                term_uri = md.metadata.get('term')
                 if term_uri:
                     docs[term_uri] = {
-                        'content': post.content,
-                        'metadata': post.metadata,
+                        'content': md.content,
+                        'metadata': md.metadata,
                         'file_path': str(md_file)
                     }
             except Exception as e:
