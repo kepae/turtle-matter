@@ -157,7 +157,7 @@ class VocabularyExtractor:
                         term_type='Class',
                         label=str(graph.value(cls, RDFS.label)) if graph.value(cls, RDFS.label) else None,
                         comment=str(graph.value(cls, RDFS.comment)) if graph.value(cls, RDFS.comment) else None,
-                        subclass_of=[str(o) for o in graph.objects(cls, RDFS.subClassOf)]
+                        subclass_of=sorted([str(o) for o in graph.objects(cls, RDFS.subClassOf)])
                     )
                     classes.append(term)
         
@@ -182,8 +182,8 @@ class VocabularyExtractor:
                         term_type='Property',
                         label=str(graph.value(prop, RDFS.label)) if graph.value(prop, RDFS.label) else None,
                         comment=str(graph.value(prop, RDFS.comment)) if graph.value(prop, RDFS.comment) else None,
-                        domain=list(set(domain_list)),  # Remove duplicates
-                        range=list(set(range_list))     # Remove duplicates
+                        domain=sorted(list(set(domain_list))),  # Remove duplicates and sort
+                        range=sorted(list(set(range_list)))     # Remove duplicates and sort
                     )
                     properties.append(term)
         

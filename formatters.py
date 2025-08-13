@@ -74,7 +74,7 @@ class MarkdownFormatter:
                     for prop in cls.related_properties:
                         range_info = ""
                         if prop.range:
-                            range_names = [r.split('/')[-1] for r in prop.range]
+                            range_names = sorted([r.split('/')[-1] for r in prop.range])
                             range_info = f" (→ {', '.join(range_names)})"
                         content += f"- [{prop.local_name}](#{prop.local_name}){range_info}\n"
                     content += "\n"
