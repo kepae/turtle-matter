@@ -23,7 +23,7 @@ from formatters import HTMLFormatter, MarkdownFormatter, JSONLDFormatter
               help='Directory containing companion markdown documentation files')
 @click.option('--title', help='Title for the vocabulary (defaults to filename)')
 def main(rdf_file: Path, emit: str, rdf_format: Optional[str], namespace: Optional[str], full_context: bool, docs_dir: Optional[Path], title: Optional[str]):
-    """Generate vocabulary documentation from RDF file."""
+    """Generate human- and machine-readable vocabulary documentation (HTML, Markdown) from RDF file."""
     
     # Auto-detect RDF format if not specified
     if rdf_format is None:
