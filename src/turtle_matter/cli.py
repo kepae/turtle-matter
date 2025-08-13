@@ -1,16 +1,17 @@
 #!/usr/bin/env python3
 """
-turtle-matter: Generate vocabulary documentation from RDF files
+CLI interface for turtle-matter.
 """
 
 import click
 from pathlib import Path
 from typing import Optional
 from rdflib import Graph
-from rdflib.namespace import RDF, RDFS, OWL
+from rdflib.namespace import RDF, OWL
 
-from vocabulary import VocabularyTerm, VocabularyData, VocabularyExtractor
-from formatters import HTMLFormatter, MarkdownFormatter, JSONLDFormatter
+
+from .vocabulary import VocabularyExtractor
+from .formatters import HTMLFormatter, MarkdownFormatter, JSONLDFormatter
 
 @click.command()
 @click.argument('rdf_file', type=click.Path(exists=True, path_type=Path))

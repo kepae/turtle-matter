@@ -1,9 +1,16 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
 name = "turtle-matter"
 version = "0.1.0"
-description = "Add your description here"
+description = "Generate vocabulary documentation from RDF files"
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.11"
+authors = [
+    {name = "Kevin Paeth"}
+]
 dependencies = [
     "rdflib>=7.0.0",
     "rdflib-jsonld>=0.6.2",
@@ -12,4 +19,22 @@ dependencies = [
     "click>=8.1.0",
     "pyld>=2.0.0",
     "markdown>=3.4.0",
+]
+
+[project.scripts]
+turtle-matter = "turtle_matter.cli:main"
+
+[project.urls]
+"Homepage" = "https://github.com/kepae/turtle-matter"
+"Bug Reports" = "https://github.com/kepae/turtle-matter/issues"
+"Examples" = "https://kepae.github.io/turtle-matter/"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/turtle_matter"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "/README.md",
+    "/pyproject.toml",
 ]
