@@ -10,8 +10,8 @@ mkdir -p $OUTPUT_DIR
 
 echo "Generating all formats for croissant vocabulary..."
 
-uv run python main.py $TURTLE_FILE --format html --namespace $NAMESPACE --docs-dir $DOCS_DIR --full-context > $OUTPUT_DIR/croissant.html
-uv run python main.py $TURTLE_FILE --format markdown --namespace $NAMESPACE --docs-dir $DOCS_DIR --full-context > $OUTPUT_DIR/croissant.md
+uv run python main.py $TURTLE_FILE --format html --namespace $NAMESPACE --docs-dir $DOCS_DIR > $OUTPUT_DIR/croissant.html
+uv run python main.py $TURTLE_FILE --format markdown --namespace $NAMESPACE --docs-dir $DOCS_DIR > $OUTPUT_DIR/croissant.md
 uv run python main.py $TURTLE_FILE --format jsonld --namespace $NAMESPACE > $OUTPUT_DIR/croissant-context.json
 uv run python main.py $TURTLE_FILE --namespace $NAMESPACE > $OUTPUT_DIR/croissant-analysis.txt
 

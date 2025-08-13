@@ -10,376 +10,138 @@
     "@vocab": "http://mlcommons.org/croissant/",
     "ContentExtractionEnumeration": {
       "@id": "http://mlcommons.org/croissant/ContentExtractionEnumeration",
-      "@type": "@id",
-      "rdfs:subClassOf": {
-        "@id": "https://schema.org/Enumeration"
-      }
+      "@type": "@id"
     },
     "DataSource": {
       "@id": "http://mlcommons.org/croissant/DataSource",
-      "@type": "@id",
-      "rdfs:subClassOf": {
-        "@id": "https://schema.org/Intangible"
-      }
+      "@type": "@id"
     },
     "DataType": {
       "@id": "http://mlcommons.org/croissant/DataType",
-      "@type": "@id",
-      "rdfs:subClassOf": {
-        "@id": "https://schema.org/URL"
-      }
+      "@type": "@id"
     },
     "Extract": {
       "@id": "http://mlcommons.org/croissant/Extract",
-      "@type": "@id",
-      "rdfs:subClassOf": {
-        "@id": "https://schema.org/Intangible"
-      }
+      "@type": "@id"
     },
     "Field": {
       "@id": "http://mlcommons.org/croissant/Field",
-      "@type": "@id",
-      "rdfs:subClassOf": {
-        "@id": "https://schema.org/Intangible"
-      }
+      "@type": "@id"
     },
     "FileObject": {
       "@id": "http://mlcommons.org/croissant/FileObject",
-      "@type": "@id",
-      "rdfs:subClassOf": {
-        "@id": "https://schema.org/CreativeWork"
-      }
+      "@type": "@id"
     },
     "FilePropertyEnumeration": {
       "@id": "http://mlcommons.org/croissant/FilePropertyEnumeration",
-      "@type": "@id",
-      "rdfs:subClassOf": {
-        "@id": "https://schema.org/Enumeration"
-      }
+      "@type": "@id"
     },
     "FileSet": {
       "@id": "http://mlcommons.org/croissant/FileSet",
-      "@type": "@id",
-      "rdfs:subClassOf": {
-        "@id": "https://schema.org/Intangible"
-      }
+      "@type": "@id"
     },
     "Format": {
       "@id": "http://mlcommons.org/croissant/Format",
-      "@type": "@id",
-      "rdfs:subClassOf": {
-        "@id": "https://schema.org/Text"
-      }
+      "@type": "@id"
     },
     "RecordSet": {
       "@id": "http://mlcommons.org/croissant/RecordSet",
-      "@type": "@id",
-      "rdfs:subClassOf": {
-        "@id": "https://schema.org/Intangible"
-      }
+      "@type": "@id"
     },
     "Transform": {
       "@id": "http://mlcommons.org/croissant/Transform",
-      "@type": "@id",
-      "rdfs:subClassOf": {
-        "@id": "https://schema.org/Intangible"
-      }
+      "@type": "@id"
     },
     "citeAs": {
-      "@id": "http://mlcommons.org/croissant/citeAs",
-      "rdfs:domain": {
-        "@id": "https://schema.org/Dataset"
-      },
-      "rdfs:range": {
-        "@id": "https://schema.org/Text"
-      }
+      "@id": "http://mlcommons.org/croissant/citeAs"
     },
     "column": {
-      "@id": "http://mlcommons.org/croissant/column",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/Extract"
-      },
-      "rdfs:range": {
-        "@id": "https://schema.org/Text"
-      }
+      "@id": "http://mlcommons.org/croissant/column"
     },
     "containedIn": {
-      "@id": "http://mlcommons.org/croissant/containedIn",
-      "rdfs:domain": [
-        {
-          "@id": "http://mlcommons.org/croissant/FileObject"
-        },
-        {
-          "@id": "http://mlcommons.org/croissant/FileSet"
-        }
-      ],
-      "rdfs:range": [
-        {
-          "@id": "http://mlcommons.org/croissant/FileObject"
-        },
-        {
-          "@id": "http://mlcommons.org/croissant/FileSet"
-        }
-      ]
+      "@id": "http://mlcommons.org/croissant/containedIn"
     },
     "content": {
-      "@id": "http://mlcommons.org/croissant/content",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/Extract"
-      },
-      "rdfs:range": {
-        "@id": "http://mlcommons.org/croissant/ContentExtractionEnumeration"
-      }
+      "@id": "http://mlcommons.org/croissant/content"
     },
     "data": {
-      "@id": "http://mlcommons.org/croissant/data",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/RecordSet"
-      },
-      "rdfs:range": {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON"
-      }
+      "@id": "http://mlcommons.org/croissant/data"
     },
     "dataType": {
-      "@id": "http://mlcommons.org/croissant/dataType",
-      "rdfs:domain": [
-        {
-          "@id": "http://mlcommons.org/croissant/Field"
-        },
-        {
-          "@id": "http://mlcommons.org/croissant/RecordSet"
-        }
-      ],
-      "rdfs:range": {
-        "@id": "http://mlcommons.org/croissant/DataType"
-      }
+      "@id": "http://mlcommons.org/croissant/dataType"
     },
     "delimiter": {
-      "@id": "http://mlcommons.org/croissant/delimiter",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/Transform"
-      },
-      "rdfs:range": {
-        "@id": "https://schema.org/Text"
-      }
+      "@id": "http://mlcommons.org/croissant/delimiter"
     },
     "equivalentProperty": {
-      "@id": "http://mlcommons.org/croissant/equivalentProperty",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/Field"
-      },
-      "rdfs:range": {
-        "@id": "https://schema.org/URL"
-      }
+      "@id": "http://mlcommons.org/croissant/equivalentProperty"
     },
     "examples": {
-      "@id": "http://mlcommons.org/croissant/examples",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/RecordSet"
-      },
-      "rdfs:range": {
-        "@id": "http://www.w3.org/1999/02/22-rdf-syntax-ns#JSON"
-      }
+      "@id": "http://mlcommons.org/croissant/examples"
     },
     "excludes": {
-      "@id": "http://mlcommons.org/croissant/excludes",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/FileSet"
-      },
-      "rdfs:range": {
-        "@id": "https://schema.org/Text"
-      }
+      "@id": "http://mlcommons.org/croissant/excludes"
     },
     "extract": {
-      "@id": "http://mlcommons.org/croissant/extract",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/DataSource"
-      },
-      "rdfs:range": {
-        "@id": "http://mlcommons.org/croissant/Extract"
-      }
+      "@id": "http://mlcommons.org/croissant/extract"
     },
     "field": {
-      "@id": "http://mlcommons.org/croissant/field",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/RecordSet"
-      },
-      "rdfs:range": {
-        "@id": "http://mlcommons.org/croissant/Field"
-      }
+      "@id": "http://mlcommons.org/croissant/field"
     },
     "fileObject": {
-      "@id": "http://mlcommons.org/croissant/fileObject",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/DataSource"
-      },
-      "rdfs:range": {
-        "@id": "http://mlcommons.org/croissant/FileObject"
-      }
+      "@id": "http://mlcommons.org/croissant/fileObject"
     },
     "fileProperty": {
-      "@id": "http://mlcommons.org/croissant/fileProperty",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/Extract"
-      },
-      "rdfs:range": {
-        "@id": "http://mlcommons.org/croissant/FilePropertyEnumeration"
-      }
+      "@id": "http://mlcommons.org/croissant/fileProperty"
     },
     "fileSet": {
-      "@id": "http://mlcommons.org/croissant/fileSet",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/DataSource"
-      },
-      "rdfs:range": {
-        "@id": "http://mlcommons.org/croissant/FileSet"
-      }
+      "@id": "http://mlcommons.org/croissant/fileSet"
     },
     "format": {
-      "@id": "http://mlcommons.org/croissant/format",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/DataSource"
-      },
-      "rdfs:range": {
-        "@id": "http://mlcommons.org/croissant/Format"
-      }
+      "@id": "http://mlcommons.org/croissant/format"
     },
     "includes": {
-      "@id": "http://mlcommons.org/croissant/includes",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/FileSet"
-      },
-      "rdfs:range": {
-        "@id": "https://schema.org/Text"
-      }
+      "@id": "http://mlcommons.org/croissant/includes"
     },
     "isLiveDataset": {
-      "@id": "http://mlcommons.org/croissant/isLiveDataset",
-      "rdfs:domain": {
-        "@id": "https://schema.org/Dataset"
-      },
-      "rdfs:range": {
-        "@id": "https://schema.org/Boolean"
-      }
+      "@id": "http://mlcommons.org/croissant/isLiveDataset"
     },
     "jsonPath": {
-      "@id": "http://mlcommons.org/croissant/jsonPath",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/Extract"
-      },
-      "rdfs:range": {
-        "@id": "https://schema.org/Text"
-      }
+      "@id": "http://mlcommons.org/croissant/jsonPath"
     },
     "jsonQuery": {
-      "@id": "http://mlcommons.org/croissant/jsonQuery",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/Transform"
-      },
-      "rdfs:range": {
-        "@id": "https://schema.org/Text"
-      }
+      "@id": "http://mlcommons.org/croissant/jsonQuery"
     },
     "key": {
-      "@id": "http://mlcommons.org/croissant/key",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/RecordSet"
-      },
-      "rdfs:range": {
-        "@id": "http://mlcommons.org/croissant/Field"
-      }
+      "@id": "http://mlcommons.org/croissant/key"
     },
     "owl": "http://www.w3.org/2002/07/owl#",
     "parentField": {
-      "@id": "http://mlcommons.org/croissant/parentField",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/Field"
-      },
-      "rdfs:range": {
-        "@id": "http://mlcommons.org/croissant/Field"
-      }
+      "@id": "http://mlcommons.org/croissant/parentField"
     },
     "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
     "recordSet": {
-      "@id": "http://mlcommons.org/croissant/recordSet",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/DataSource"
-      },
-      "rdfs:range": {
-        "@id": "http://mlcommons.org/croissant/RecordSet"
-      }
+      "@id": "http://mlcommons.org/croissant/recordSet"
     },
     "references": {
-      "@id": "http://mlcommons.org/croissant/references",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/Field"
-      },
-      "rdfs:range": {
-        "@id": "http://mlcommons.org/croissant/Field"
-      }
+      "@id": "http://mlcommons.org/croissant/references"
     },
     "regex": {
-      "@id": "http://mlcommons.org/croissant/regex",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/Transform"
-      },
-      "rdfs:range": {
-        "@id": "https://schema.org/Text"
-      }
+      "@id": "http://mlcommons.org/croissant/regex"
     },
     "repeated": {
-      "@id": "http://mlcommons.org/croissant/repeated",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/Field"
-      },
-      "rdfs:range": {
-        "@id": "https://schema.org/Boolean"
-      }
+      "@id": "http://mlcommons.org/croissant/repeated"
     },
     "schema": "https://schema.org/",
     "source": {
-      "@id": "http://mlcommons.org/croissant/source",
-      "rdfs:domain": [
-        {
-          "@id": "http://mlcommons.org/croissant/Field"
-        },
-        {
-          "@id": "http://mlcommons.org/croissant/RecordSet"
-        }
-      ],
-      "rdfs:range": [
-        {
-          "@id": "http://mlcommons.org/croissant/DataSource"
-        },
-        {
-          "@id": "http://mlcommons.org/croissant/FileSet"
-        },
-        {
-          "@id": "http://mlcommons.org/croissant/FileObject"
-        },
-        {
-          "@id": "http://mlcommons.org/croissant/RecordSet"
-        }
-      ]
+      "@id": "http://mlcommons.org/croissant/source"
     },
     "subField": {
-      "@id": "http://mlcommons.org/croissant/subField",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/Field"
-      },
-      "rdfs:range": {
-        "@id": "http://mlcommons.org/croissant/Field"
-      }
+      "@id": "http://mlcommons.org/croissant/subField"
     },
     "transform": {
-      "@id": "http://mlcommons.org/croissant/transform",
-      "rdfs:domain": {
-        "@id": "http://mlcommons.org/croissant/DataSource"
-      },
-      "rdfs:range": {
-        "@id": "http://mlcommons.org/croissant/Transform"
-      }
+      "@id": "http://mlcommons.org/croissant/transform"
     }
   }
 }
@@ -574,6 +336,82 @@
             </ul>
             
             
+            <div class="documentation">
+                <h4>Documentation</h4>
+                <div class="doc-content">
+                    
+                        <p><code>DataSource</code> is the class describing the data that can be extracted from files to populate a <code>RecordSet</code>. This class should be used when the data coming from the source needs to be transformed or formatted to be included in the ML dataset; otherwise a simple <code>Reference</code> can be used instead to point to the source.</p>
+<p><code>DataSource</code> is a subclass of <a href="https://schema.org/Intangible">schema.org/Intangible</a>.</p>
+<h2>Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Expected Type</th>
+<th>Cardinality</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fileObject</td>
+<td>Reference</td>
+<td>ONE</td>
+<td>The name of the referenced <code>FileObject</code> source of the data</td>
+</tr>
+<tr>
+<td>fileSet</td>
+<td>Reference</td>
+<td>ONE</td>
+<td>The name of the referenced <code>FileSet</code> source of the data</td>
+</tr>
+<tr>
+<td>recordSet</td>
+<td>Reference</td>
+<td>ONE</td>
+<td>The name of the referenced <code>RecordSet</code> source</td>
+</tr>
+<tr>
+<td>extract</td>
+<td>Extract</td>
+<td>ONE</td>
+<td>The extraction method from the provided source</td>
+</tr>
+<tr>
+<td>transform</td>
+<td>Transform</td>
+<td>MANY</td>
+<td>A transformation to apply on source data on top of the extracted method as specified through <code>extract</code>, e.g., a regular expression or JSON query</td>
+</tr>
+<tr>
+<td>format</td>
+<td>Format</td>
+<td>ONE</td>
+<td>A format to parse the values of the data from text, e.g., a date format or number format</td>
+</tr>
+</tbody>
+</table>
+<h2>Usage</h2>
+<p><code>DataSource</code> is used within <code>Field</code> definitions to specify where the data for the field comes from and how it should be processed. The source can be a <code>FileObject</code>, <code>FileSet</code>, or another <code>RecordSet</code>, and the data can be extracted and transformed using the <code>extract</code>, <code>transform</code>, and <code>format</code> properties.</p>
+<h2>Example</h2>
+<pre class="codehilite"><code class="language-json">{
+  &quot;source&quot;: {
+    &quot;fileSet&quot;: { &quot;@id&quot;: &quot;image-files&quot; },
+    &quot;extract&quot;: {
+      &quot;fileProperty&quot;: &quot;filename&quot;
+    },
+    &quot;transform&quot;: {
+      &quot;regex&quot;: &quot;([^\\/]*)\\.jpg&quot;
+    }
+  }
+}
+</code></pre>
+
+<p>This example extracts filenames from a set of image files and applies a regular expression transformation to extract just the base filename without the path and extension.</p>
+                    
+                </div>
+            </div>
+            
         </div>
         
         <div class="term" id="DataType">
@@ -591,6 +429,108 @@
             </ul>
             
             
+            
+            <div class="documentation">
+                <h4>Documentation</h4>
+                <div class="doc-content">
+                    
+                        <p>The data type of values expected for a <code>Field</code> in a <code>RecordSet</code>. This class is inspired by the Datatype class in <a href="https://csvw.org/">CSVW</a>. In addition to simple atomic types, types can be semantic types, such as schema.org classes, as well types defined in other vocabularies.</p>
+<h2>Key Features</h2>
+<ul>
+<li>A field may have more than a single assigned <code>dataType</code>, in which case at least one must be an atomic data type (e.g.: <code>sc:Text</code>), while other types can provide more semantic information, possibly in the context of ML.</li>
+<li>Can be specified at two levels: on individual <code>Field</code>s and on entire <code>RecordSet</code>s.</li>
+</ul>
+<h2>Atomic Data Types</h2>
+<table>
+<thead>
+<tr>
+<th>dataType</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://schema.org/Boolean">sc:Boolean</a></td>
+<td>Describes a boolean</td>
+</tr>
+<tr>
+<td><a href="https://schema.org/Date">sc:Date</a></td>
+<td>Describes a date</td>
+</tr>
+<tr>
+<td><a href="https://schema.org/Float">sc:Float</a></td>
+<td>Describes a float</td>
+</tr>
+<tr>
+<td><a href="https://schema.org/Integer">sc:Integer</a></td>
+<td>Describes an integer</td>
+</tr>
+<tr>
+<td><a href="https://schema.org/Text">sc:Text</a></td>
+<td>Describes a string</td>
+</tr>
+</tbody>
+</table>
+<h2>ML-Specific Data Types</h2>
+<table>
+<thead>
+<tr>
+<th>dataType</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://schema.org/ImageObject">sc:ImageObject</a></td>
+<td>Describes a field containing the content of an image (pixels)</td>
+</tr>
+<tr>
+<td><a href="http://mlcommons.org/schema/BoundingBox">cr:BoundingBox</a></td>
+<td>Describes the coordinates of a bounding box (4-number array)</td>
+</tr>
+<tr>
+<td><a href="http://mlcommons.org/schema/Split">cr:Split</a></td>
+<td>Describes a RecordSet used to divide data into multiple sets according to intended usage with regards to models</td>
+</tr>
+</tbody>
+</table>
+<h2>Using Data Types from Other Vocabularies</h2>
+<p>Croissant datasets can use data types from other vocabularies, such as Wikidata. These may be supported by the tools consuming the data, but don't need to. For example:</p>
+<table>
+<thead>
+<tr>
+<th>dataType</th>
+<th>Usage</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.wikidata.org/wiki/Q48277">wd:Q48277</a> (gender)</td>
+<td>Describes a Field or a RecordSet whose values are indicative of someone's gender</td>
+</tr>
+</tbody>
+</table>
+<h2>Examples</h2>
+<h3>Simple Field Type</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@id&quot;: &quot;images/color_sample&quot;,
+  &quot;@type&quot;: &quot;cr:Field&quot;,
+  &quot;dataType&quot;: &quot;sc:ImageObject&quot;
+}
+</code></pre>
+
+<h3>Multiple Data Types</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@id&quot;: &quot;cities/url&quot;,
+  &quot;@type&quot;: &quot;cr:Field&quot;,
+  &quot;dataType&quot;: [&quot;https://schema.org/URL&quot;, &quot;https://www.wikidata.org/wiki/Q515&quot;]
+}
+</code></pre>
+
+<p>This example shows a field that is expected to be a URL, whose semantic type is City, so values will be URLs referring to cities.</p>
+                    
+                </div>
+            </div>
             
         </div>
         
@@ -623,6 +563,88 @@
             </ul>
             
             
+            <div class="documentation">
+                <h4>Documentation</h4>
+                <div class="doc-content">
+                    
+                        <p>Sometimes, not all the data from the source is needed, but only a subset. The <code>Extract</code> class can be used to specify how to do that, depending on the type of the data.</p>
+<h2>Extraction Methods</h2>
+<table>
+<thead>
+<tr>
+<th>Source type</th>
+<th>Property</th>
+<th>Expected property value</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FileObject or FileSet</td>
+<td>fileProperty</td>
+<td>One of: <code>fullpath</code>, <code>filename</code>, <code>content</code>, <code>lines</code>, <code>lineNumbers</code></td>
+<td>The corresponding property for the FileObject</td>
+</tr>
+<tr>
+<td>CSV (FileObject)</td>
+<td>column</td>
+<td>A column name</td>
+<td>Values in the specified column</td>
+</tr>
+<tr>
+<td>JSON</td>
+<td>jsonPath</td>
+<td>A <a href="https://goessner.net/articles/JsonPath/">JSONPath</a> expression</td>
+<td>The value(s) obtained by evaluating the JSON path expression</td>
+</tr>
+</tbody>
+</table>
+<h2>FileProperty Values</h2>
+<ul>
+<li><strong><code>fullpath</code></strong>: The full path to the file within the Croissant extraction or download folders. Example: <code>data/train/metadata.csv</code></li>
+<li><strong><code>filename</code></strong>: The name of the file. In <code>data/train/metadata.csv</code>, the file name is <code>metadata.csv</code></li>
+<li><strong><code>content</code></strong>: The byte content of the file</li>
+<li><strong><code>lines</code></strong>: The byte content of each line in the file</li>
+<li><strong><code>lineNumbers</code></strong>: The number of each line in the file (starting from 0)</li>
+</ul>
+<h2>Examples</h2>
+<h3>Extracting File Content</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;extract&quot;: {
+    &quot;fileProperty&quot;: &quot;content&quot;
+  }
+}
+</code></pre>
+
+<h3>Extracting CSV Column</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;extract&quot;: {
+    &quot;column&quot;: &quot;userId&quot;
+  }
+}
+</code></pre>
+
+<h3>Extracting with JSONPath</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;extract&quot;: {
+    &quot;jsonPath&quot;: &quot;$.metadata.title&quot;
+  }
+}
+</code></pre>
+
+<h3>Extracting Filename</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;extract&quot;: {
+    &quot;fileProperty&quot;: &quot;filename&quot;
+  }
+}
+</code></pre>
+
+<p>This class is typically used within a <code>DataSource</code> to specify exactly what part of the source data should be extracted for a particular field.</p>
+                    
+                </div>
+            </div>
+            
         </div>
         
         <div class="term" id="Field">
@@ -653,12 +675,146 @@
                 
                 <li><a href="#repeated">repeated</a> (→ Boolean)</li>
                 
-                <li><a href="#source">source</a> (→ DataSource, FileSet, FileObject, RecordSet)</li>
+                <li><a href="#source">source</a> (→ FileObject, FileSet, DataSource, RecordSet)</li>
                 
                 <li><a href="#subField">subField</a> (→ Field)</li>
                 
             </ul>
             
+            
+            <div class="documentation">
+                <h4>Documentation</h4>
+                <div class="doc-content">
+                    
+                        <p>A <code>Field</code> is part of a <code>RecordSet</code>. It may represent a column of a table, or a nested data structure or even a nested <code>RecordSet</code> in the case of hierarchical data.</p>
+<p><code>Field</code> is a subclass of <a href="https://schema.org/Intangible">schema.org/Intangible</a>.</p>
+<h2>Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Expected Type</th>
+<th>Cardinality</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>source</td>
+<td>DataSource<br><a href="http://schema.org/URL">URL</a></td>
+<td>ONE</td>
+<td>The data source of the field. This will generally reference a <code>FileObject</code> or <code>FileSet</code>'s contents</td>
+</tr>
+<tr>
+<td>dataType</td>
+<td>DataType</td>
+<td>MANY</td>
+<td>The data type of the field, identified by the URI of the corresponding class</td>
+</tr>
+<tr>
+<td>repeated</td>
+<td><a href="http://schema.org/Boolean">Boolean</a></td>
+<td>ONE</td>
+<td>If true, then the Field is a list of values of type dataType</td>
+</tr>
+<tr>
+<td>equivalentProperty</td>
+<td><a href="http://schema.org/URL">URL</a></td>
+<td>MANY</td>
+<td>A property that is equivalent to this Field</td>
+</tr>
+<tr>
+<td>references</td>
+<td>Reference</td>
+<td>MANY</td>
+<td>Another <code>Field</code> of another <code>RecordSet</code> that this field references (foreign key equivalent)</td>
+</tr>
+<tr>
+<td>subField</td>
+<td>Field</td>
+<td>MANY</td>
+<td>Another <code>Field</code> that is nested inside this one</td>
+</tr>
+<tr>
+<td>parentField</td>
+<td>Reference</td>
+<td>MANY</td>
+<td>A special case of <code>SubField</code> that should be hidden because it references a <code>Field</code> that already appears in the <code>RecordSet</code></td>
+</tr>
+</tbody>
+</table>
+<h2>Key Features</h2>
+<ul>
+<li>Each field has a <code>name</code> (unique identifier within the <code>RecordSet</code>)</li>
+<li>Supports foreign key relationships through the <code>references</code> property</li>
+<li>Supports hierarchical nesting with <code>subField</code> and <code>parentField</code></li>
+<li>Can specify multiple data types for semantic enrichment</li>
+</ul>
+<h2>Examples</h2>
+<h3>Simple Field</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@type&quot;: &quot;cr:Field&quot;,
+  &quot;@id&quot;: &quot;ratings/user_id&quot;,
+  &quot;dataType&quot;: &quot;sc:Integer&quot;,
+  &quot;source&quot;: {
+    &quot;fileObject&quot;: { &quot;@id&quot;: &quot;ratings-table&quot; },
+    &quot;extract&quot;: {
+      &quot;column&quot;: &quot;userId&quot;
+    }
+  }
+}
+</code></pre>
+
+<h3>Field with Reference (Foreign Key)</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@type&quot;: &quot;cr:Field&quot;,
+  &quot;@id&quot;: &quot;ratings/movie_id&quot;,
+  &quot;dataType&quot;: &quot;sc:Integer&quot;,
+  &quot;source&quot;: {
+    &quot;fileObject&quot;: { &quot;@id&quot;: &quot;ratings-table&quot; },
+    &quot;extract&quot;: {
+      &quot;column&quot;: &quot;movieId&quot;
+    }
+  },
+  &quot;references&quot;: {
+    &quot;@id&quot;: &quot;movies/movie_id&quot;
+  }
+}
+</code></pre>
+
+<h3>Nested Field with SubFields</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@type&quot;: &quot;cr:Field&quot;,
+  &quot;@id&quot;: &quot;gps_coordinates&quot;,
+  &quot;description&quot;: &quot;GPS coordinates where the image was taken.&quot;,
+  &quot;dataType&quot;: &quot;sc:GeoCoordinates&quot;,
+  &quot;subField&quot;: [
+    {
+      &quot;@type&quot;: &quot;cr:Field&quot;,
+      &quot;@id&quot;: &quot;gps_coordinates/latitude&quot;,
+      &quot;dataType&quot;: &quot;sc:Float&quot;,
+      &quot;source&quot;: {
+        &quot;fileObject&quot;: { &quot;@id&quot;: &quot;metadata&quot; },
+        &quot;extract&quot;: { &quot;column&quot;: &quot;latitude&quot; }
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;cr:Field&quot;,
+      &quot;@id&quot;: &quot;gps_coordinates/longitude&quot;,
+      &quot;dataType&quot;: &quot;sc:Float&quot;,
+      &quot;source&quot;: {
+        &quot;fileObject&quot;: { &quot;@id&quot;: &quot;metadata&quot; },
+        &quot;extract&quot;: { &quot;column&quot;: &quot;longitude&quot; }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<p>This example shows how fields can be hierarchically structured to represent complex data types like geographical coordinates.</p>
+                    
+                </div>
+            </div>
             
         </div>
         
@@ -680,7 +836,7 @@
             <p><strong>Properties:</strong></p>
             <ul class="property-list">
                 
-                <li><a href="#containedIn">containedIn</a> (→ FileObject, FileSet)</li>
+                <li><a href="#containedIn">containedIn</a> (→ FileSet, FileObject)</li>
                 
             </ul>
             
@@ -829,7 +985,7 @@
             <p><strong>Properties:</strong></p>
             <ul class="property-list">
                 
-                <li><a href="#containedIn">containedIn</a> (→ FileObject, FileSet)</li>
+                <li><a href="#containedIn">containedIn</a> (→ FileSet, FileObject)</li>
                 
                 <li><a href="#excludes">excludes</a> (→ Text)</li>
                 
@@ -837,6 +993,103 @@
                 
             </ul>
             
+            
+            <div class="documentation">
+                <h4>Documentation</h4>
+                <div class="doc-content">
+                    
+                        <p>In many datasets, data comes in the form of collections of homogeneous files, such as images, videos or text files, where each file needs to be treated as an individual item, e.g., as a training example. <code>FileSet</code> is a class that describes such collections of files.</p>
+<p>A <code>FileSet</code> is a set of files located in a container, which can be an archive <code>FileObject</code> or a "manifest" file. A FileSet may also specify inclusion / exclusion filters using file patterns.</p>
+<p><code>FileSet</code> extends <a href="https://schema.org/Intangible">schema.org/Intangible</a>.</p>
+<h2>Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Expected Type</th>
+<th>Cardinality</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>containedIn</td>
+<td>Reference</td>
+<td>MANY</td>
+<td>The source of data for the <code>FileSet</code>, e.g., an archive. If multiple values are provided, then the union of their contents is taken</td>
+</tr>
+<tr>
+<td>includes</td>
+<td><a href="http://schema.org/Text">Text</a></td>
+<td>MANY</td>
+<td>A glob pattern that specifies the files to include</td>
+</tr>
+<tr>
+<td>excludes</td>
+<td><a href="http://schema.org/Text">Text</a></td>
+<td>MANY</td>
+<td>A glob pattern that specifies the files to exclude</td>
+</tr>
+</tbody>
+</table>
+<h2>Pattern Processing</h2>
+<p>The <code>includes</code> and <code>excludes</code> properties use <a href="https://en.wikipedia.org/wiki/Glob_(programming)">glob patterns</a>, a common mechanism to specify a set of files along a path, like "<em>.jpg" for all jpg images, or "/foo/pic</em>.jpg" for all jpg images under the "foo" directory whose filename starts with "pic".</p>
+<p>To get the set of FileObjects included in the FileSet:
+1. The <code>includes</code> pattern(s) are evaluated first
+2. If multiple <code>includes</code> are specified, the union of their results is taken
+3. Then all the files corresponding to the <code>excludes</code> patterns are removed from that set
+4. Patterns are evaluated from the root of the <code>containedIn</code> contents (e.g., the top level directory extracted from an archive)</p>
+<h2>Examples</h2>
+<h3>Simple Image Archive</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@type&quot;: &quot;cr:FileObject&quot;,
+  &quot;@id&quot;: &quot;train2014.zip&quot;,
+  &quot;contentSize&quot;: &quot;13510573713 B&quot;,
+  &quot;contentUrl&quot;: &quot;http://images.cocodataset.org/zips/train2014.zip&quot;,
+  &quot;encodingFormat&quot;: &quot;application/zip&quot;,
+  &quot;sha256&quot;: &quot;sha256&quot;
+},
+{
+  &quot;@type&quot;: &quot;cr:FileSet&quot;,
+  &quot;@id&quot;: &quot;image-files&quot;,
+  &quot;containedIn&quot;: { &quot;@id&quot;: &quot;train2014.zip&quot; },
+  &quot;encodingFormat&quot;: &quot;image/jpeg&quot;,
+  &quot;includes&quot;: &quot;*.jpg&quot;
+}
+</code></pre>
+
+<h3>Complex Archive with Multiple FileSets</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@type&quot;: &quot;cr:FileObject&quot;,
+  &quot;@id&quot;: &quot;flores200_dataset.tar.gz&quot;,
+  &quot;description&quot;: &quot;Flores 200 is hosted on a webserver.&quot;,
+  &quot;contentSize&quot;: &quot;25585843 B&quot;,
+  &quot;contentUrl&quot;: &quot;https://tinyurl.com/flores200dataset&quot;,
+  &quot;encodingFormat&quot;: &quot;application/x-gzip&quot;,
+  &quot;sha256&quot;: &quot;c764ffdeee4894b3002337c5b1e70ecf6f514c00&quot;
+},
+{
+  &quot;@type&quot;: &quot;cr:FileSet&quot;,
+  &quot;@id&quot;: &quot;files-dev&quot;,
+  &quot;description&quot;: &quot;dev files are inside the tar.&quot;,
+  &quot;containedIn&quot;: { &quot;@id&quot;: &quot;flores200_dataset.tar.gz&quot; },
+  &quot;encodingFormat&quot;: &quot;application/json&quot;,
+  &quot;includes&quot;: &quot;flores200_dataset/dev/*.dev&quot;
+},
+{
+  &quot;@type&quot;: &quot;cr:FileSet&quot;,
+  &quot;@id&quot;: &quot;files-devtest&quot;,
+  &quot;description&quot;: &quot;devtest files are inside the tar.&quot;,
+  &quot;containedIn&quot;: { &quot;@id&quot;: &quot;flores200_dataset.tar.gz&quot; },
+  &quot;encodingFormat&quot;: &quot;application/json&quot;,
+  &quot;includes&quot;: &quot;flores200_dataset/devtest/*.devtest&quot;
+}
+</code></pre>
+
+<p>This example shows how multiple FileSets can be extracted from a single archive, each with different inclusion patterns to select different subsets of files.</p>
+                    
+                </div>
+            </div>
             
         </div>
         
@@ -855,6 +1108,70 @@
             </ul>
             
             
+            
+            <div class="documentation">
+                <h4>Documentation</h4>
+                <div class="doc-content">
+                    
+                        <p>A format string used to parse the values coming from a <code>DataSource</code>. For example, a date may be represented as the string "2022/11/10", and interpreted into the correct date via the format "yyyy/MM/dd". Formats correspond to a target data type.</p>
+<h2>Supported Format Types</h2>
+<table>
+<thead>
+<tr>
+<th>Data types</th>
+<th>Format</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://schema.org/Date">sc:Date</a><br><a href="http://schema.org/DateTime">sc:DateTime</a></td>
+<td><a href="https://cldr.unicode.org/translation/date-time/date-time-patterns">CLDR Date/Time Patterns</a></td>
+<td>MM/dd/yyyy</td>
+</tr>
+<tr>
+<td><a href="http://schema.org/Number">sc:Number</a><br><a href="http://schema.org/Float">sc:Float</a><br><a href="http://schema.org/Integer">sc:Integer</a></td>
+<td><a href="https://cldr.unicode.org/translation/number-currency-formats/number-and-currency-patterns">CLDR Number and Currency patterns</a></td>
+<td>0.##E0 (scientific notation with max 2 decimals)</td>
+</tr>
+<tr>
+<td>cr:BoundingBox</td>
+<td><a href="https://keras.io/api/keras_cv/bounding_box/formats/">Keras bounding box format</a></td>
+<td>CENTER_XYWH</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Note</strong>: This list is not exhaustive, and not all Croissant implementations will support all formats.</p>
+<h2>Examples</h2>
+<h3>Date Format Parsing</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;source&quot;: {
+    &quot;fileObject&quot;: { &quot;@id&quot;: &quot;metadata&quot; },
+    &quot;extract&quot;: { &quot;column&quot;: &quot;datetaken&quot; },
+    &quot;format&quot;: &quot;%Y-%m-%d %H:%M:%S.%f&quot;
+  }
+}
+</code></pre>
+
+<h3>Bounding Box Format</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@type&quot;: &quot;cr:Field&quot;,
+  &quot;@id&quot;: &quot;images/annotations/bbox&quot;,
+  &quot;description&quot;: &quot;The bounding box around annotated object[s].&quot;,
+  &quot;dataType&quot;: &quot;cr:BoundingBox&quot;,
+  &quot;source&quot;: {
+    &quot;fileSet&quot;: { &quot;@id&quot;: &quot;instancesperson_keypoints_annotations&quot; },
+    &quot;extract&quot;: { &quot;column&quot;: &quot;bbox&quot; },
+    &quot;format&quot;: &quot;CENTER_XYWH&quot;
+  }
+}
+</code></pre>
+
+<h2>Usage</h2>
+<p>Format specifications are typically used within <code>DataSource</code> definitions to ensure that string representations of structured data (like dates, numbers, or coordinates) are correctly parsed into their intended data types. This is particularly important for ML datasets where precise data interpretation is crucial for model training and evaluation.</p>
+                    
+                </div>
+            </div>
             
         </div>
         
@@ -886,10 +1203,137 @@
                 
                 <li><a href="#key">key</a> (→ Field)</li>
                 
-                <li><a href="#source">source</a> (→ DataSource, FileSet, FileObject, RecordSet)</li>
+                <li><a href="#source">source</a> (→ FileObject, FileSet, DataSource, RecordSet)</li>
                 
             </ul>
             
+            
+            <div class="documentation">
+                <h4>Documentation</h4>
+                <div class="doc-content">
+                    
+                        <p>A <code>RecordSet</code> describes a set of structured records obtained from one or more data sources (typically a file or set of files) and the structure of these records, expressed as a set of fields (e.g., the columns of a table). A <code>RecordSet</code> can represent flat or nested data.</p>
+<h2>Purpose</h2>
+<p><code>RecordSet</code> provides a common structure description that can be used across different modalities, in terms of records that may contain multiple fields. It handles:</p>
+<ul>
+<li><strong>Unstructured content</strong> (like text and images) as single-field records</li>
+<li><strong>Tabular data</strong> as one record per row in the table, with fields for each column  </li>
+<li><strong>Tree-structured data</strong> with nested and repeated fields</li>
+</ul>
+<p><code>RecordSet</code> is a subclass of <a href="https://schema.org/Intangible">schema.org/Intangible</a>.</p>
+<h2>Properties</h2>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Expected Type</th>
+<th>Cardinality</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>field</td>
+<td>Field</td>
+<td>MANY</td>
+<td>A data element that appears in the records of the <code>RecordSet</code> (e.g., one column of a table)</td>
+</tr>
+<tr>
+<td>key</td>
+<td><a href="http://schema.org/Text">Text</a></td>
+<td>MANY</td>
+<td>One or more fields whose values uniquely identify each record in the <code>RecordSet</code></td>
+</tr>
+<tr>
+<td>data</td>
+<td>JSON</td>
+<td>MANY</td>
+<td>One or more records that constitute the data of the <code>RecordSet</code></td>
+</tr>
+<tr>
+<td>examples</td>
+<td>JSON<br><a href="http://schema.org/URL">URL</a></td>
+<td>MANY</td>
+<td>One or more records provided as example content of the <code>RecordSet</code>, or a reference to data source that contains examples</td>
+</tr>
+</tbody>
+</table>
+<h2>Additional Features</h2>
+<ul>
+<li><strong>Embedding</strong>: Supports embedding small enumerations directly via the <code>data</code> property</li>
+<li><strong>Typing</strong>: Supports typing with <code>dataType</code> for entire RecordSets  </li>
+<li><strong>Joins</strong>: Supports joins through field references (foreign keys)</li>
+<li><strong>Hierarchical</strong>: Supports hierarchical structures with nested records</li>
+</ul>
+<h2>Examples</h2>
+<h3>Simple Tabular RecordSet</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@type&quot;: &quot;cr:RecordSet&quot;,
+  &quot;@id&quot;: &quot;ratings&quot;,
+  &quot;key&quot;: [{ &quot;@id&quot;: &quot;ratings/user_id&quot; }, { &quot;@id&quot;: &quot;ratings/movie_id&quot; }],
+  &quot;field&quot;: [
+    {
+      &quot;@type&quot;: &quot;cr:Field&quot;,
+      &quot;@id&quot;: &quot;ratings/user_id&quot;,
+      &quot;dataType&quot;: &quot;sc:Integer&quot;,
+      &quot;source&quot;: {
+        &quot;fileObject&quot;: { &quot;@id&quot;: &quot;ratings-table&quot; },
+        &quot;extract&quot;: { &quot;column&quot;: &quot;userId&quot; }
+      }
+    },
+    {
+      &quot;@type&quot;: &quot;cr:Field&quot;,
+      &quot;@id&quot;: &quot;ratings/rating&quot;,
+      &quot;description&quot;: &quot;The score of the rating on a five-star scale.&quot;,
+      &quot;dataType&quot;: &quot;sc:Float&quot;,
+      &quot;source&quot;: {
+        &quot;fileObject&quot;: { &quot;@id&quot;: &quot;ratings-table&quot; },
+        &quot;extract&quot;: { &quot;column&quot;: &quot;rating&quot; }
+      }
+    }
+  ]
+}
+</code></pre>
+
+<h3>Enumeration with Embedded Data</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@type&quot;: &quot;cr:RecordSet&quot;,
+  &quot;@id&quot;: &quot;gender_enum&quot;,
+  &quot;description&quot;: &quot;Maps gender ids (0, 1) to labeled values.&quot;,
+  &quot;key&quot;: { &quot;@id&quot;: &quot;gender_enum/id&quot; },
+  &quot;field&quot;: [
+    { &quot;@id&quot;: &quot;gender_enum/id&quot;, &quot;@type&quot;: &quot;cr:Field&quot;, &quot;dataType&quot;: &quot;sc:Integer&quot; },
+    { &quot;@id&quot;: &quot;gender_enum/label&quot;, &quot;@type&quot;: &quot;cr:Field&quot;, &quot;dataType&quot;: &quot;sc:String&quot; }
+  ],
+  &quot;data&quot;: [
+    { &quot;gender_enum/id&quot;: 0, &quot;gender_enum/label&quot;: &quot;Male&quot; },
+    { &quot;gender_enum/id&quot;: 1, &quot;gender_enum/label&quot;: &quot;Female&quot; }
+  ]
+}
+</code></pre>
+
+<h3>Geographic Data with Type Mapping</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;@id&quot;: &quot;cities&quot;,
+  &quot;@type&quot;: &quot;cr:RecordSet&quot;,
+  &quot;dataType&quot;: &quot;sc:GeoCoordinates&quot;,
+  &quot;field&quot;: [
+    {
+      &quot;@id&quot;: &quot;cities/latitude&quot;,
+      &quot;@type&quot;: &quot;cr:Field&quot;
+    },
+    {
+      &quot;@id&quot;: &quot;cities/longitude&quot;, 
+      &quot;@type&quot;: &quot;cr:Field&quot;
+    }
+  ]
+}
+</code></pre>
+
+<p>This example shows how RecordSets can be typed with semantic types like <code>sc:GeoCoordinates</code>, and fields can be implicitly mapped to properties of that type (latitude and longitude).</p>
+                    
+                </div>
+            </div>
             
         </div>
         
@@ -919,6 +1363,72 @@
                 
             </ul>
             
+            
+            <div class="documentation">
+                <h4>Documentation</h4>
+                <div class="doc-content">
+                    
+                        <p>Croissant supports a few simple transformations that can be applied on the source data. Transformations are used to modify extracted data before it's included in the final dataset.</p>
+<h2>Supported Transformations</h2>
+<ul>
+<li><strong>delimiter</strong>: Split a string into an array using the supplied character</li>
+<li><strong>regex</strong>: A regular expression to parse the data  </li>
+<li><strong>jsonQuery</strong>: A JSON query to evaluate on the (JSON) data source</li>
+</ul>
+<h2>Examples</h2>
+<h3>Regular Expression Transformation</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;fileSet&quot;: {
+    &quot;@id&quot;: &quot;files&quot;
+  },
+  &quot;extract&quot;: {
+    &quot;fileProperty&quot;: &quot;filename&quot;
+  },
+  &quot;transform&quot;: {
+    &quot;regex&quot;: &quot;^(train|val|test)2014/.*\\.jpg$&quot;
+  }
+}
+</code></pre>
+
+<p>This example extracts filenames and applies a regex to parse training/validation/test split information.</p>
+<h3>Filename Parsing</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;source&quot;: {
+    &quot;fileSet&quot;: { &quot;@id&quot;: &quot;image-files&quot; },
+    &quot;extract&quot;: {
+      &quot;fileProperty&quot;: &quot;filename&quot;
+    },
+    &quot;transform&quot;: {
+      &quot;regex&quot;: &quot;([^\\/]*)\\.jpg&quot;
+    }
+  }
+}
+</code></pre>
+
+<p>This extracts the base filename (without path and extension) from image files.</p>
+<h3>Delimiter Transformation</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;transform&quot;: {
+    &quot;delimiter&quot;: &quot;,&quot;
+  }
+}
+</code></pre>
+
+<p>This would split a comma-separated string into an array of values.</p>
+<h3>JSON Query Transformation</h3>
+<pre class="codehilite"><code class="language-json">{
+  &quot;transform&quot;: {
+    &quot;jsonQuery&quot;: &quot;$.metadata.authors[*].name&quot;
+  }
+}
+</code></pre>
+
+<p>This would extract all author names from a JSON structure using a JSON query.</p>
+<h2>Usage</h2>
+<p>Transformations are typically used within <code>DataSource</code> definitions, applied after data extraction but before final formatting. They provide a way to clean, parse, or restructure data to make it suitable for machine learning workflows without requiring external preprocessing steps.</p>
+                    
+                </div>
+            </div>
             
         </div>
         
@@ -989,9 +1499,9 @@
             <p><strong>Domain:</strong></p>
             <ul class="property-list">
                 
-                <li><a href="http://mlcommons.org/croissant/FileObject">http://mlcommons.org/croissant/FileObject</a></li>
-                
                 <li><a href="http://mlcommons.org/croissant/FileSet">http://mlcommons.org/croissant/FileSet</a></li>
+                
+                <li><a href="http://mlcommons.org/croissant/FileObject">http://mlcommons.org/croissant/FileObject</a></li>
                 
             </ul>
             
@@ -999,9 +1509,9 @@
             <p><strong>Range:</strong></p>
             <ul class="property-list">
                 
-                <li><a href="http://mlcommons.org/croissant/FileObject">http://mlcommons.org/croissant/FileObject</a></li>
-                
                 <li><a href="http://mlcommons.org/croissant/FileSet">http://mlcommons.org/croissant/FileSet</a></li>
+                
+                <li><a href="http://mlcommons.org/croissant/FileObject">http://mlcommons.org/croissant/FileObject</a></li>
                 
             </ul>
             
@@ -1068,9 +1578,9 @@
             <p><strong>Domain:</strong></p>
             <ul class="property-list">
                 
-                <li><a href="http://mlcommons.org/croissant/Field">http://mlcommons.org/croissant/Field</a></li>
-                
                 <li><a href="http://mlcommons.org/croissant/RecordSet">http://mlcommons.org/croissant/RecordSet</a></li>
+                
+                <li><a href="http://mlcommons.org/croissant/Field">http://mlcommons.org/croissant/Field</a></li>
                 
             </ul>
             
@@ -1595,9 +2105,9 @@
             <p><strong>Domain:</strong></p>
             <ul class="property-list">
                 
-                <li><a href="http://mlcommons.org/croissant/Field">http://mlcommons.org/croissant/Field</a></li>
-                
                 <li><a href="http://mlcommons.org/croissant/RecordSet">http://mlcommons.org/croissant/RecordSet</a></li>
+                
+                <li><a href="http://mlcommons.org/croissant/Field">http://mlcommons.org/croissant/Field</a></li>
                 
             </ul>
             
@@ -1605,11 +2115,11 @@
             <p><strong>Range:</strong></p>
             <ul class="property-list">
                 
-                <li><a href="http://mlcommons.org/croissant/DataSource">http://mlcommons.org/croissant/DataSource</a></li>
+                <li><a href="http://mlcommons.org/croissant/FileObject">http://mlcommons.org/croissant/FileObject</a></li>
                 
                 <li><a href="http://mlcommons.org/croissant/FileSet">http://mlcommons.org/croissant/FileSet</a></li>
                 
-                <li><a href="http://mlcommons.org/croissant/FileObject">http://mlcommons.org/croissant/FileObject</a></li>
+                <li><a href="http://mlcommons.org/croissant/DataSource">http://mlcommons.org/croissant/DataSource</a></li>
                 
                 <li><a href="http://mlcommons.org/croissant/RecordSet">http://mlcommons.org/croissant/RecordSet</a></li>
                 
