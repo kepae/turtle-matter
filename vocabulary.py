@@ -202,15 +202,33 @@ class VocabularyExtractor:
             cls.related_properties.sort(key=lambda x: x.local_name)
         
         # Generate JSON-LD context
-        jsonld_context = {
-            "@context": {
-                "@vocab": self.target_namespaces[0] if self.target_namespaces else "",
-                "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-                "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-                "owl": "http://www.w3.org/2002/07/owl#",
-                "schema": "https://schema.org/"
-            }
+        context = {
+            "@vocab": self.target_namespaces[0] if self.target_namespaces else ""
         }
+        
+        # Track which prefixes are actually used
+        used_uris = set()
+        for cls in classes:
+            used_uris.update(cls.subclass_of)
+        for prop in properties:
+            used_uris.update(prop.domain)
+            used_uris.update(prop.range)
+        
+        # Map common prefixes
+        prefix_map = {
+            "http://www.w3.org/1999/02/22-rdf-syntax-ns#": "rdf",
+            "http://www.w3.org/2000/01/rdf-schema#": "rdfs", 
+            "http://www.w3.org/2002/07/owl#": "owl",
+            "https://schema.org/": "schema"
+        }
+        
+        # Only add prefixes that are actually used
+        for uri in used_uris:
+            for namespace, prefix in prefix_map.items():
+                if uri.startswith(namespace) and prefix not in context:
+                    context[prefix] = namespace
+        
+        jsonld_context = {"@context": context}
         
         # Add term definitions to context
         for cls in classes:
