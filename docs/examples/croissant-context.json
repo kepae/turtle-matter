@@ -1,0 +1,138 @@
+{
+  "@context": {
+    "@vocab": "http://mlcommons.org/croissant/",
+    "schema": "https://schema.org/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "ContentExtractionEnumeration": {
+      "@id": "http://mlcommons.org/croissant/ContentExtractionEnumeration",
+      "@type": "@id"
+    },
+    "DataSource": {
+      "@id": "http://mlcommons.org/croissant/DataSource",
+      "@type": "@id"
+    },
+    "DataType": {
+      "@id": "http://mlcommons.org/croissant/DataType",
+      "@type": "@id"
+    },
+    "Extract": {
+      "@id": "http://mlcommons.org/croissant/Extract",
+      "@type": "@id"
+    },
+    "Field": {
+      "@id": "http://mlcommons.org/croissant/Field",
+      "@type": "@id"
+    },
+    "FileObject": {
+      "@id": "http://mlcommons.org/croissant/FileObject",
+      "@type": "@id"
+    },
+    "FilePropertyEnumeration": {
+      "@id": "http://mlcommons.org/croissant/FilePropertyEnumeration",
+      "@type": "@id"
+    },
+    "FileSet": {
+      "@id": "http://mlcommons.org/croissant/FileSet",
+      "@type": "@id"
+    },
+    "Format": {
+      "@id": "http://mlcommons.org/croissant/Format",
+      "@type": "@id"
+    },
+    "RecordSet": {
+      "@id": "http://mlcommons.org/croissant/RecordSet",
+      "@type": "@id"
+    },
+    "Transform": {
+      "@id": "http://mlcommons.org/croissant/Transform",
+      "@type": "@id"
+    },
+    "citeAs": {
+      "@id": "http://mlcommons.org/croissant/citeAs"
+    },
+    "column": {
+      "@id": "http://mlcommons.org/croissant/column"
+    },
+    "containedIn": {
+      "@id": "http://mlcommons.org/croissant/containedIn"
+    },
+    "content": {
+      "@id": "http://mlcommons.org/croissant/content"
+    },
+    "data": {
+      "@id": "http://mlcommons.org/croissant/data"
+    },
+    "dataType": {
+      "@id": "http://mlcommons.org/croissant/dataType"
+    },
+    "delimiter": {
+      "@id": "http://mlcommons.org/croissant/delimiter"
+    },
+    "equivalentProperty": {
+      "@id": "http://mlcommons.org/croissant/equivalentProperty"
+    },
+    "examples": {
+      "@id": "http://mlcommons.org/croissant/examples"
+    },
+    "excludes": {
+      "@id": "http://mlcommons.org/croissant/excludes"
+    },
+    "extract": {
+      "@id": "http://mlcommons.org/croissant/extract"
+    },
+    "field": {
+      "@id": "http://mlcommons.org/croissant/field"
+    },
+    "fileObject": {
+      "@id": "http://mlcommons.org/croissant/fileObject"
+    },
+    "fileProperty": {
+      "@id": "http://mlcommons.org/croissant/fileProperty"
+    },
+    "fileSet": {
+      "@id": "http://mlcommons.org/croissant/fileSet"
+    },
+    "format": {
+      "@id": "http://mlcommons.org/croissant/format"
+    },
+    "includes": {
+      "@id": "http://mlcommons.org/croissant/includes"
+    },
+    "isLiveDataset": {
+      "@id": "http://mlcommons.org/croissant/isLiveDataset"
+    },
+    "jsonPath": {
+      "@id": "http://mlcommons.org/croissant/jsonPath"
+    },
+    "jsonQuery": {
+      "@id": "http://mlcommons.org/croissant/jsonQuery"
+    },
+    "key": {
+      "@id": "http://mlcommons.org/croissant/key"
+    },
+    "parentField": {
+      "@id": "http://mlcommons.org/croissant/parentField"
+    },
+    "recordSet": {
+      "@id": "http://mlcommons.org/croissant/recordSet"
+    },
+    "references": {
+      "@id": "http://mlcommons.org/croissant/references"
+    },
+    "regex": {
+      "@id": "http://mlcommons.org/croissant/regex"
+    },
+    "repeated": {
+      "@id": "http://mlcommons.org/croissant/repeated"
+    },
+    "source": {
+      "@id": "http://mlcommons.org/croissant/source"
+    },
+    "subField": {
+      "@id": "http://mlcommons.org/croissant/subField"
+    },
+    "transform": {
+      "@id": "http://mlcommons.org/croissant/transform"
+    }
+  }
+}
