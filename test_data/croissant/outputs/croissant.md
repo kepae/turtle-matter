@@ -1,5 +1,5 @@
 ---
-title: Vocabulary
+title: Croissant
 namespace: http://mlcommons.org/croissant/
 jsonld_context: |
   {
@@ -144,7 +144,7 @@ jsonld_context: |
   }
 ---
 
-# Vocabulary
+# Croissant
 
 **Namespace:** http://mlcommons.org/croissant/
 

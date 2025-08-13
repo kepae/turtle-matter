@@ -1,4 +1,4 @@
-Loading Turtle file: test_data/croissant/croissant.ttl
+Loading RDF file: test_data/croissant/croissant.ttl (format: turtle)
 Target namespace: http://mlcommons.org/croissant/
 Loaded 227 triples
 

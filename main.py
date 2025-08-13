@@ -21,7 +21,8 @@ from formatters import HTMLFormatter, MarkdownFormatter, JSONLDFormatter
 @click.option('--full-context', is_flag=True, help='Include semantic relationships (subClassOf, domain, range) in JSON-LD context')
 @click.option('--docs-dir', '-d', type=click.Path(exists=True, path_type=Path), 
               help='Directory containing companion markdown documentation files')
-def main(rdf_file: Path, emit: str, rdf_format: Optional[str], namespace: Optional[str], full_context: bool, docs_dir: Optional[Path]):
+@click.option('--title', help='Title for the vocabulary (defaults to filename)')
+def main(rdf_file: Path, emit: str, rdf_format: Optional[str], namespace: Optional[str], full_context: bool, docs_dir: Optional[Path], title: Optional[str]):
     """Generate vocabulary documentation from RDF file."""
     
     # Auto-detect RDF format if not specified
@@ -58,6 +59,14 @@ def main(rdf_file: Path, emit: str, rdf_format: Optional[str], namespace: Option
     target_namespaces = [namespace] if namespace else []
     extractor = VocabularyExtractor(target_namespaces)
     vocab_data = extractor.extract_from_graph(graph, full_context)
+    
+    # Set title (use provided title or infer from filename)
+    if title:
+        vocab_data.title = title
+    else:
+        # Simple filename-based inference
+        stem = rdf_file.stem  # "croissant" from "croissant.ttl"
+        vocab_data.title = stem.replace('-', ' ').replace('_', ' ').title()
     
     # Enrich with companion documentation if provided
     if docs_dir:
