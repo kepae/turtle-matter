@@ -1,17 +1,28 @@
 #!/bin/bash
 
-# Generate examples for GitHub Pages
+echo "Generating examples..."
+
+# Croissant example
+echo "Processing croissant..."
 RDF_FILE="docs/examples/croissant/inputs/croissant.ttl"
 NAMESPACE="http://mlcommons.org/croissant/"
 DOCS_DIR="docs/examples/croissant/inputs/docs"
-EXAMPLES_OUTPUTS_DIR="docs/examples/croissant/outputs"
+OUTPUTS_DIR="docs/examples/croissant/outputs"
 
-mkdir -p $EXAMPLES_OUTPUTS_DIR
+mkdir -p $OUTPUTS_DIR
+uv run python main.py $RDF_FILE --emit html --namespace $NAMESPACE --docs-dir $DOCS_DIR --title "Croissant" > $OUTPUTS_DIR/croissant.html
+uv run python main.py $RDF_FILE --emit markdown --namespace $NAMESPACE --docs-dir $DOCS_DIR --title "Croissant" > $OUTPUTS_DIR/croissant.md
+uv run python main.py $RDF_FILE --emit jsonld --namespace $NAMESPACE > $OUTPUTS_DIR/croissant-context.json
 
-echo "Generating examples for GitHub Pages..."
+# PROV example  
+echo "Processing prov..."
+RDF_FILE="docs/examples/prov/inputs/prov.ttl"
+NAMESPACE="http://www.w3.org/ns/prov#"
+OUTPUTS_DIR="docs/examples/prov/outputs"
 
-uv run python main.py $RDF_FILE --emit html --namespace $NAMESPACE --docs-dir $DOCS_DIR --title "Croissant" > $EXAMPLES_OUTPUTS_DIR/croissant.html
-uv run python main.py $RDF_FILE --emit markdown --namespace $NAMESPACE --docs-dir $DOCS_DIR --title "Croissant" > $EXAMPLES_OUTPUTS_DIR/croissant.md
-uv run python main.py $RDF_FILE --emit jsonld --namespace $NAMESPACE > $EXAMPLES_OUTPUTS_DIR/croissant-context.json
+mkdir -p $OUTPUTS_DIR
+uv run python main.py $RDF_FILE --emit html --namespace $NAMESPACE --title "PROV Ontology" > $OUTPUTS_DIR/prov.html
+uv run python main.py $RDF_FILE --emit markdown --namespace $NAMESPACE --title "PROV Ontology" > $OUTPUTS_DIR/prov.md
+uv run python main.py $RDF_FILE --emit jsonld --namespace $NAMESPACE > $OUTPUTS_DIR/prov-context.json
 
-echo "Done! Examples generated in $EXAMPLES_OUTPUTS_DIR"
+echo "Done! All examples generated."

@@ -1,0 +1,411 @@
+{
+  "@context": {
+    "@vocab": "http://www.w3.org/ns/prov#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "Accept": {
+      "@id": "http://www.w3.org/ns/prov#Accept",
+      "@type": "@id"
+    },
+    "Activity": {
+      "@id": "http://www.w3.org/ns/prov#Activity",
+      "@type": "@id"
+    },
+    "ActivityInfluence": {
+      "@id": "http://www.w3.org/ns/prov#ActivityInfluence",
+      "@type": "@id"
+    },
+    "Agent": {
+      "@id": "http://www.w3.org/ns/prov#Agent",
+      "@type": "@id"
+    },
+    "AgentInfluence": {
+      "@id": "http://www.w3.org/ns/prov#AgentInfluence",
+      "@type": "@id"
+    },
+    "Association": {
+      "@id": "http://www.w3.org/ns/prov#Association",
+      "@type": "@id"
+    },
+    "Attribution": {
+      "@id": "http://www.w3.org/ns/prov#Attribution",
+      "@type": "@id"
+    },
+    "Bundle": {
+      "@id": "http://www.w3.org/ns/prov#Bundle",
+      "@type": "@id"
+    },
+    "Collection": {
+      "@id": "http://www.w3.org/ns/prov#Collection",
+      "@type": "@id"
+    },
+    "Communication": {
+      "@id": "http://www.w3.org/ns/prov#Communication",
+      "@type": "@id"
+    },
+    "Contribute": {
+      "@id": "http://www.w3.org/ns/prov#Contribute",
+      "@type": "@id"
+    },
+    "Contributor": {
+      "@id": "http://www.w3.org/ns/prov#Contributor",
+      "@type": "@id"
+    },
+    "Copyright": {
+      "@id": "http://www.w3.org/ns/prov#Copyright",
+      "@type": "@id"
+    },
+    "Create": {
+      "@id": "http://www.w3.org/ns/prov#Create",
+      "@type": "@id"
+    },
+    "Creator": {
+      "@id": "http://www.w3.org/ns/prov#Creator",
+      "@type": "@id"
+    },
+    "Delegation": {
+      "@id": "http://www.w3.org/ns/prov#Delegation",
+      "@type": "@id"
+    },
+    "Derivation": {
+      "@id": "http://www.w3.org/ns/prov#Derivation",
+      "@type": "@id"
+    },
+    "Dictionary": {
+      "@id": "http://www.w3.org/ns/prov#Dictionary",
+      "@type": "@id"
+    },
+    "DirectQueryService": {
+      "@id": "http://www.w3.org/ns/prov#DirectQueryService",
+      "@type": "@id"
+    },
+    "EmptyCollection": {
+      "@id": "http://www.w3.org/ns/prov#EmptyCollection",
+      "@type": "@id"
+    },
+    "EmptyDictionary": {
+      "@id": "http://www.w3.org/ns/prov#EmptyDictionary",
+      "@type": "@id"
+    },
+    "End": {
+      "@id": "http://www.w3.org/ns/prov#End",
+      "@type": "@id"
+    },
+    "Entity": {
+      "@id": "http://www.w3.org/ns/prov#Entity",
+      "@type": "@id"
+    },
+    "EntityInfluence": {
+      "@id": "http://www.w3.org/ns/prov#EntityInfluence",
+      "@type": "@id"
+    },
+    "Generation": {
+      "@id": "http://www.w3.org/ns/prov#Generation",
+      "@type": "@id"
+    },
+    "Influence": {
+      "@id": "http://www.w3.org/ns/prov#Influence",
+      "@type": "@id"
+    },
+    "Insertion": {
+      "@id": "http://www.w3.org/ns/prov#Insertion",
+      "@type": "@id"
+    },
+    "InstantaneousEvent": {
+      "@id": "http://www.w3.org/ns/prov#InstantaneousEvent",
+      "@type": "@id"
+    },
+    "Invalidation": {
+      "@id": "http://www.w3.org/ns/prov#Invalidation",
+      "@type": "@id"
+    },
+    "KeyEntityPair": {
+      "@id": "http://www.w3.org/ns/prov#KeyEntityPair",
+      "@type": "@id"
+    },
+    "Location": {
+      "@id": "http://www.w3.org/ns/prov#Location",
+      "@type": "@id"
+    },
+    "Modify": {
+      "@id": "http://www.w3.org/ns/prov#Modify",
+      "@type": "@id"
+    },
+    "Organization": {
+      "@id": "http://www.w3.org/ns/prov#Organization",
+      "@type": "@id"
+    },
+    "Person": {
+      "@id": "http://www.w3.org/ns/prov#Person",
+      "@type": "@id"
+    },
+    "Plan": {
+      "@id": "http://www.w3.org/ns/prov#Plan",
+      "@type": "@id"
+    },
+    "PrimarySource": {
+      "@id": "http://www.w3.org/ns/prov#PrimarySource",
+      "@type": "@id"
+    },
+    "Publish": {
+      "@id": "http://www.w3.org/ns/prov#Publish",
+      "@type": "@id"
+    },
+    "Publisher": {
+      "@id": "http://www.w3.org/ns/prov#Publisher",
+      "@type": "@id"
+    },
+    "Quotation": {
+      "@id": "http://www.w3.org/ns/prov#Quotation",
+      "@type": "@id"
+    },
+    "Removal": {
+      "@id": "http://www.w3.org/ns/prov#Removal",
+      "@type": "@id"
+    },
+    "Replace": {
+      "@id": "http://www.w3.org/ns/prov#Replace",
+      "@type": "@id"
+    },
+    "Revision": {
+      "@id": "http://www.w3.org/ns/prov#Revision",
+      "@type": "@id"
+    },
+    "RightsAssignment": {
+      "@id": "http://www.w3.org/ns/prov#RightsAssignment",
+      "@type": "@id"
+    },
+    "RightsHolder": {
+      "@id": "http://www.w3.org/ns/prov#RightsHolder",
+      "@type": "@id"
+    },
+    "Role": {
+      "@id": "http://www.w3.org/ns/prov#Role",
+      "@type": "@id"
+    },
+    "ServiceDescription": {
+      "@id": "http://www.w3.org/ns/prov#ServiceDescription",
+      "@type": "@id"
+    },
+    "SoftwareAgent": {
+      "@id": "http://www.w3.org/ns/prov#SoftwareAgent",
+      "@type": "@id"
+    },
+    "Start": {
+      "@id": "http://www.w3.org/ns/prov#Start",
+      "@type": "@id"
+    },
+    "Submit": {
+      "@id": "http://www.w3.org/ns/prov#Submit",
+      "@type": "@id"
+    },
+    "Usage": {
+      "@id": "http://www.w3.org/ns/prov#Usage",
+      "@type": "@id"
+    },
+    "actedOnBehalfOf": {
+      "@id": "http://www.w3.org/ns/prov#actedOnBehalfOf"
+    },
+    "activity": {
+      "@id": "http://www.w3.org/ns/prov#activity"
+    },
+    "agent": {
+      "@id": "http://www.w3.org/ns/prov#agent"
+    },
+    "alternateOf": {
+      "@id": "http://www.w3.org/ns/prov#alternateOf"
+    },
+    "asInBundle": {
+      "@id": "http://www.w3.org/ns/prov#asInBundle"
+    },
+    "atLocation": {
+      "@id": "http://www.w3.org/ns/prov#atLocation"
+    },
+    "atTime": {
+      "@id": "http://www.w3.org/ns/prov#atTime"
+    },
+    "derivedByInsertionFrom": {
+      "@id": "http://www.w3.org/ns/prov#derivedByInsertionFrom"
+    },
+    "derivedByRemovalFrom": {
+      "@id": "http://www.w3.org/ns/prov#derivedByRemovalFrom"
+    },
+    "describesService": {
+      "@id": "http://www.w3.org/ns/prov#describesService"
+    },
+    "dictionary": {
+      "@id": "http://www.w3.org/ns/prov#dictionary"
+    },
+    "endedAtTime": {
+      "@id": "http://www.w3.org/ns/prov#endedAtTime"
+    },
+    "entity": {
+      "@id": "http://www.w3.org/ns/prov#entity"
+    },
+    "generated": {
+      "@id": "http://www.w3.org/ns/prov#generated"
+    },
+    "generatedAtTime": {
+      "@id": "http://www.w3.org/ns/prov#generatedAtTime"
+    },
+    "hadActivity": {
+      "@id": "http://www.w3.org/ns/prov#hadActivity"
+    },
+    "hadDictionaryMember": {
+      "@id": "http://www.w3.org/ns/prov#hadDictionaryMember"
+    },
+    "hadGeneration": {
+      "@id": "http://www.w3.org/ns/prov#hadGeneration"
+    },
+    "hadMember": {
+      "@id": "http://www.w3.org/ns/prov#hadMember"
+    },
+    "hadPlan": {
+      "@id": "http://www.w3.org/ns/prov#hadPlan"
+    },
+    "hadPrimarySource": {
+      "@id": "http://www.w3.org/ns/prov#hadPrimarySource"
+    },
+    "hadRole": {
+      "@id": "http://www.w3.org/ns/prov#hadRole"
+    },
+    "hadUsage": {
+      "@id": "http://www.w3.org/ns/prov#hadUsage"
+    },
+    "has_anchor": {
+      "@id": "http://www.w3.org/ns/prov#has_anchor"
+    },
+    "has_provenance": {
+      "@id": "http://www.w3.org/ns/prov#has_provenance"
+    },
+    "has_query_service": {
+      "@id": "http://www.w3.org/ns/prov#has_query_service"
+    },
+    "influenced": {
+      "@id": "http://www.w3.org/ns/prov#influenced"
+    },
+    "influencer": {
+      "@id": "http://www.w3.org/ns/prov#influencer"
+    },
+    "insertedKeyEntityPair": {
+      "@id": "http://www.w3.org/ns/prov#insertedKeyEntityPair"
+    },
+    "invalidated": {
+      "@id": "http://www.w3.org/ns/prov#invalidated"
+    },
+    "invalidatedAtTime": {
+      "@id": "http://www.w3.org/ns/prov#invalidatedAtTime"
+    },
+    "mentionOf": {
+      "@id": "http://www.w3.org/ns/prov#mentionOf"
+    },
+    "pairEntity": {
+      "@id": "http://www.w3.org/ns/prov#pairEntity"
+    },
+    "pairKey": {
+      "@id": "http://www.w3.org/ns/prov#pairKey"
+    },
+    "pingback": {
+      "@id": "http://www.w3.org/ns/prov#pingback"
+    },
+    "provenanceUriTemplate": {
+      "@id": "http://www.w3.org/ns/prov#provenanceUriTemplate"
+    },
+    "qualifiedAssociation": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedAssociation"
+    },
+    "qualifiedAttribution": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedAttribution"
+    },
+    "qualifiedCommunication": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedCommunication"
+    },
+    "qualifiedDelegation": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedDelegation"
+    },
+    "qualifiedDerivation": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedDerivation"
+    },
+    "qualifiedEnd": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedEnd"
+    },
+    "qualifiedGeneration": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedGeneration"
+    },
+    "qualifiedInfluence": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedInfluence"
+    },
+    "qualifiedInsertion": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedInsertion"
+    },
+    "qualifiedInvalidation": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedInvalidation"
+    },
+    "qualifiedPrimarySource": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedPrimarySource"
+    },
+    "qualifiedQuotation": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedQuotation"
+    },
+    "qualifiedRemoval": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedRemoval"
+    },
+    "qualifiedRevision": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedRevision"
+    },
+    "qualifiedStart": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedStart"
+    },
+    "qualifiedUsage": {
+      "@id": "http://www.w3.org/ns/prov#qualifiedUsage"
+    },
+    "removedKey": {
+      "@id": "http://www.w3.org/ns/prov#removedKey"
+    },
+    "specializationOf": {
+      "@id": "http://www.w3.org/ns/prov#specializationOf"
+    },
+    "startedAtTime": {
+      "@id": "http://www.w3.org/ns/prov#startedAtTime"
+    },
+    "used": {
+      "@id": "http://www.w3.org/ns/prov#used"
+    },
+    "value": {
+      "@id": "http://www.w3.org/ns/prov#value"
+    },
+    "wasAssociatedWith": {
+      "@id": "http://www.w3.org/ns/prov#wasAssociatedWith"
+    },
+    "wasAttributedTo": {
+      "@id": "http://www.w3.org/ns/prov#wasAttributedTo"
+    },
+    "wasDerivedFrom": {
+      "@id": "http://www.w3.org/ns/prov#wasDerivedFrom"
+    },
+    "wasEndedBy": {
+      "@id": "http://www.w3.org/ns/prov#wasEndedBy"
+    },
+    "wasGeneratedBy": {
+      "@id": "http://www.w3.org/ns/prov#wasGeneratedBy"
+    },
+    "wasInfluencedBy": {
+      "@id": "http://www.w3.org/ns/prov#wasInfluencedBy"
+    },
+    "wasInformedBy": {
+      "@id": "http://www.w3.org/ns/prov#wasInformedBy"
+    },
+    "wasInvalidatedBy": {
+      "@id": "http://www.w3.org/ns/prov#wasInvalidatedBy"
+    },
+    "wasQuotedFrom": {
+      "@id": "http://www.w3.org/ns/prov#wasQuotedFrom"
+    },
+    "wasRevisionOf": {
+      "@id": "http://www.w3.org/ns/prov#wasRevisionOf"
+    },
+    "wasStartedBy": {
+      "@id": "http://www.w3.org/ns/prov#wasStartedBy"
+    }
+  }
+}

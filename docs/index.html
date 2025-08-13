@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>turtle-matter Examples</title>
+    <title>turtle-matter 🐢</title>
     <style>
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -90,11 +90,15 @@
     </style>
 </head>
 <body>
-    <h1>turtle-matter Examples</h1>
+    <h1>turtle-matter 🐢</h1>
     
     <div class="description">
         <p>turtle-matter generates vocabulary documentation from RDF files. Below are example outputs showing different formats generated from the same source vocabulary.</p>
+        <p>The HTML pages contain machine-readable JSON-LD information embedded in the document header, while the Markdown files include the JSON-LD context in their frontmatter.</p>
+        <p>When companion documentation in per-term Markdown files are provided, they are included in the generated outputs for each term.</p>
     </div>
+
+    <h2>Examples</h2>
 
     <div class="example-card">
         <div class="example-header">
@@ -115,6 +119,29 @@
                     <li><a href="examples/croissant/outputs/croissant.html">Interactive HTML Documentation</a> <span class="format-tag">HTML</span></li>
                     <li><a href="examples/croissant/outputs/croissant.md">Markdown Documentation</a> <span class="format-tag">Markdown</span></li>
                     <li><a href="examples/croissant/outputs/croissant-context.json">JSON-LD Context</a> <span class="format-tag">JSON-LD</span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="example-card">
+        <div class="example-header">
+            <h3>PROV Ontology</h3>
+            <p>W3C PROV ontology for representing provenance information</p>
+        </div>
+        <div class="example-content">
+            <div class="inputs-section">
+                <h4 class="section-title">Inputs</h4>
+                <ul class="example-links">
+                    <li><a href="examples/prov/inputs/prov.ttl">prov.ttl</a> <span class="format-tag">Turtle</span></li>
+                </ul>
+            </div>
+            <div class="outputs-section">
+                <h4 class="section-title">Outputs</h4>
+                <ul class="example-links">
+                    <li><a href="examples/prov/outputs/prov.html">Interactive HTML Documentation</a> <span class="format-tag">HTML</span></li>
+                    <li><a href="examples/prov/outputs/prov.md">Markdown Documentation</a> <span class="format-tag">Markdown</span></li>
+                    <li><a href="examples/prov/outputs/prov-context.json">JSON-LD Context</a> <span class="format-tag">JSON-LD</span></li>
                 </ul>
             </div>
         </div>
