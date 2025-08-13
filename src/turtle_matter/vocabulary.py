@@ -83,6 +83,16 @@ class VocabularyExtractor:
             return uri_str.split('/')[-1]
         return uri_str
     
+    # Blank node detection: https://en.wikipedia.org/wiki/Blank_node
+    def is_blank_node(self, uri_str: str) -> bool:
+        """Check if URI is a blank node (auto-generated identifier)."""
+        # Blank nodes often start with 'n' followed by hex characters
+        # or contain long random-looking strings
+        local_name = self.get_local_name(uri_str)
+        return (len(local_name) > 30 and 
+                (local_name.startswith('n') or 
+                 all(c in '0123456789abcdef' for c in local_name.replace('n', '').replace('b', ''))))
+    
     def load_documentation(self, docs_dir: Path) -> Dict[str, Dict[str, Any]]:
         """Load companion documentation from markdown files."""
         docs = {}
@@ -157,7 +167,7 @@ class VocabularyExtractor:
                         term_type='Class',
                         label=str(graph.value(cls, RDFS.label)) if graph.value(cls, RDFS.label) else None,
                         comment=str(graph.value(cls, RDFS.comment)) if graph.value(cls, RDFS.comment) else None,
-                        subclass_of=sorted([str(o) for o in graph.objects(cls, RDFS.subClassOf)])
+                        subclass_of=sorted([str(o) for o in graph.objects(cls, RDFS.subClassOf) if not self.is_blank_node(str(o))])
                     )
                     classes.append(term)
         
@@ -168,13 +178,13 @@ class VocabularyExtractor:
                 if self.matches_target_namespaces(str(prop)):
                     # Extract domain from both rdfs:domain and schema:domainIncludes
                     domain_list = []
-                    domain_list.extend([str(o) for o in graph.objects(prop, RDFS.domain)])
-                    domain_list.extend([str(o) for o in graph.objects(prop, SCHEMA.domainIncludes)])
+                    domain_list.extend([str(o) for o in graph.objects(prop, RDFS.domain) if not self.is_blank_node(str(o))])
+                    domain_list.extend([str(o) for o in graph.objects(prop, SCHEMA.domainIncludes) if not self.is_blank_node(str(o))])
                     
                     # Extract range from both rdfs:range and schema:rangeIncludes  
                     range_list = []
-                    range_list.extend([str(o) for o in graph.objects(prop, RDFS.range)])
-                    range_list.extend([str(o) for o in graph.objects(prop, SCHEMA.rangeIncludes)])
+                    range_list.extend([str(o) for o in graph.objects(prop, RDFS.range) if not self.is_blank_node(str(o))])
+                    range_list.extend([str(o) for o in graph.objects(prop, SCHEMA.rangeIncludes) if not self.is_blank_node(str(o))])
                     
                     term = VocabularyTerm(
                         uri=str(prop),

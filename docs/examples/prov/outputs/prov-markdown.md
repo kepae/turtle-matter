@@ -461,7 +461,6 @@ jsonld_context: |
 
 **Subclass of:**
 - [http://www.w3.org/ns/prov#Influence](http://www.w3.org/ns/prov#Influence)
-- [n49ac45382f294be8903b128e0b07ab50b1](n49ac45382f294be8903b128e0b07ab50b1)
 
 **Properties:**
 - [activity](#activity) (→ prov#Activity)
@@ -754,8 +753,6 @@ jsonld_context: |
 
 **Subclass of:**
 - [http://www.w3.org/ns/prov#Derivation](http://www.w3.org/ns/prov#Derivation)
-- [n49ac45382f294be8903b128e0b07ab50b71](n49ac45382f294be8903b128e0b07ab50b71)
-- [n49ac45382f294be8903b128e0b07ab50b72](n49ac45382f294be8903b128e0b07ab50b72)
 
 **Properties:**
 - [dictionary](#dictionary) (→ prov#Dictionary)
@@ -789,10 +786,6 @@ jsonld_context: |
 ### Key-Entity Pair
 
 **URI:** `http://www.w3.org/ns/prov#KeyEntityPair`
-
-**Subclass of:**
-- [n49ac45382f294be8903b128e0b07ab50b69](n49ac45382f294be8903b128e0b07ab50b69)
-- [n49ac45382f294be8903b128e0b07ab50b70](n49ac45382f294be8903b128e0b07ab50b70)
 
 **Properties:**
 - [pairEntity](#pairEntity) (→ prov#Entity)
@@ -890,8 +883,6 @@ jsonld_context: |
 
 **Subclass of:**
 - [http://www.w3.org/ns/prov#Derivation](http://www.w3.org/ns/prov#Derivation)
-- [n49ac45382f294be8903b128e0b07ab50b73](n49ac45382f294be8903b128e0b07ab50b73)
-- [n49ac45382f294be8903b128e0b07ab50b74](n49ac45382f294be8903b128e0b07ab50b74)
 
 **Properties:**
 - [dictionary](#dictionary) (→ prov#Dictionary)
@@ -1071,9 +1062,6 @@ When :x prov:mentionOf :y and :y is described in Bundle :b, the triple :x prov:a
 
 **Description:** The Location of any resource.
 
-**Domain:**
-- [n49ac45382f294be8903b128e0b07ab50b4](n49ac45382f294be8903b128e0b07ab50b4)
-
 **Range:**
 - [http://www.w3.org/ns/prov#Location](http://www.w3.org/ns/prov#Location)
 
@@ -1198,7 +1186,6 @@ When :x prov:mentionOf :y and :y is described in Bundle :b, the triple :x prov:a
 
 **Domain:**
 - [http://www.w3.org/ns/prov#Influence](http://www.w3.org/ns/prov#Influence)
-- [n49ac45382f294be8903b128e0b07ab50b9](n49ac45382f294be8903b128e0b07ab50b9)
 
 **Range:**
 - [http://www.w3.org/ns/prov#Activity](http://www.w3.org/ns/prov#Activity)
@@ -1277,7 +1264,6 @@ When :x prov:mentionOf :y and :y is described in Bundle :b, the triple :x prov:a
 
 **Domain:**
 - [http://www.w3.org/ns/prov#Influence](http://www.w3.org/ns/prov#Influence)
-- [n49ac45382f294be8903b128e0b07ab50b16](n49ac45382f294be8903b128e0b07ab50b16)
 
 **Range:**
 - [http://www.w3.org/ns/prov#Role](http://www.w3.org/ns/prov#Role)
@@ -1540,9 +1526,6 @@ prov:asInBundle is used to cite the Bundle in which the generalization was menti
 
 **Description:** Because prov:qualifiedInfluence is a broad relation, the more specific relations (qualifiedCommunication, qualifiedDelegation, qualifiedEnd, etc.) should be used when applicable.
 
-**Domain:**
-- [n49ac45382f294be8903b128e0b07ab50b19](n49ac45382f294be8903b128e0b07ab50b19)
-
 **Range:**
 - [http://www.w3.org/ns/prov#Influence](http://www.w3.org/ns/prov#Influence)
 
@@ -1790,12 +1773,6 @@ prov:asInBundle is used to cite the Bundle in which the generalization was menti
 **URI:** `http://www.w3.org/ns/prov#wasInfluencedBy`
 
 **Description:** Because prov:wasInfluencedBy is a broad relation, its more specific subproperties (e.g. prov:wasInformedBy, prov:actedOnBehalfOf, prov:wasEndedBy, etc.) should be used when applicable.
-
-**Domain:**
-- [n49ac45382f294be8903b128e0b07ab50b35](n49ac45382f294be8903b128e0b07ab50b35)
-
-**Range:**
-- [n49ac45382f294be8903b128e0b07ab50b39](n49ac45382f294be8903b128e0b07ab50b39)
 
 ---
 
