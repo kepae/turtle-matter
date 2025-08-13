@@ -4,10 +4,11 @@ Generate human- and machine-readable HTML pages from RDF files and related markd
 
 ### Usage
 ```shell
-% uv run main.py --help
-Usage: main.py [OPTIONS] RDF_FILE
+% uv run turtle-matter --help                                                          
+Usage: turtle-matter [OPTIONS] RDF_FILE
 
-  Generate vocabulary documentation from RDF file.
+  Generate human- and machine-readable vocabulary documentation (HTML,
+  Markdown) from RDF file.
 
 Options:
   -e, --emit [html|markdown|jsonld|analysis]
