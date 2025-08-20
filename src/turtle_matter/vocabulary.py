@@ -6,7 +6,7 @@ and vocabulary data in an intermediate format, as well as the extraction logic
 for processing RDF graphs.
 """
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
 
@@ -29,29 +29,12 @@ class VocabularyTerm:
     term_type: str  # 'Class' or 'Property'
     label: str | None = None
     comment: str | None = None
-    subclass_of: list[str] = None
-    subproperty_of: list[str] = None
-    domain: list[str] = None
-    range: list[str] = None
-    documentation: dict[str, Any] = None
-    related_properties: list["VocabularyTerm"] = (
-        None  # Properties that apply to this class
-    )
-
-    def __post_init__(self):
-        # Initialize mutable defaults
-        if self.subclass_of is None:
-            self.subclass_of = []
-        if self.subproperty_of is None:
-            self.subproperty_of = []
-        if self.domain is None:
-            self.domain = []
-        if self.range is None:
-            self.range = []
-        if self.documentation is None:
-            self.documentation = {}
-        if self.related_properties is None:
-            self.related_properties = []
+    subclass_of: list[str] = field(default_factory=list)
+    subproperty_of: list[str] = field(default_factory=list)
+    domain: list[str] = field(default_factory=list)
+    range: list[str] = field(default_factory=list)
+    documentation: dict[str, Any] = field(default_factory=dict)
+    related_properties: list["VocabularyTerm"] = field(default_factory=list)
 
 
 @dataclass
@@ -69,8 +52,10 @@ class VocabularyData:
 class VocabularyExtractor:
     """Extracts vocabulary data from RDF graphs."""
 
-    def __init__(self, target_namespaces: list[str] = None):
-        self.target_namespaces = target_namespaces or []
+    def __init__(self, target_namespaces: list[str] | None = None):
+        self.target_namespaces = (
+            target_namespaces if target_namespaces is not None else []
+        )
 
     def matches_target_namespaces(self, uri_str: str) -> bool:
         """Check if URI matches any of the target namespaces."""
@@ -291,7 +276,7 @@ class VocabularyExtractor:
                 if uri.startswith(namespace) and prefix not in context:
                     context[prefix] = namespace
 
-        jsonld_context = {"@context": context}
+        jsonld_context: dict[str, Any] = {"@context": context}
 
         # Add term definitions to context
         for cls in classes:
