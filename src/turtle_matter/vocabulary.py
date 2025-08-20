@@ -145,12 +145,8 @@ class VocabularyExtractor:
 
         return vocab_data
 
-    def extract_from_graph(
-        self, graph: Graph, full_context: bool = False
-    ) -> VocabularyData:
-        """Extract vocabulary data from RDF graph."""
-
-        # Extract classes
+    def _extract_classes(self, graph: Graph) -> list[VocabularyTerm]:
+        """Extract class terms from RDF graph."""
         classes = []
         rdf_class = URIRef("http://www.w3.org/1999/02/22-rdf-syntax-ns#Class")
 
@@ -176,44 +172,53 @@ class VocabularyExtractor:
                         ),
                     )
                     classes.append(term)
+        return classes
 
-        # Extract properties
+    def _extract_property_domains_ranges(
+        self, graph: Graph, prop: URIRef
+    ) -> tuple[list[str], list[str]]:
+        """Extract domain and range lists for a property."""
+        domain_list = []
+        domain_list.extend(
+            [
+                str(o)
+                for o in graph.objects(prop, RDFS.domain)
+                if not self.is_blank_node(str(o))
+            ]
+        )
+        domain_list.extend(
+            [
+                str(o)
+                for o in graph.objects(prop, SCHEMA.domainIncludes)
+                if not self.is_blank_node(str(o))
+            ]
+        )
+
+        range_list = []
+        range_list.extend(
+            [
+                str(o)
+                for o in graph.objects(prop, RDFS.range)
+                if not self.is_blank_node(str(o))
+            ]
+        )
+        range_list.extend(
+            [
+                str(o)
+                for o in graph.objects(prop, SCHEMA.rangeIncludes)
+                if not self.is_blank_node(str(o))
+            ]
+        )
+        return domain_list, range_list
+
+    def _extract_properties(self, graph: Graph) -> list[VocabularyTerm]:
+        """Extract property terms from RDF graph."""
         properties = []
         for prop_type in [RDF.Property, OWL.ObjectProperty, OWL.DatatypeProperty]:
             for prop in graph.subjects(RDF.type, prop_type):
                 if self.matches_target_namespaces(str(prop)):
-                    # Extract domain from both rdfs:domain and schema:domainIncludes
-                    domain_list = []
-                    domain_list.extend(
-                        [
-                            str(o)
-                            for o in graph.objects(prop, RDFS.domain)
-                            if not self.is_blank_node(str(o))
-                        ]
-                    )
-                    domain_list.extend(
-                        [
-                            str(o)
-                            for o in graph.objects(prop, SCHEMA.domainIncludes)
-                            if not self.is_blank_node(str(o))
-                        ]
-                    )
-
-                    # Extract range from both rdfs:range and schema:rangeIncludes
-                    range_list = []
-                    range_list.extend(
-                        [
-                            str(o)
-                            for o in graph.objects(prop, RDFS.range)
-                            if not self.is_blank_node(str(o))
-                        ]
-                    )
-                    range_list.extend(
-                        [
-                            str(o)
-                            for o in graph.objects(prop, SCHEMA.rangeIncludes)
-                            if not self.is_blank_node(str(o))
-                        ]
+                    domain_list, range_list = self._extract_property_domains_ranges(
+                        graph, prop
                     )
 
                     term = VocabularyTerm(
@@ -230,26 +235,15 @@ class VocabularyExtractor:
                         range=sorted(set(range_list)),
                     )
                     properties.append(term)
+        return properties
 
-        # Remove duplicates and sort
-        classes = sorted(
-            {cls.uri: cls for cls in classes}.values(), key=lambda x: x.local_name
-        )
-        properties = sorted(
-            {prop.uri: prop for prop in properties}.values(), key=lambda x: x.local_name
-        )
-
-        # Add reverse lookup: find properties that apply to each class
-        for cls in classes:
-            cls.related_properties = []
-            for prop in properties:
-                # Check if this class is in the property's domain
-                if cls.uri in prop.domain:
-                    cls.related_properties.append(prop)
-            # Sort properties by name
-            cls.related_properties.sort(key=lambda x: x.local_name)
-
-        # Generate JSON-LD context
+    def _generate_jsonld_context(
+        self,
+        classes: list[VocabularyTerm],
+        properties: list[VocabularyTerm],
+        full_context: bool,
+    ) -> dict[str, Any]:
+        """Generate JSON-LD context from extracted terms."""
         context = {
             "@vocab": self.target_namespaces[0] if self.target_namespaces else ""
         }
@@ -281,23 +275,17 @@ class VocabularyExtractor:
         # Add term definitions to context
         for cls in classes:
             term_def = {"@id": cls.uri, "@type": "@id"}
-
-            # Add semantic relationships if full context requested
-            if full_context:
-                if cls.subclass_of:
-                    if len(cls.subclass_of) == 1:
-                        term_def["rdfs:subClassOf"] = {"@id": cls.subclass_of[0]}
-                    else:
-                        term_def["rdfs:subClassOf"] = [
-                            {"@id": parent} for parent in cls.subclass_of
-                        ]
-
+            if full_context and cls.subclass_of:
+                if len(cls.subclass_of) == 1:
+                    term_def["rdfs:subClassOf"] = {"@id": cls.subclass_of[0]}
+                else:
+                    term_def["rdfs:subClassOf"] = [
+                        {"@id": parent} for parent in cls.subclass_of
+                    ]
             jsonld_context["@context"][cls.local_name] = term_def
 
         for prop in properties:
             term_def = {"@id": prop.uri}
-
-            # Add semantic relationships if full context requested
             if full_context:
                 if prop.domain:
                     if len(prop.domain) == 1:
@@ -306,7 +294,6 @@ class VocabularyExtractor:
                         term_def["rdfs:domain"] = [
                             {"@id": domain} for domain in prop.domain
                         ]
-
                 if prop.range:
                     if len(prop.range) == 1:
                         term_def["rdfs:range"] = {"@id": prop.range[0]}
@@ -314,8 +301,38 @@ class VocabularyExtractor:
                         term_def["rdfs:range"] = [
                             {"@id": range_val} for range_val in prop.range
                         ]
-
             jsonld_context["@context"][prop.local_name] = term_def
+
+        return jsonld_context
+
+    def extract_from_graph(
+        self, graph: Graph, full_context: bool = False
+    ) -> VocabularyData:
+        """Extract vocabulary data from RDF graph."""
+        # Extract classes and properties
+        classes = self._extract_classes(graph)
+        properties = self._extract_properties(graph)
+
+        # Remove duplicates and sort
+        classes = sorted(
+            {cls.uri: cls for cls in classes}.values(), key=lambda x: x.local_name
+        )
+        properties = sorted(
+            {prop.uri: prop for prop in properties}.values(), key=lambda x: x.local_name
+        )
+
+        # Add reverse lookup: find properties that apply to each class
+        for cls in classes:
+            cls.related_properties = []
+            for prop in properties:
+                if cls.uri in prop.domain:
+                    cls.related_properties.append(prop)
+            cls.related_properties.sort(key=lambda x: x.local_name)
+
+        # Generate JSON-LD context
+        jsonld_context = self._generate_jsonld_context(
+            classes, properties, full_context
+        )
 
         return VocabularyData(
             title="Vocabulary",
