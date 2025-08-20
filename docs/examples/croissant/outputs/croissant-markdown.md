@@ -6,8 +6,8 @@ jsonld_context: |
   {
     "@context": {
       "@vocab": "http://mlcommons.org/croissant/",
-      "schema": "https://schema.org/",
       "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "schema": "https://schema.org/",
       "ContentExtractionEnumeration": {
         "@id": "http://mlcommons.org/croissant/ContentExtractionEnumeration",
         "@type": "@id"

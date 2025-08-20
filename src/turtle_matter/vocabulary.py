@@ -264,11 +264,16 @@ class VocabularyExtractor:
             "https://schema.org/": "schema",
         }
 
-        # Only add prefixes that are actually used
+        # Find prefixes actually used
+        used_prefixes = {}
         for uri in used_uris:
             for namespace, prefix in prefix_map.items():
-                if uri.startswith(namespace) and prefix not in context:
-                    context[prefix] = namespace
+                if uri.startswith(namespace):
+                    used_prefixes[prefix] = namespace
+
+        # Sort prefixes for stability
+        for prefix in sorted(used_prefixes.keys()):
+            context[prefix] = used_prefixes[prefix]
 
         jsonld_context: dict[str, Any] = {"@context": context}
 
