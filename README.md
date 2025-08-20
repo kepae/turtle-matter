@@ -1,5 +1,8 @@
 # Turtle Matter 🐢
 
+[![License](https://img.shields.io/github/license/kepae/turtle-matter)](https://github.com/kepae/turtle-matter/blob/main/LICENSE)
+[![Pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit)](https://github.com/kepae/turtle-matter/blob/main/.pre-commit-config.yaml)
+
 Generate human- and machine-readable HTML pages from RDF files and related markdown documentation files.
 
 > [!NOTE]
