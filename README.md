@@ -2,7 +2,13 @@
 
 Generate human- and machine-readable HTML pages from RDF files and related markdown documentation files.
 
+> [!NOTE]  
+> Experimental! Please use and [report issues](https://github.com/kepae/turtle-matter/issues).
+
 ### Usage
+
+[`uv`](https://docs.astral.sh/uv/getting-started/installation/) is recommended both as a Python package manager and to run this tool. This is because [`uv run`](https://docs.astral.sh/uv/reference/cli/#uv-run) will automatically handle creating, activating, and maintaining your Python virtual environment.
+
 ```shell
 % uv run turtle-matter --help                                                          
 Usage: turtle-matter [OPTIONS] RDF_FILE
